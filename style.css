@@ -126,3 +126,12 @@ h2{
 .player h3{
     color:gold;
 }
+
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    margin-top:10px;
+    font-size:16px;
+}
