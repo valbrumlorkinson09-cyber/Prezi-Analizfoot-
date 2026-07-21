@@ -96,3 +96,22 @@ h2{
     text-align:center;
     font-size:13px;
 }
+
+.match-box{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    text-align:center;
+}
+
+
+.team{
+    font-size:18px;
+}
+
+
+.vs{
+    font-size:30px;
+    color:gold;
+    font-weight:bold;
+}
