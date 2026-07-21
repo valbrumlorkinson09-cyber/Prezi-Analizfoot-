@@ -1,63 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="ht">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>ANALIZFOOT Premium</title>
 
-}<script>
-function rechache(){
-    let rech = document.getElementById("recherche").value.toLowerCase();
+<style>
 
-    if(rech.includes("real") || rech.includes("madrid")){
-        alert("⚪ Real Madrid\nViktwa: 4\nGòl make: 12\nFòs ekip: 88%");
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-</script>
-<style><script>
-function rechache(){
-    let rech = document.getElementById("recherche").value.toLowerCase();
 
-    if(rech.includes("real") || rech.includes("madrid")){
-        alert("⚪ Real Madrid\nViktwa: 4\nGòl make: 12\nFòs ekip: 88%");
-    }
-
-    else if(rech.includes("barcelona")){
-        alert("🔵 Barcelona\nViktwa: 3\nGòl make: 10\nFòs ekip: 84%");
-    }
-
-    else if(rech.includes("mbappe")){
-        alert("🥇 Kylian Mbappé\n⚽ Gòl: 8\n🎯 Pas desizif: 4\n⭐ Nòt: 9.2");
-    }
-
-    else{
-        alert("❌ Pa jwenn enfòmasyon sa a nan AnalizFoot");
-    }
-}
-    </script><script>
-function rechache(){
-    let rech = document.getElementById("recherche").value.toLowerCase();
-
-    if(rech.includes("real") || rech.includes("madrid")){
-        alert("⚪ Real Madrid\nViktwa: 4\nGòl make: 12\nFòs ekip: 88%");
-    }
-
-    else if(rech.includes("barcelona")){
-        alert("🔵 Barcelona\nViktwa: 3\nGòl make: 10\nFòs ekip: 84%");
-    }
-
-    else if(rech.includes("mbappe")){
-        alert("🥇 Kylian Mbappé\n⚽ Gòl: 8\n🎯 Pas desizif: 4\n⭐ Nòt: 9.2");
-    }
-
-    else{
-        alert("❌ Pa jwenn enfòmasyon sa a nan AnalizFoot");
-    }
-}
-</script>
 body{
+    background:#0d0d0d;
+    color:white;
+    font-family:Arial,sans-serif;
 }
+
+header{
+    background:linear-gradient(135deg,#111,#1f1f1f);
+    text-align:center;
+    padding:25px;
+    border-bottom:2px solid gold;
+}
+
+.logo{
+    font-size:35px;
+    color:gold;
+    font-weight:bold;
+}
+
+.slogan{
+    color:#ddd;
+    margin-top:8px;
+}
+
+.menu{
+    display:flex;
+    justify-content:space-around;
+    background:#181818;
+    padding:15px;
+    font-weight:bold;
+}
+
+.menu div{
+    cursor:pointer;
+}
+
+.card{
+    background:#1b1b1b;
+    margin:20px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(255,215,0,.2);
+}
+
+h2{
+    color:gold;
+    margin-bottom:15px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.button{
+    background:gold;
+    color:black;
+    padding:12px;
+    text-align:center;
+    border-radius:10px;
+    font-weight:bold;
+}
+
 </style>
 
 </head>
@@ -65,56 +88,75 @@ body{
 <body>
 
 <header>
-<div class="logo">⚽ ANALIZFOOT</div>
-<p>Platfòm analiz foutbòl an Kreyòl</p>
+
+<div class="logo">
+⚽ ANALIZFOOT
+</div>
+
+<div class="slogan">
+Platfòm analiz foutbòl an Kreyòl
+</div>
+
 </header>
 
-
 <div class="menu">
+
 <div>🏠 Akèy</div>
+
 <div>⚽ Match</div>
+
 <div>📊 Analiz</div>
+
 <div>🔥 Prediksyon</div>
+
 </div>
 
 <div class="card">
 
 <h2>🔍 RECHÈCH FOOTBALL</h2>
 
-<input type="text" placeholder="Chèche ekip oswa jwè..." 
-style="width:90%; padding:12px; border-radius:10px;">
+<input
+type="text"
+placeholder="Chèche ekip oswa jwè...">
 
 <div class="button">
-Chèche
+
+CHÈCHE
+
 </div>
 
 </div>
-<div class="card" id="match">🔥 MATCH DU JOUR</h2>
+<div class="card">
+
+<h2>🔥 MATCH DU JOUR</h2>
 
 <h3>⚽ Real Madrid VS Barcelona</h3>
 
 <p>📊 Analiz ekip yo</p>
 
 <p>
-🔥 Atak: 88% <br>
-🛡 Defans: 82% <br>
-⚡ Fòm: Bon
+🔥 Atak: <b>88%</b><br>
+🛡 Defans: <b>82%</b><br>
+⚡ Fòm: <b>Bon</b>
 </p>
 
 <h3>🤖 Prediksyon AI</h3>
 
 <p>
-Real Madrid: 55% <br>
-Match nul: 25% <br>
-Barcelona: 20%
+⚪ Real Madrid: <b>55%</b><br>
+🤝 Match nul: <b>25%</b><br>
+🔵 Barcelona: <b>20%</b>
 </p>
 
-<div class="button">Gade Analiz Konplè</div><div class="card" id="analiz">
+<div class="button">
+Gade Analiz Konplè
+</div>
 
 </div>
 
+<div class="card">
 
-<div class="card" id="analiz">📊 ESTATISTIK EKIP</h2>
+<h2>📊 ESTATISTIK EKIP</h2>
 
 <h3>⚪ Real Madrid</h3>
 
@@ -126,7 +168,7 @@ Barcelona: 20%
 🛡 Gòl pran: 3
 </p>
 
-<hr>
+<hr><br>
 
 <h3>🔵 Barcelona</h3>
 
@@ -141,126 +183,127 @@ Barcelona: 20%
 </div>
 
 <div class="card">
+
 <h2>⭐ TOP JWÈ YO</h2>
 
-<h3>🥇 Kylian Mbappé</h3>
 <p>
+🥇 <b>Kylian Mbappé</b><br>
 ⚽ Gòl: 8<br>
 🎯 Pas desizif: 4<br>
 ⭐ Nòt: 9.2
-</p></div>
+</p>
 
-<hr>
+<hr><br>
 
-<h3>🥈 Lamine Yamal</h3>
 <p>
+🥈 <b>Lamine Yamal</b><br>
 ⚽ Gòl: 5<br>
 🎯 Pas desizif: 6<br>
 ⭐ Nòt: 8.8
-</p></div>
+</p>
 
-<hr>
+<hr><br>
 
-<h3>🥉 Vinícius Jr</h3>
 <p>
+🥉 <b>Vinícius Jr</b><br>
 ⚽ Gòl: 6<br>
 🎯 Pas desizif: 5<br>
 ⭐ Nòt: 8.7
-</p></div>
-<div class="card">
+</p>
+
+    </div>
+    <div class="card">
+
 <h2>📰 DÈNYE NOUVÈL FOUTBÒL</h2>
 
 <h3>🔥 Gwo Match Semèn nan</h3>
+
 <p>
 Real Madrid ak Barcelona pare pou yon gwo konfwontasyon.
-Analiz ekip yo disponib sou AnalizFoot.
+Swiv tout analiz yo sou ANALIZFOOT.
 </p>
 
-<hr>
+<hr><br>
 
 <h3>⚽ Mache Transfè</h3>
+
 <p>
-Swiv dènye mouvman jwè yo ak enfòmasyon klè.
+Swiv tout dènye nouvèl sou transfè jwè yo.
 </p>
 
-<hr>
+<hr><br>
 
 <h3>🏆 Konpetisyon</h3>
+
 <p>
-Rezilta, klasman ak moman fò ekip yo.
+Rezilta, klasman ak pi bon moman nan chanpyona yo.
 </p>
+
+</div>
+
 <div class="card">
+
 <h2>🤖 AI MATCH ANALYSE</h2>
 
 <h3>⚽ Real Madrid VS Barcelona</h3>
 
 <p>
-📌 Fòs ekip:
-<br>
-Real Madrid: 88%
-<br>
-Barcelona: 84%
+📌 Fòs ekip:<br>
+⚪ Real Madrid: <b>88%</b><br>
+🔵 Barcelona: <b>84%</b>
 </p>
 
 <p>
-🔥 Atak:
-<br>
+🔥 Atak:<br>
 Real Madrid pi danjere sou kont-atak.
 </p>
 
 <p>
-🛡 Defans:
-<br>
+🛡 Defans:<br>
 Barcelona gen bon posesyon men bezwen amelyore dèyè.
 </p>
 
 <h3>🎯 Prediksyon AI</h3>
 
 <p>
-⚽ Gòl posib: 2-3
-<br><br>
-Real Madrid: 55%
-<br>
-Match nul: 25%
-<br>
-Barcelona: 20%
+⚽ Gòl posib: <b>2-3</b><br><br>
+
+⚪ Real Madrid: <b>55%</b><br>
+🤝 Match nul: <b>25%</b><br>
+🔵 Barcelona: <b>20%</b>
 </p>
 
-</div>
-</div>
-</div>
-<div class="card" id="prediksyon">
-<h2>🤖 AI Football</h2>
-<p>Analiz entèlijan pou ede konprann match yo.</p>
 </div>
 
 <div class="bottom-menu">
 
-<div>
-🏠<br>
-Akèy
-</div>
-
-<div>
-⚽<br>
-Match
-</div>
-
-<div>
-📊<br>
-Analiz
-</div>
-
-<div>
-🔥<br>
-Prediksyon
-</div>
-
-<div>
-👤<br>
-Profil
-</div>
+<div>🏠<br>Akèy</div>
+<div>⚽<br>Match</div>
+<div>📊<br>Analiz</div>
+<div>🔥<br>Prediksyon</div>
+<div>👤<br>Profil</div>
 
 </div>
+
+<style>
+.bottom-menu{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#111;
+display:flex;
+justify-content:space-around;
+padding:12px 0;
+border-top:2px solid gold;
+}
+
+.bottom-menu div{
+text-align:center;
+font-size:13px;
+color:white;
+}
+</style>
+
 </body>
 </html>
