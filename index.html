@@ -18,12 +18,30 @@ function rechache(){
 
 let rech = document.getElementById("recherche").value;
 
+let rezilta = document.getElementById("rezilta");
+
+
 if(rech == ""){
-alert("Ekri non yon ekip oswa jwè");
+
+rezilta.innerHTML =
+"⚠️ Ekri non yon ekip oswa jwè";
+
 }
 
 else{
-alert("Analiz pou: " + rech + " ap prepare ⚽🤖");
+
+rezilta.innerHTML =
+
+"<h3>🔍 Rezilta rechèch</h3>" +
+
+"<p>⚽ Analiz pou: <b>" + rech + "</b></p>" +
+
+"<p>🔥 Atak: 85%<br>" +
+"🛡 Defans: 82%<br>" +
+"⚡ Fòm: Bon</p>" +
+
+"<p>🤖 AI: Analiz ap kontinye...</p>";
+
 }
 
 }
@@ -82,7 +100,7 @@ Kòmanse Analiz
 
 <div class="button" onclick="rechache()">
 CHÈCHE
-</div>
+</div><div id="rezilta"></div>
 </section>
 
 
