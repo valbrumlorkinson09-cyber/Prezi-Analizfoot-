@@ -142,3 +142,10 @@ input{
     background:#111;
     border-radius:10px;
 }
+
+.bottom-menu a{
+    color:white;
+    text-decoration:none;
+    text-align:center;
+    font-size:13px;
+}
