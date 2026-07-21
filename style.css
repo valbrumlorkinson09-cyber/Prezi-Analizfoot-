@@ -149,3 +149,13 @@ input{
     text-align:center;
     font-size:13px;
 }
+#premium{
+    border:2px solid gold;
+    box-shadow:0 0 20px rgba(255,215,0,0.4);
+}
+
+
+#premium .button{
+    margin-top:20px;
+    background:linear-gradient(90deg,gold,orange);
+}
