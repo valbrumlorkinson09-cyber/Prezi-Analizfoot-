@@ -1,173 +1,190 @@
 <!DOCTYPE html>
 <html lang="ht">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ANALIZFOOT - Match</title>
+<title>Match - ANALIZFOOT</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    background:#050505;
-    color:white;
-}
-
-header{
-    background:#111;
-    padding:20px;
-    text-align:center;
-    border-bottom:2px solid #00ff66;
-}
-
-header h1{
-    color:#00ff66;
-}
-
-.container{
-    padding:20px;
-}
-
-.match{
-    background:#111;
-    border-radius:15px;
-    padding:20px;
-    margin-bottom:20px;
-    border:1px solid #333;
-}
-
-.match h2{
-    text-align:center;
-    color:#00ff66;
-}
-
-.teams{
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    margin:20px 0;
-    font-size:20px;
-}
-
-.vs{
-    color:red;
-    font-weight:bold;
-}
-
-.info{
-    background:#222;
-    padding:15px;
-    border-radius:10px;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    background:#00ff66;
-    border:none;
-    border-radius:10px;
-    font-weight:bold;
-    margin-top:15px;
-}
-
-.bottom-menu{
-    position:fixed;
-    bottom:0;
-    width:100%;
-    background:#111;
-    padding:15px;
-    display:flex;
-    justify-content:space-around;
-}
-
-.bottom-menu a{
-    color:white;
-    text-decoration:none;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
+
 <header>
-<h1>⚽ ANALIZFOOT</h1>
-<p>Match foutbòl yo</p>
+
+<img src="logo.png" class="logo-img" alt="ANALIZFOOT">
+
+<div class="logo">
+⚽ ANALIZFOOT
+</div>
+
+<div class="slogan">
+Platfòm analiz foutbòl an Kreyòl
+</div>
+
 </header>
 
 
-<div class="container">
 
-<div class="match">
+<section class="container">
+
+<h1>⚽ Match Foutbòl</h1>
+
+
+
+<div class="card">
 
 <h2>🔥 Match Du Jour</h2>
 
-<div class="teams">
-<span>Real Madrid</span>
+<h3>⚪ Real Madrid VS Barcelona 🔵</h3>
 
-<span class="vs">VS</span>
+<p>🏆 La Liga</p>
 
-<span>Barcelona</span>
-</div>
+<p>📅 Jodi a</p>
 
-<div class="info">
-
-<p>🏆 Lig: La Liga</p>
-<p>📅 Dat: Jodi a</p>
-<p>⏰ Lè: 20:00</p>
-
-<br>
-
-<p>📊 Fòm Real Madrid: 4 Viktwa - 1 Nul</p>
-<p>📊 Fòm Barcelona: 3 Viktwa - 2 Nul</p>
-
-</div>
-
-<button>🔥 Gade Analiz AI</button>
-
-</div>
-
-
-
-<div class="match">
-
-<h2>⚽ Lòt Match</h2>
-
-<div class="info">
-
-<p>Manchester City 🆚 Arsenal</p>
-<p>🏆 Premier League</p>
-<p>⏰ 18:30</p>
-
-<hr><br>
-
-<p>PSG 🆚 Marseille</p>
-<p>🏆 Ligue 1</p>
 <p>⏰ 21:00</p>
 
-</div>
+<button>
+Gade Analiz
+</button>
 
 </div>
 
+
+
+
+<div class="card">
+
+<h2>📅 Match K ap Vini</h2>
+
+
+<p>
+⚽ Manchester City VS Arsenal
+</p>
+
+<p>
+🏆 Premier League
+</p>
+
+<p>
+⏰ 18:30
+</p>
+
+
+<hr>
+
+
+<p>
+⚽ PSG VS Marseille
+</p>
+
+<p>
+🏆 Ligue 1
+</p>
+
+<p>
+⏰ 20:45
+</p>
+
+
 </div>
 
 
 
-<div class="bottom-menu">
 
-<a href="index.html">🏠 Akèy</a>
-<a href="match.html">⚽ Match</a>
-<a href="analyse.html">📊 Analiz</a>
-<a href="prediction.html">🔥 Prediksyon</a>
+<div class="card">
+
+<h2>📊 Dènye Rezilta</h2>
+
+
+<p>
+⚪ Real Madrid 3 - 1 Sevilla
+</p>
+
+
+<p>
+🔵 Barcelona 2 - 0 Valencia
+</p>
+
+
+<p>
+⚫ Manchester City 2 - 2 Chelsea
+</p>
+
 
 </div>
+
+
+
+
+<div class="card">
+
+<h2>🔥 Top Lig</h2>
+
+
+<p>
+🇪🇸 La Liga
+</p>
+
+<p>
+🏴 Premier League
+</p>
+
+<p>
+🇫🇷 Ligue 1
+</p>
+
+<p>
+🇮🇹 Serie A
+</p>
+
+<p>
+🇩🇪 Bundesliga
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+<nav class="bottom-menu">
+
+
+<a href="index.html">
+🏠 Akèy
+</a>
+
+
+<a href="match.html">
+⚽ Match
+</a>
+
+
+<a href="analyse.html">
+📊 Analiz
+</a>
+
+
+<a href="prediction.html">
+🔥 Prediksyon
+</a>
+
+
+</nav>
+
 
 
 </body>
+
 </html>
