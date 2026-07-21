@@ -124,3 +124,37 @@ hr{
     border-bottom:1px solid #333;
     text-align:center;
 }
+.card{
+    background:#1a1a1a;
+    border:1px solid #2c2c2c;
+    border-radius:15px;
+    padding:20px;
+    margin:15px 10px;
+    box-shadow:0 4px 12px rgba(0,0,0,.4);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+button{
+    background:#007bff;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    padding:12px 20px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:15px;
+}
