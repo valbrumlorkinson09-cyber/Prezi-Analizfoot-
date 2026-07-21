@@ -12,7 +12,23 @@
 
 </head>
 
+<script>
 
+function rechache(){
+
+let rech = document.getElementById("recherche").value;
+
+if(rech == ""){
+alert("Ekri non yon ekip oswa jwè");
+}
+
+else{
+alert("Analiz pou: " + rech + " ap prepare ⚽🤖");
+}
+
+}
+
+</script>
 <body>
 
 
@@ -61,12 +77,12 @@ Kòmanse Analiz
 
 <h2>🔍 RECHÈCH FOOTBALL</h2>
 
-<input type="text" placeholder="Chèche ekip oswa jwè...">
 
-<div class="button">
+<input id="recherche" type="text" placeholder="Chèche ekip oswa jwè...">
+
+<div class="button" onclick="rechache()">
 CHÈCHE
 </div>
-
 </section>
 
 
