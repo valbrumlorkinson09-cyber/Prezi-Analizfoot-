@@ -107,3 +107,20 @@ hr{
     text-align:center;
     font-size:13px;
   }
+.table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.table th{
+    background:#007BFF;
+    color:white;
+    padding:10px;
+}
+
+.table td{
+    padding:10px;
+    border-bottom:1px solid #333;
+    text-align:center;
+}
