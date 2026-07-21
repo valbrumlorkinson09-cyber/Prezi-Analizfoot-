@@ -23,7 +23,27 @@
     text-align:center;
     font-size:13px;
 }
-<style>
+<style><script>
+function rechache(){
+    let rech = document.getElementById("recherche").value.toLowerCase();
+
+    if(rech.includes("real") || rech.includes("madrid")){
+        alert("⚪ Real Madrid\nViktwa: 4\nGòl make: 12\nFòs ekip: 88%");
+    }
+
+    else if(rech.includes("barcelona")){
+        alert("🔵 Barcelona\nViktwa: 3\nGòl make: 10\nFòs ekip: 84%");
+    }
+
+    else if(rech.includes("mbappe")){
+        alert("🥇 Kylian Mbappé\n⚽ Gòl: 8\n🎯 Pas desizif: 4\n⭐ Nòt: 9.2");
+    }
+
+    else{
+        alert("❌ Pa jwenn enfòmasyon sa a nan AnalizFoot");
+    }
+}
+    </script>
 body{
     margin:0;
     font-family:Arial, sans-serif;
