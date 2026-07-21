@@ -7,83 +7,89 @@
 <title>ANALIZFOOT - Match</title>
 
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
-background:#0d0d0d;
-color:white;
-font-family:Arial,sans-serif;
-padding-bottom:80px;
+    background:#050505;
+    color:white;
 }
 
 header{
-background:#111;
-text-align:center;
-padding:25px;
-border-bottom:2px solid gold;
+    background:#111;
+    padding:20px;
+    text-align:center;
+    border-bottom:2px solid #00ff66;
 }
 
-.logo{
-font-size:32px;
-color:gold;
-font-weight:bold;
+header h1{
+    color:#00ff66;
 }
 
-.card{
-background:#1b1b1b;
-margin:20px;
-padding:20px;
-border-radius:15px;
-}
-
-h2{
-color:gold;
-margin-bottom:15px;
+.container{
+    padding:20px;
 }
 
 .match{
-text-align:center;
-font-size:20px;
-margin:15px 0;
+    background:#111;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:20px;
+    border:1px solid #333;
 }
 
-.button{
-background:gold;
-color:black;
-padding:12px;
-border-radius:10px;
-text-align:center;
-font-weight:bold;
-margin-top:15px;
+.match h2{
+    text-align:center;
+    color:#00ff66;
+}
+
+.teams{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    margin:20px 0;
+    font-size:20px;
+}
+
+.vs{
+    color:red;
+    font-weight:bold;
+}
+
+.info{
+    background:#222;
+    padding:15px;
+    border-radius:10px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#00ff66;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    margin-top:15px;
 }
 
 .bottom-menu{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:#111;
-display:flex;
-justify-content:space-around;
-padding:12px 0;
-border-top:2px solid gold;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#111;
+    padding:15px;
+    display:flex;
+    justify-content:space-around;
 }
 
-.bottom-menu div{
-text-align:center;
-font-size:13px;
+.bottom-menu a{
+    color:white;
+    text-decoration:none;
 }
-
-a{
-color:white;
-text-decoration:none;
-}
-
 </style>
 
 </head>
@@ -91,105 +97,74 @@ text-decoration:none;
 <body>
 
 <header>
-
-<div class="logo">
-⚽ ANALIZFOOT
-</div>
-
-<p>Tout Match yo</p>
-
+<h1>⚽ ANALIZFOOT</h1>
+<p>Match foutbòl yo</p>
 </header>
 
 
-<div class="card">
-
-<h2>🔥 MATCH JODI A</h2>
+<div class="container">
 
 <div class="match">
-⚪ Real Madrid<br>
-VS<br>
-🔵 Barcelona
+
+<h2>🔥 Match Du Jour</h2>
+
+<div class="teams">
+<span>Real Madrid</span>
+
+<span class="vs">VS</span>
+
+<span>Barcelona</span>
 </div>
 
-<p>
-📊 Liga Espay<br>
-⏰ 21:00<br>
-🔥 Gwo afich
-</p>
+<div class="info">
 
-<div class="button">
-Analize Match
+<p>🏆 Lig: La Liga</p>
+<p>📅 Dat: Jodi a</p>
+<p>⏰ Lè: 20:00</p>
+
+<br>
+
+<p>📊 Fòm Real Madrid: 4 Viktwa - 1 Nul</p>
+<p>📊 Fòm Barcelona: 3 Viktwa - 2 Nul</p>
+
 </div>
 
-</div>
-
-
-<div class="card">
-
-<h2>🏴 Premier League</h2>
-
-<p>
-⚽ Manchester City VS Arsenal
-</p>
-
-<div class="button">
-Gade Analiz
-</div>
+<button>🔥 Gade Analiz AI</button>
 
 </div>
 
 
-<div class="card">
 
-<h2>🇮🇹 Serie A</h2>
+<div class="match">
 
-<p>
-⚽ Inter Milan VS Juventus
-</p>
+<h2>⚽ Lòt Match</h2>
 
-<div class="button">
-Gade Analiz
+<div class="info">
+
+<p>Manchester City 🆚 Arsenal</p>
+<p>🏆 Premier League</p>
+<p>⏰ 18:30</p>
+
+<hr><br>
+
+<p>PSG 🆚 Marseille</p>
+<p>🏆 Ligue 1</p>
+<p>⏰ 21:00</p>
+
+</div>
+
 </div>
 
 </div>
 
-
-<div class="card">
-
-<h2>🇫🇷 Ligue 1</h2>
-
-<p>
-⚽ PSG VS Marseille
-</p>
-
-<div class="button">
-Gade Analiz
-</div>
-
-</div>
 
 
 <div class="bottom-menu">
 
-<a href="index.html">
-<div>🏠<br>Akèy</div>
-</a>
-
-<a href="match.html">
-<div>⚽<br>Match</div>
-</a>
-
-<a href="analyse.html">
-<div>📊<br>Analiz</div>
-</a>
-
-<a href="prediction.html">
-<div>🔥<br>Prediksyon</div>
-</a>
-
-<div>
-👤<br>Profil
-</div>
+<a href="index.html">🏠 Akèy</a>
+<a href="match.html">⚽ Match</a>
+<a href="analyse.html">📊 Analiz</a>
+<a href="prediction.html">🔥 Prediksyon</a>
 
 </div>
 
