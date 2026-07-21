@@ -43,52 +43,28 @@ function rechache(){
         alert("❌ Pa jwenn enfòmasyon sa a nan AnalizFoot");
     }
 }
-    </script>
+    </script><script>
+function rechache(){
+    let rech = document.getElementById("recherche").value.toLowerCase();
+
+    if(rech.includes("real") || rech.includes("madrid")){
+        alert("⚪ Real Madrid\nViktwa: 4\nGòl make: 12\nFòs ekip: 88%");
+    }
+
+    else if(rech.includes("barcelona")){
+        alert("🔵 Barcelona\nViktwa: 3\nGòl make: 10\nFòs ekip: 84%");
+    }
+
+    else if(rech.includes("mbappe")){
+        alert("🥇 Kylian Mbappé\n⚽ Gòl: 8\n🎯 Pas desizif: 4\n⭐ Nòt: 9.2");
+    }
+
+    else{
+        alert("❌ Pa jwenn enfòmasyon sa a nan AnalizFoot");
+    }
+}
+</script>
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#050505;
-    color:white;
-}
-
-header{
-    background:linear-gradient(135deg,#111,#222);
-    padding:30px;
-    text-align:center;
-}
-
-.logo{
-    font-size:35px;
-    font-weight:bold;
-    color:#f5c542;
-}
-
-.menu{
-    display:flex;
-    justify-content:space-around;
-    background:#111;
-    padding:15px;
-}
-
-.card{
-    background:#151515;
-    margin:20px;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 0 15px #000;
-}
-
-h2{
-    color:#f5c542;
-}
-
-.button{
-    background:#f5c542;
-    color:black;
-    padding:12px 20px;
-    border-radius:10px;
-    display:inline-block;
-    font-weight:bold;
 }
 </style>
 
