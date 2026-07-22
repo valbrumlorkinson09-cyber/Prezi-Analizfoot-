@@ -12,12 +12,7 @@
 
 </head>
 
-<script>
 
-function rechache(){
-
-
-</script>
 <body>
 
 
@@ -519,6 +514,50 @@ alert("⚽ Ou chwazi match Real Madrid 🆚 Barcelona. Paj analiz konplè ap vin
 
 }
 </script>
+    <script>
+
+function rechache(){
+
+let rech = document.getElementById("recherche").value.toLowerCase();
+
+let rezilta = document.getElementById("rezilta");
+
+
+if(rech === ""){
+rezilta.innerHTML = "⚠️ Ekri non yon ekip oswa jwè";
+}
+
+else if(rech.includes("real")){
+
+rezilta.innerHTML = `
+<h3>⚪ Real Madrid</h3>
+🔥 Atak: 88%<br>
+🛡 Defans: 82%<br>
+⚡ Fòm: Bon
+`;
+
+}
+
+else if(rech.includes("barcelona")){
+
+rezilta.innerHTML = `
+<h3>🔵 Barcelona</h3>
+🔥 Atak: 84%<br>
+🛡 Defans: 80%<br>
+⚡ Fòm: Bon
+`;
+
+}
+
+else{
+
+rezilta.innerHTML = "❌ Ekip sa a poko nan baz done ANALIZFOOT";
+
+}
+
+}
+
+    </script>
 </body>
 </html>
 
