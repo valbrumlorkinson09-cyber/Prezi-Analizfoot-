@@ -415,6 +415,26 @@ function rechache(){
 
 let rech = document.getElementById("recherche").value.toLowerCase().trim();
 
+if(rech=="madrid"){
+    rech="real madrid";
+}
+
+if(rech=="barça" || rech=="barca"){
+    rech="barcelona";
+}
+
+if(rech=="man city" || rech=="city"){
+    rech="manchester city";
+}
+
+if(rech=="inter"){
+    rech="inter milan";
+}
+
+if(rech=="milan"){
+    rech="ac milan";
+}
+
 let rezilta = document.getElementById("rezilta");
 
 if(ekip[rech]){
@@ -428,13 +448,14 @@ rezilta.innerHTML = `
 
 }else{
 
-rezilta.innerHTML="❌ Ekip sa a poko nan baz done.";
+rezilta.innerHTML = `
+<h3>❌ Pa jwenn ekip la</h3>
+<p>Eseye ekri non ekip la ankò.</p>
+`;
 
 }
 
 }
-
-function nouvoAnaliz(){
 
 document.getElementById("ai-rezilta").innerHTML=`
 <h3>🤖 AI NOUVO ANALIZ</h3>
