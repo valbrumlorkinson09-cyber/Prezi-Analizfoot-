@@ -165,3 +165,24 @@ input{
     background:#111;
     border-radius:10px;
 }
+.match-teams{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:20px 0;
+}
+
+.team{
+text-align:center;
+}
+
+.team-logo{
+width:60px;
+height:60px;
+}
+
+.vs{
+font-size:22px;
+font-weight:bold;
+color:gold;
+}
