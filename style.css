@@ -92,7 +92,7 @@ h2{
 }
 
 
-.bottom-menu div{
+.bottom-menu a{
     text-align:center;
     font-size:13px;
 }
@@ -107,6 +107,7 @@ h2{
 
 .team{
     font-size:18px;
+    text-align:center;
 }
 
 
@@ -172,9 +173,7 @@ align-items:center;
 margin:20px 0;
 }
 
-.team{
-text-align:center;
-}
+
 
 .team-logo{
 width:60px;
@@ -214,3 +213,28 @@ progress{
     background:#222;
     border-radius:10px;
     }
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th{
+    background:gold;
+    color:black;
+    padding:10px;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #333;
+}
+.button{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.button:hover{
+    transform:scale(1.03);
+}
