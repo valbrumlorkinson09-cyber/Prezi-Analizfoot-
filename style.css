@@ -159,3 +159,9 @@ input{
     margin-top:20px;
     background:linear-gradient(90deg,gold,orange);
 }
+#ai-rezilta{
+    margin-top:15px;
+    padding:15px;
+    background:#111;
+    border-radius:10px;
+}
