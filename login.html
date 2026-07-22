@@ -3,61 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Konekte - ANALIZFOOT</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <header>
-
-<div class="logo">
-⚽ ANALIZFOOT
-</div>
-
-<div class="slogan">
-Konekte sou kont ou
-</div>
-
+<div class="logo">⚽ ANALIZFOOT</div>
+<p class="slogan">Konekte sou kont ou</p>
 </header>
 
 <section class="card">
 
-<h2>👤 KONEKTE</h2>
+<h2>🔐 KONEKTE</h2>
 
-<input id="email" type="email" placeholder="Antre imèl ou">
+<input type="text" placeholder="Non itilizatè">
 
-<input id="password" type="password" placeholder="Antre modpas ou">
+<input type="password" placeholder="Modpas">
 
-
-<div class="button" onclick="konekte()">
+<div class="button">
 KONEKTE
 </div>
+
 <br>
 
-<p>Pa gen kont?</p>
-
-
-<div class="button" onclick="location.href='register.html'">
-KREYE KONT
+<div class="button" onclick="location.href='index.html'">
+⬅️ Retounen
 </div>
+
 </section>
-<script>
-function konekte(){
 
-let email = document.getElementById("email").value;
-let password = document.getElementById("password").value;
-
-if(email=="" || password==""){
-alert("⚠️ Ranpli tout chan yo.");
-}else{
-alert("✅ Koneksyon reyisi (vèsyon tès).");
-}
-
-}
-</script>
 </body>
 </html>
