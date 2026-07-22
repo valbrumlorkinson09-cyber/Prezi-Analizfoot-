@@ -531,6 +531,66 @@ rezilta.innerHTML="❌ Ekip sa a poko nan baz done ANALIZFOOT";
 }
 
 </script>
+
+  <script>
+
+function rechache(){
+
+let rech = document.getElementById("recherche").value.toLowerCase();
+
+let rezilta = document.getElementById("rezilta");
+
+if(rech.includes("real")){
+
+rezilta.innerHTML = `
+<h3>⚪ Real Madrid</h3>
+🔥 Atak: 88%<br>
+🛡 Defans: 82%<br>
+⚡ Fòm: Bon
+`;
+
+}
+
+else if(rech.includes("psg")){
+
+rezilta.innerHTML = `
+<h3>🔴 PSG</h3>
+🔥 Atak: 86%<br>
+🛡 Defans: 78%<br>
+⚡ Fòm: Bon
+`;
+
+}
+
+else{
+
+rezilta.innerHTML="❌ Ekip sa a poko nan baz done ANALIZFOOT";
+
+}
+
+}
+
+
+function nouvoAnaliz(){
+
+let rezilta = document.getElementById("ai-rezilta");
+
+rezilta.innerHTML = `
+<h3>🤖 AI NOUVO ANALIZ</h3>
+
+⚽ Real Madrid VS Barcelona<br><br>
+
+⚪ Real Madrid: 55%<br>
+🤝 Match nul: 25%<br>
+🔵 Barcelona: 20%<br><br>
+
+⚽ Gòl posib: 2-3
+
+`;
+
+}
+
+  </script>  
 </body>
 </html>
 
