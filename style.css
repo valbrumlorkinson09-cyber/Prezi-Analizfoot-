@@ -205,3 +205,12 @@ progress{
         opacity:0.4;
     }
     }
+.match-item{
+    padding:15px;
+    transition:0.3s;
+}
+
+.match-item:hover{
+    background:#222;
+    border-radius:10px;
+    }
