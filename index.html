@@ -141,3 +141,109 @@ VOYE NOUVO ANALIZ
 <div id="ai-rezilta"></div>
 
 </section>
+<section class="card">
+
+<h2>⭐ TOP JWÈ YO</h2>
+
+<p>🥇 Kylian Mbappé — ⭐ 9.2</p>
+<p>🥈 Vinícius Jr — ⭐ 8.9</p>
+<p>🥉 Lamine Yamal — ⭐ 8.8</p>
+
+</section>
+
+<section class="card">
+
+<h2>👤 PROFIL UTILIZATÈ</h2>
+
+<p>👤 Non: <span id="non-user">Vizitè</span></p>
+<p>🏆 Nivo: Gratis</p>
+
+<div class="button" onclick="location.href='login.html'">
+🔐 KONEKTE
+</div>
+
+</section>
+
+<div class="bottom-menu">
+
+<a href="index.html">🏠<br>Akèy</a>
+<a href="match.html">⚽<br>Match</a>
+<a href="standings.html">📊<br>Klasman</a>
+<a href="news.html">📰<br>Nouvèl</a>
+<a href="players.html">⭐<br>Jwè</a>
+
+</div>
+
+<script>
+
+let ekip = {
+
+"real":{
+non:"⚪ Real Madrid",
+atak:"88%",
+defans:"82%",
+fom:"Bon"
+},
+
+"barcelona":{
+non:"🔵 Barcelona",
+atak:"84%",
+defans:"80%",
+fom:"Bon"
+},
+
+"psg":{
+non:"🔴 PSG",
+atak:"86%",
+defans:"78%",
+fom:"Bon"
+}
+
+};
+
+function rechache(){
+
+let rech = document.getElementById("recherche").value.toLowerCase().trim();
+
+let rezilta = document.getElementById("rezilta");
+
+if(ekip[rech]){
+
+rezilta.innerHTML = `
+<h3>${ekip[rech].non}</h3>
+🔥 Atak: ${ekip[rech].atak}<br>
+🛡 Defans: ${ekip[rech].defans}<br>
+⚡ Fòm: ${ekip[rech].fom}
+`;
+
+}else{
+
+rezilta.innerHTML="❌ Ekip sa a poko nan baz done.";
+
+}
+
+}
+
+function nouvoAnaliz(){
+
+document.getElementById("ai-rezilta").innerHTML=`
+<h3>🤖 AI NOUVO ANALIZ</h3>
+<p>⚪ Real Madrid: 55%</p>
+<p>🤝 Match nul: 25%</p>
+<p>🔵 Barcelona: 20%</p>
+`;
+
+}
+
+let non = localStorage.getItem("utilizate");
+
+if(non){
+
+document.getElementById("non-user").textContent = non;
+
+}
+
+</script>
+
+</body>
+</html>
