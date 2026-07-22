@@ -28,14 +28,14 @@ Konekte sou kont ou
 
 <h2>👤 KONEKTE</h2>
 
-<input type="email" placeholder="Antre imèl ou">
+<input id="email" type="email" placeholder="Antre imèl ou">
 
-<input type="password" placeholder="Antre modpas ou">
+<input id="password" type="password" placeholder="Antre modpas ou">
 
-<div class="button">
+
+<div class="button" onclick="konekte()">
 KONEKTE
 </div>
-
 <br>
 
 <p>Pa gen kont?</p>
@@ -45,6 +45,19 @@ KONEKTE
 KREYE KONT
 </div>
 </section>
+<script>
+function konekte(){
 
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+
+if(email=="" || password==""){
+alert("⚠️ Ranpli tout chan yo.");
+}else{
+alert("✅ Koneksyon reyisi (vèsyon tès).");
+}
+
+}
+</script>
 </body>
 </html>
