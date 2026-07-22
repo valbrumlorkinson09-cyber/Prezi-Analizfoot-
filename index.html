@@ -436,7 +436,7 @@ Fonksyon match an dirèk ap disponib talè.
 <h2>👤 PROFIL UTILIZATÈ</h2>
 
 <p>
-👤 Non: Vizitè
+👤 Non: <span id="non-user">Vizitè</span>
 </p>
 
 <p>
@@ -592,6 +592,18 @@ rezilta.innerHTML = `
 }
 
   </script>  
+<script>
+
+let non = localStorage.getItem("utilizate");
+
+if(non){
+
+document.getElementById("non-user").innerHTML = non;
+
+}
+
+</script>
+    
 </body>
 </html>
 
