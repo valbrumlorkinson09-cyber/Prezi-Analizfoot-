@@ -502,7 +502,35 @@ rezilta.innerHTML = `
 }
 
 </script>
+<script>
 
+function rechache(){
+
+let rech = document.getElementById("recherche").value.toLowerCase();
+
+let rezilta = document.getElementById("rezilta");
+
+if(rech.includes("real")){
+
+rezilta.innerHTML="⚪ Real Madrid<br>🔥 Atak:88%<br>🛡 Defans:82%";
+
+}
+
+else if(rech.includes("psg")){
+
+rezilta.innerHTML="🔴 PSG<br>🔥 Atak:86%<br>🛡 Defans:78%";
+
+}
+
+else{
+
+rezilta.innerHTML="❌ Ekip sa a poko nan baz done ANALIZFOOT";
+
+}
+
+}
+
+</script>
 </body>
 </html>
 
