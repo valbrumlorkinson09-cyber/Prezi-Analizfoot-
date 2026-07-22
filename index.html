@@ -514,7 +514,47 @@ alert("⚽ Ou chwazi match Real Madrid 🆚 Barcelona. Paj analiz konplè ap vin
 
 }
 </script>
-    <script>
+  <script>
+
+let ekip = {
+
+"real": {
+non:"⚪ Real Madrid",
+atak:"88%",
+defans:"82%",
+fom:"Bon"
+},
+
+"barcelona": {
+non:"🔵 Barcelona",
+atak:"84%",
+defans:"80%",
+fom:"Bon"
+},
+
+"psg": {
+non:"🔴 PSG",
+atak:"86%",
+defans:"78%",
+fom:"Bon"
+},
+
+"manchester city": {
+non:"🔵 Manchester City",
+atak:"90%",
+defans:"85%",
+fom:"Ekselan"
+},
+
+"liverpool": {
+non:"🔴 Liverpool",
+atak:"87%",
+defans:"83%",
+fom:"Bon"
+}
+
+};
+
 
 function rechache(){
 
@@ -522,42 +562,30 @@ let rech = document.getElementById("recherche").value.toLowerCase();
 
 let rezilta = document.getElementById("rezilta");
 
+let jwenn = ekip[rech];
 
-if(rech === ""){
-rezilta.innerHTML = "⚠️ Ekri non yon ekip oswa jwè";
-}
 
-else if(rech.includes("real")){
+if(jwenn){
 
 rezilta.innerHTML = `
-<h3>⚪ Real Madrid</h3>
-🔥 Atak: 88%<br>
-🛡 Defans: 82%<br>
-⚡ Fòm: Bon
-`;
-
-}
-
-else if(rech.includes("barcelona")){
-
-rezilta.innerHTML = `
-<h3>🔵 Barcelona</h3>
-🔥 Atak: 84%<br>
-🛡 Defans: 80%<br>
-⚡ Fòm: Bon
+<h3>${jwenn.non}</h3>
+🔥 Atak: ${jwenn.atak}<br>
+🛡 Defans: ${jwenn.defans}<br>
+⚡ Fòm: ${jwenn.fom}
 `;
 
 }
 
 else{
 
-rezilta.innerHTML = "❌ Ekip sa a poko nan baz done ANALIZFOOT";
+rezilta.innerHTML =
+"❌ Ekip sa a poko nan baz done ANALIZFOOT";
 
 }
 
 }
 
-    </script>
+</script>  
 </body>
 </html>
 
