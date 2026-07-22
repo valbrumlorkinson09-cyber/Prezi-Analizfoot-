@@ -470,21 +470,14 @@ Fonksyon match an dirèk ap disponib talè.
 
 </div>
 
-
-
 function nouvoAnaliz(){
 
 let rezilta = document.getElementById("ai-rezilta");
 
 rezilta.innerHTML = `
-
 <h3>🤖 AI NOUVO ANALIZ</h3>
-
-<p>
 ⚽ Real Madrid VS Barcelona
-</p>
 
-<p>
 📊 Chans viktwa:
 <br>
 ⚪ Real Madrid: 55%
@@ -492,29 +485,15 @@ rezilta.innerHTML = `
 🤝 Match nul: 25%
 <br>
 🔵 Barcelona: 20%
-</p>
 
-<p>
+<br><br>
 ⚽ Gòl posib: 2-3
-</p>
 
-<p>
-🔥 AI di:
-Real Madrid gen yon ti avantaj nan match la.
-</p>
-
+<br><br>
+🔥 AI di: Real Madrid gen yon ti avantaj nan match la.
 `;
 
-
-<script>
-
-function gadeMatch(){
-
-alert("⚽ Ou chwazi match Real Madrid 🆚 Barcelona. Paj analiz konplè ap vini byento.");
-
 }
-</script>
-  
 
 let ekip = {
 
@@ -525,78 +504,6 @@ defans:"82%",
 fom:"Bon"
 },
 
-"real madrid": {
-non:"⚪ Real Madrid",
-atak:"88%",
-defans:"82%",
-fom:"Bon"
-},
-
-"madrid": {
-non:"⚪ Real Madrid",
-atak:"88%",
-defans:"82%",
-fom:"Bon"
-},
-
-"barcelona": {
-non:"🔵 Barcelona",
-atak:"84%",
-defans:"80%",
-fom:"Bon"
-},
-
-"barca": {
-non:"🔵 Barcelona",
-atak:"84%",
-defans:"80%",
-fom:"Bon"
-},
-
-"psg": {
-non:"🔴 PSG",
-atak:"86%",
-defans:"78%",
-fom:"Bon"
-},
-
-"paris": {
-non:"🔴 PSG",
-atak:"86%",
-defans:"78%",
-fom:"Bon"
-},
-
-"man city": {
-non:"🔵 Manchester City",
-atak:"90%",
-defans:"85%",
-fom:"Ekselan"
-},
-
-"manchester city": {
-non:"🔵 Manchester City",
-atak:"90%",
-defans:"85%",
-fom:"Ekselan"
-},
-
-"liverpool": {
-non:"🔴 Liverpool",
-atak:"87%",
-defans:"83%",
-fom:"Bon"
-}
-
-};
-
-"real": {
-non:"⚪ Real Madrid",
-atak:"88%",
-defans:"82%",
-fom:"Bon"
-},
-
 "barcelona": {
 non:"🔵 Barcelona",
 atak:"84%",
@@ -626,38 +533,6 @@ fom:"Bon"
 }
 
 };
-
-
-function rechache(){
-
-let rech = document.getElementById("recherche").value.toLowerCase();
-
-let rezilta = document.getElementById("rezilta");
-
-let jwenn = ekip[rech];
-
-
-if(jwenn){
-
-rezilta.innerHTML = `
-<h3>${jwenn.non}</h3>
-🔥 Atak: ${jwenn.atak}<br>
-🛡 Defans: ${jwenn.defans}<br>
-⚡ Fòm: ${jwenn.fom}
-`;
-
-}
-
-else{
-
-rezilta.innerHTML =
-"❌ Ekip sa a poko nan baz done ANALIZFOOT";
-
-}
-
-}
-
-</script>  
 </body>
 </html>
 
