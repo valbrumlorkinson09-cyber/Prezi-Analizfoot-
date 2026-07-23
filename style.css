@@ -6,8 +6,10 @@
 }
 
 body{
-    background:#08111f;
+    body{
+    background:#050505;
     color:white;
+    }
     padding-bottom:80px;
 }
 
@@ -15,7 +17,10 @@ body{
 /* HEADER */
 
 .top{
-    background:#101c33;
+    .card{
+    background:#111827;
+    border:1px solid #1f2937;
+    }
     padding:20px;
     display:flex;
     justify-content:space-between;
@@ -81,7 +86,7 @@ body{
 .hero{
     margin:15px;
     padding:25px;
-    background:linear-gradient(135deg,#2563eb,#00a86b);
+    background:linear-gradient(135deg,#003cff,#00e5ff);
     border-radius:20px;
     text-align:center;
 }
@@ -111,16 +116,14 @@ body{
 }
 
 .card h2{
-    margin-bottom:15px;
-    color:#00ff88;
+    color:#00e5ff;
 }
+
 
 
 /* LIVE MATCH */
 
-.live{
-    border-left:5px solid red;
-}
+.li
 
 .teams{
     display:flex;
@@ -131,9 +134,13 @@ body{
 
 .teams strong{
     font-size:25px;
-    color:#00ff88;
+    .logo{
+    color:#00e5ff;
+    }
+}.live{
+    border-left:5px solid #ff0033;
+    box-shadow:0 0 15px #ff0033;
 }
-
 
 /* AI */
 
