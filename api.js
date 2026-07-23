@@ -14,7 +14,7 @@ async function montreMatch() {
 
     try {
 
-        const today = "2026-07-24";
+        const today = "2026-07-23";
 
 
         const response = await fetch(
