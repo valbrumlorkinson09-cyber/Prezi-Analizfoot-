@@ -1,51 +1,59 @@
 const API_URL = "https://v3.football.api-sports.io";
-alert("API JS CHARGE");
-const API_KEY = "c07c38a93b2e98f06baf7069f3467119dbade3caa812e26ca81fd4b8468c7ab9
+const API_KEY = "c07c38a93b2e98f06baf7069f3467119dbade3caa812e26ca81fd4b8468c7ab9";
 
-async function montreMatch(){
+async function montreMatch() {
 
-let box = document.getElementById("match-api");
+  const box = document.getElementById("match-api");
 
-box.innerHTML = "🔄 Ap teste API...";
+  if (!box) return;
 
-try{
+  box.innerHTML = "🔄 Ap chèche match yo...";
 
-const response = await fetch(
-API_URL + "/fixtures?date=2026-07-23",
-{
-headers:{
-"x-apisports-key": API_KEY
-}
-}
-);
+  try {
 
-const data = await response.json();
+    const response = await fetch(
+      API_URL + "/fixtures?date=2026-07-23",
+      {
+        headers: {
+          "x-apisports-key": API_KEY
+        }
+      }
+    );
 
-console.log(data);
+    const data = await response.json();
 
-if(data.response){
+    console.log(data);
 
-box.innerHTML = "✅ API konekte";
+    if (data.response && data.response.length > 0) {
 
-}else{
+      box.innerHTML = "";
 
-box.innerHTML = "❌ API pa bay done";
+      data.response.slice(0, 5).forEach(match => {
 
-}
+        box.innerHTML += `
+          <div class="match-item">
+            ⚽ ${match.teams.home.name}
+            <b>VS</b>
+            ${match.teams.away.name}<br>
+            🕒 ${new Date(match.fixture.date).toLocaleString()}
+          </div>
+          <hr>
+        `;
 
-}
+      });
 
-catch(error){
+    } else {
 
-box.innerHTML = "❌ " + error;
+      box.innerHTML = "❌ Pa gen match pou dat sa a.";
 
-console.log(error);
+    }
 
-}
+  } catch (error) {
 
-box.innerHTML = "❌ Erè koneksyon API";
+    console.error(error);
+    box.innerHTML = "❌ Erè koneksyon API.";
 
-}
+  }
 
 }
 
