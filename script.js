@@ -142,3 +142,32 @@ if (nonUser) {
   }
 
 }
+function analizeMatch(){
+
+let rezilta = document.getElementById("analiz-rezilta");
+
+rezilta.innerHTML = `
+
+<h3>🤖 ANALIZFOOT AI</h3>
+
+<p>⚔️ Atak Real Madrid: 88%</p>
+
+<p>🛡 Defans Real Madrid: 82%</p>
+
+<p>⚔️ Atak Barcelona: 85%</p>
+
+<p>🛡 Defans Barcelona: 80%</p>
+
+<hr>
+
+<p>🔥 Prediksyon:</p>
+
+<p>⚪ Real Madrid: 55%</p>
+
+<p>🤝 Match nul: 25%</p>
+
+<p>🔵 Barcelona: 20%</p>
+
+`;
+
+}
