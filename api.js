@@ -1,9 +1,11 @@
 const API_URL = "https://v3.football.api-sports.io";
-const API_KEY = c07c38a93b2e98f06baf7069f3467119dbade3caa812e26ca81fd4b8468c7ab9
+const API_KEY = "METE_KLE_OU_LA";
 
 async function montreMatch(){
 
-let matchBox = document.getElementById("match-api");
+let box = document.getElementById("match-api");
+
+box.innerHTML = "🔄 Ap teste API...";
 
 try{
 
@@ -20,29 +22,15 @@ const data = await response.json();
 
 console.log(data);
 
-if(!data.response){
+if(data.response){
 
-matchBox.innerHTML = "❌ API pa bay repons";
-return;
+box.innerHTML = "✅ API konekte";
+
+}else{
+
+box.innerHTML = "❌ API pa bay done";
 
 }
-
-matchBox.innerHTML="";
-
-data.response.slice(0,5).forEach(match=>{
-
-matchBox.innerHTML += `
-<div class="match-item">
-⚽ ${match.teams.home.name}
-<b> VS </b>
-${match.teams.away.name}
-<br>
-🕒 ${match.fixture.date}
-</div>
-<hr>
-`;
-
-});
 
 }
 
@@ -50,7 +38,7 @@ catch(error){
 
 console.log(error);
 
-matchBox.innerHTML="❌ Erè koneksyon API";
+box.innerHTML = "❌ Erè koneksyon API";
 
 }
 
