@@ -37,11 +37,11 @@ box.innerHTML = "❌ API pa bay done";
 
 catch(error){
 
-box.innerHTML = "❌ Erè koneksyon API";
-
-}
+box.innerHTML = "❌ " + error;
 
 console.log(error);
+
+}
 
 box.innerHTML = "❌ Erè koneksyon API";
 
