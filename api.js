@@ -99,3 +99,21 @@ async function montreMatch() {
 
 
 montreMatch();
+async function AIAPI(teamId){
+
+const response = await fetch(
+API_URL + "/teams/statistics?team=" + teamId + "&season=2025&league=39",
+{
+headers:{
+"x-apisports-key":API_KEY
+}
+}
+);
+
+const data = await response.json();
+
+console.log(data);
+
+return data;
+
+}
