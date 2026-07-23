@@ -1,5 +1,6 @@
 const API_URL = "https://v3.football.api-sports.io";
-const API_KEY = "METE_KLE_OU_LA";
+alert("API JS CHARGE");
+const API_KEY = "c07c38a93b2e98f06baf7069f3467119dbade3caa812e26ca81fd4b8468c7ab9
 
 async function montreMatch(){
 
