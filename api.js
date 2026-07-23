@@ -12,7 +12,16 @@ async function montreMatch() {
   try {
 
     const response = await fetch(
-      API_URL + "/fixtures?date=2026-07-23",
+      const today = new Date().toISOString().split("T")[0];
+
+const response = await fetch(
+  API_URL + "/fixtures?date=" + today,
+  {
+    headers: {
+      "x-apisports-key": API_KEY
+    }
+  }
+);
       {
         headers: {
           "x-apisports-key": API_KEY
