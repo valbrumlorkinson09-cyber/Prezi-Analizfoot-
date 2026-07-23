@@ -171,3 +171,58 @@ rezilta.innerHTML = `
 `;
 
 }
+function AIAnaliz(){
+
+let rezilta = document.getElementById("ai-result");
+
+
+let realMadrid = 88 + 82 + 90;
+let barcelona = 85 + 80 + 85;
+
+
+let total = realMadrid + barcelona;
+
+
+let madridPercent = Math.round((realMadrid / total) * 100);
+let barcaPercent = Math.round((barcelona / total) * 100);
+
+
+rezilta.innerHTML = `
+
+<h3>🤖 ANALIZFOOT AI</h3>
+
+<p>⚪ Real Madrid</p>
+<p>⚔️ Atak: 88%</p>
+<p>🛡 Defans: 82%</p>
+<p>🔥 Fòm: 90%</p>
+
+
+<hr>
+
+
+<p>🔵 Barcelona</p>
+<p>⚔️ Atak: 85%</p>
+<p>🛡 Defans: 80%</p>
+<p>🔥 Fòm: 85%</p>
+
+
+<hr>
+
+
+<h3>🔥 Prediksyon AI</h3>
+
+<p>
+⚪ Real Madrid: ${madridPercent}%
+</p>
+
+<p>
+🔵 Barcelona: ${barcaPercent}%
+</p>
+
+<p>
+🤝 Match nul: 20%
+</p>
+
+`;
+
+}
