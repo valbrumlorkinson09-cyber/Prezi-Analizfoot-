@@ -294,3 +294,115 @@ font-weight:bold;
 margin-top:20px;
 
 }
+/* 📱 MOBILE RESPONSIVE */
+
+@media(max-width:600px){
+
+body{
+    padding-bottom:80px;
+}
+
+
+header{
+    text-align:center;
+}
+
+
+.logo{
+    font-size:24px;
+}
+
+
+.menu{
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+
+}
+
+
+.menu a{
+
+    font-size:14px;
+    padding:8px;
+
+}
+
+
+
+.card{
+
+    margin:12px;
+    padding:15px;
+    border-radius:15px;
+
+}
+
+
+
+.match-card{
+
+    width:100%;
+    padding:15px;
+
+}
+
+
+
+.teams{
+
+    gap:10px;
+
+}
+
+
+.logo-team{
+
+    font-size:35px;
+
+}
+
+
+.vs{
+
+    font-size:20px;
+
+}
+
+
+
+.button{
+
+    width:100%;
+    text-align:center;
+    margin-top:10px;
+
+}
+
+
+
+table{
+
+    width:100%;
+    font-size:13px;
+
+}
+
+
+.bottom-menu{
+
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+
+    display:flex;
+    justify-content:space-around;
+
+    padding:10px;
+
+}
+
+}
