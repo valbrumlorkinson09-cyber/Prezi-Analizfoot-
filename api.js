@@ -11,72 +11,83 @@ async function montreMatch() {
 
     box.innerHTML = "🔄 Ap chèche match yo...";
 
-
     try {
 
-        const today = "2026-07-23";
+        let jwennMatch = false;
+
+        for (let i = 0; i < 7; i++) {
+
+            let dat = new Date();
+
+            dat.setDate(dat.getDate() + i);
+
+            let dateSearch = dat.toISOString().split("T")[0];
 
 
-        const response = await fetch(
-            API_URL + "/fixtures?date=" + today,
-            {
-                headers:{
-                    "x-apisports-key": API_KEY
+            const response = await fetch(
+                API_URL + "/fixtures?date=" + dateSearch,
+                {
+                    headers:{
+                        "x-apisports-key": API_KEY
+                    }
                 }
+            );
+
+
+            const data = await response.json();
+
+            console.log(dateSearch, data);
+
+
+            if(data.response && data.response.length > 0){
+
+                box.innerHTML = "";
+
+                data.response.slice(0,5).forEach(match => {
+
+                    box.innerHTML += `
+
+                    <div class="match-item">
+
+                    ⚽ ${match.teams.home.name}
+
+                    <b> VS </b>
+
+                    ${match.teams.away.name}
+
+                    <br>
+
+                    🏆 ${match.league.name}
+
+                    <br>
+
+                    🕒 ${new Date(match.fixture.date).toLocaleTimeString()}
+
+                    </div>
+
+                    <hr>
+
+                    `;
+
+                });
+
+
+                jwennMatch = true;
+                break;
+
             }
-        );
-
-
-        const data = await response.json();
-
-        console.log(data);
-
-
-        if(data.response && data.response.length > 0){
-
-
-            box.innerHTML = "";
-
-
-            data.response.slice(0,5).forEach(match => {
-
-
-                box.innerHTML += `
-
-                <div class="match-item">
-
-                ⚽ ${match.teams.home.name}
-
-                <b> VS </b>
-
-                ${match.teams.away.name}
-
-                <br>
-
-                🏆 ${match.league.name}
-
-                <br>
-
-                🕒 ${new Date(match.fixture.date).toLocaleTimeString()}
-
-                </div>
-
-                <hr>
-
-                `;
-
-
-            });
-
-
-        }else{
-
-            box.innerHTML = "❌ Pa gen match pou jodi a.";
 
         }
 
 
-    }catch(error){
+        if(!jwennMatch){
+
+            box.innerHTML = "❌ Pa jwenn match nan 7 jou kap vini yo.";
+
+        }
+
+
+    } catch(error){
 
         console.error(error);
 
