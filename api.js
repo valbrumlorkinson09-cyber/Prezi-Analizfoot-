@@ -1,97 +1,89 @@
 const API_URL = "https://v3.football.api-sports.io";
 const API_KEY = "c07c38a93b2e98f06baf7069f3467119dbade3caa812e26ca81fd4b8468c7ab9";
 
+
 async function montreMatch() {
 
-const box = document.getElementById("match-api");
+    const box = document.getElementById("match-api");
 
-box.innerHTML = "API ap teste...";
+    if (!box) return;
 
-try{
+    box.innerHTML = "🔄 Ap chèche match yo...";
 
-const response = await fetch(API_URL + "/fixtures?date=2026-07-23",{
-headers:{
-"x-apisports-key":API_KEY
-}
-});
 
-const data = await response.json();
+    try {
 
-console.log(data);
+        const today = new Date().toISOString().split("T")[0];
 
-box.innerHTML = "<pre>"+JSON.stringify(data,null,2)+"</pre>";
 
-}catch(e){
+        const response = await fetch(
+            API_URL + "/fixtures?date=" + today,
+            {
+                headers:{
+                    "x-apisports-key": API_KEY
+                }
+            }
+        );
 
-box.innerHTML = "ERÈ: " + e.message;
 
-}
+        const data = await response.json();
 
-}
+        console.log(data);
 
-montreMatch();
 
-  const box = document.getElementById("match-api");
+        if(data.response && data.response.length > 0){
 
-  if (!box) return;
 
-  box.innerHTML = "🔄 Ap chèche match yo...";
+            box.innerHTML = "";
 
-  try {
 
-    const response = await fetch(
-      const today = new Date().toISOString().split("T")[0];
+            data.response.slice(0,5).forEach(match => {
 
-const response = await fetch(
-  API_URL + "/fixtures?date=" + today,
-  {
-    headers: {
-      "x-apisports-key": API_KEY
-    }
-  }
-);
-      {
-        headers: {
-          "x-apisports-key": API_KEY
+
+                box.innerHTML += `
+
+                <div class="match-item">
+
+                ⚽ ${match.teams.home.name}
+
+                <b> VS </b>
+
+                ${match.teams.away.name}
+
+                <br>
+
+                🏆 ${match.league.name}
+
+                <br>
+
+                🕒 ${new Date(match.fixture.date).toLocaleTimeString()}
+
+                </div>
+
+                <hr>
+
+                `;
+
+
+            });
+
+
+        }else{
+
+            box.innerHTML = "❌ Pa gen match pou jodi a.";
+
         }
-      }
-    );
 
-    const data = await response.json();
-alert(JSON.stringify(data));
-    console.log(data);
 
-    if (data.response && data.response.length > 0) {
+    }catch(error){
 
-      box.innerHTML = "";
+        console.error(error);
 
-      data.response.slice(0, 5).forEach(match => {
-
-        box.innerHTML += `
-          <div class="match-item">
-            ⚽ ${match.teams.home.name}
-            <b>VS</b>
-            ${match.teams.away.name}<br>
-            🕒 ${new Date(match.fixture.date).toLocaleString()}
-          </div>
-          <hr>
-        `;
-
-      });
-
-    } else {
-
-      box.innerHTML = "❌ Pa gen match pou dat sa a.";
+        box.innerHTML = "❌ Erè koneksyon API.";
 
     }
 
-  } catch (error) {
-
-    console.error(error);
-    box.innerHTML = "❌ Erè koneksyon API.";
-
-  }
-
 }
+
 
 montreMatch();
