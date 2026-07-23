@@ -2,7 +2,6 @@
 <html lang="ht">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,154 +13,89 @@
 
 <body>
 
-<header>
+<header class="top">
+    <div class="logo">
+        ⚽ ANALIZFOOT
+    </div>
 
-<div class="logo">
-⚽ ANALIZFOOT
-</div>
-
-<p class="slogan">
-Platfòm analiz foutbòl an Kreyòl
-</p>
-
+    <button class="profile">
+        👤
+    </button>
 </header>
+
+
+<div class="search">
+    🔍
+    <input type="text" placeholder="Chèche ekip oswa jwè...">
+</div>
 
 
 <nav class="menu">
 
-<a href="index.html">🏠 Akèy</a>
-<a href="match.html">⚽ Match</a>
-<a href="standings.html">📊 Klasman</a>
-<a href="ai.html">🤖 AI</a>
-<a href="news.html">📰 Nouvèl</a>
-<a href="players.html">⭐ Jwè</a>
-<a href="profile.html">👤 Profil</a>
+<a href="#">
+🏠<br>
+Akèy
+</a>
+
+<a href="#">
+⚽<br>
+Match
+</a>
+
+<a href="#">
+📊<br>
+Klasman
+</a>
+
+<a href="#">
+🤖<br>
+AI
+</a>
+
+<a href="#">
+👤<br>
+Profil
+</a>
 
 </nav>
 
 
-<section class="card">
+<section class="hero">
 
-<h2>🏠 Byenveni sou ANALIZFOOT</h2>
+<h1>
+Byenveni sou ANALIZFOOT
+</h1>
 
 <p>
-Pi bon platfòm analiz foutbòl an Kreyòl.
-Swiv match yo, estatistik yo ak prediksyon AI.
+Platfòm analiz foutbòl an Kreyòl
 </p>
 
-<div class="button">
+<button>
 Kòmanse Analiz
-</div>
+</button>
 
 </section>
 
 
-<section class="card">
+<section class="card live">
 
-<h2>🔥 MATCH VEDET JODI A</h2>
+<h2>🔴 MATCH LIVE</h2>
 
-<div class="match-box">
+<div class="teams">
 
-<div class="team">
-⚪ Real Madrid
-</div>
+<span>⚪ Real Madrid</span>
 
-<div class="vs">
-VS
-</div>
+<strong>
+2 - 1
+</strong>
 
-<div class="team">
-🔵 Barcelona
-</div>
+<span>🔵 Barcelona</span>
 
 </div>
-
-<p>🕗 Lè: 8:00 PM</p>
-
-<p>🏟️ Estadio Santiago Bernabéu</p>
-
-<p>🤖 AI: Real Madrid 55%</p>
-
-<div class="button" onclick="location.href='match.html'">
-📊 Analize Match
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>⚡ AKSÈ RAPID</h2>
-
-<div class="button" onclick="location.href='match.html'">
-⚽ Match
-</div>
-
-<div class="button" onclick="location.href='ai.html'">
-🤖 AI Analiz
-</div>
-
-<div class="button" onclick="location.href='standings.html'">
-📊 Klasman
-</div>
-
-<div class="button" onclick="location.href='premium.html'">
-👑 Premium
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>🔍 RECHÈCH FOOTBALL</h2>
-
-<input 
-id="recherche"
-type="text"
-placeholder="Chèche ekip oswa jwè..."
->
-
-<div class="button" onclick="rechache()">
-CHÈCHE
-</div>
-
-<div id="rezilta"></div>
-
-</section>
-<section class="card">
-
-<h2>🏆 ANALIZFOOT PREMIUM</h2>
-
-<p>Aksede ak pi bon analiz foutbòl yo.</p>
-
-<p>✅ Analiz pwofesyonèl</p>
-<p>✅ Prediksyon AI</p>
-<p>✅ Match an dirèk</p>
-<p>✅ Tout gwo lig yo</p>
-
-<div class="button" onclick="location.href='premium.html'">
-🚀 AKTIVE PREMIUM
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>🔴 MATCH AN DIRÈK</h2>
 
 <p>
-⚪ Real Madrid 🆚 🔵 Barcelona
+⏱ 67 minit
 </p>
-
-<p>
-⏱ Match ap jwe kounye a
-</p>
-
-<div class="button" onclick="location.href='live.html'">
-🔴 Gade Live Score
-</div>
 
 </section>
 
@@ -170,171 +104,82 @@ CHÈCHE
 
 <h2>📅 MATCH JODI A</h2>
 
-  <div id="match-api">
+<div id="matches">
+
 ⏳ Ap chèche match yo...
-  </div>
+
+</div>
+
+</section>
 
 
 <section class="card">
 
 <h2>🤖 PREDIKSYON AI</h2>
 
-<p>⚪ Real Madrid : 55%</p>
+<p>Real Madrid 55%</p>
+
 <progress value="55" max="100"></progress>
 
-<p>🤝 Match nul : 25%</p>
+
+<p>Match nul 25%</p>
+
 <progress value="25" max="100"></progress>
 
-<p>🔵 Barcelona : 20%</p>
+
+<p>Barcelona 20%</p>
+
 <progress value="20" max="100"></progress>
 
+</section>
 
-<div class="button" onclick="nouvoAnaliz()">
-VOYE NOUVO ANALIZ
-</div>
 
-<div id="ai-rezilta"></div>
+<section class="card">
+
+<h2>🏆 KLASMAN</h2>
+
+<ol>
+
+<li>⚪ Real Madrid</li>
+<li>🔵 Barcelona</li>
+<li>🔵 Manchester City</li>
+<li>🔴 Liverpool</li>
+<li>🔴 PSG</li>
+
+</ol>
 
 </section>
 
 
 <section class="card">
 
-<h2>🏆 TOP 5 KLASMAN</h2>
+<h2>📰 NOUVÈL</h2>
 
-<table>
-
-<tr>
-<th>#</th>
-<th>Ekip</th>
-<th>Pwen</th>
-</tr>
-
-<tr>
-<td>1</td>
-<td>⚪ Real Madrid</td>
-<td>85</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>🔵 Barcelona</td>
-<td>78</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>🔵 Manchester City</td>
-<td>75</td>
-</tr>
-
-<tr>
-<td>4</td>
-<td>🔴 Liverpool</td>
-<td>74</td>
-</tr>
-
-<tr>
-<td>5</td>
-<td>🔴 PSG</td>
-<td>72</td>
-</tr>
-
-</table>
-
-
-<div class="button" onclick="location.href='standings.html'">
-📊 Gade Klasman Konplè
-</div>
-
-</section>
-<section class="card">
-
-<h2>📰 DÈNYE NOUVÈL</h2>
-
-<p>🔥 Real Madrid pare pou Clasico a.</p>
-
-<hr>
-
-<p>⚽ PSG anonse yon nouvo transfè.</p>
-
-<hr>
-
-<p>🏆 Champions League ap rekòmanse byento.</p>
-
-<div class="button" onclick="location.href='news.html'">
-📰 Li tout nouvèl yo
-</div>
+<p>🔥 Dènye nouvèl foutbòl yo ap vini...</p>
 
 </section>
 
 
 <section class="card">
 
-<h2>⭐ TOP JWÈ YO</h2>
+<h2>⭐ TOP JWÈ</h2>
 
-<p>🥇 Kylian Mbappé — ⭐ 9.2</p>
-<p>🥈 Vinícius Jr — ⭐ 8.9</p>
-<p>🥉 Lamine Yamal — ⭐ 8.8</p>
-
-<div class="button" onclick="location.href='players.html'">
-⭐ Gade tout jwè yo
-</div>
+<p>🥇 Mbappé</p>
+<p>🥈 Vinícius Jr</p>
+<p>🥉 Lamine Yamal</p>
 
 </section>
 
 
-<section class="card">
+<footer>
 
-<h2>👤 PROFIL UTILIZATÈ</h2>
+⚽ ANALIZFOOT © 2026
 
-<p>
-👤 Non:
-<span id="non-user">Vizitè</span>
-</p>
-
-<p>
-🏆 Nivo: Gratis
-</p>
-
-<div class="button" onclick="location.href='profile.html'">
-🔐 Ale sou Profil
-</div>
-
-</section>
+</footer>
 
 
-<div class="bottom-menu">
-
-<a href="index.html">
-🏠<br>
-Akèy
-</a>
-
-<a href="match.html">
-⚽<br>
-Match
-</a>
-
-<a href="standings.html">
-📊<br>
-Klasman
-</a>
-
-<a href="news.html">
-📰<br>
-Nouvèl
-</a>
-
-<a href="players.html">
-⭐<br>
-Jwè
-</a>
-
-</div>
-
-
-<script src="api.js"></script>
 <script src="script.js"></script>
+
 </body>
+
 </html>
