@@ -2,7 +2,7 @@
 // ANALIZFOOT PRO - API SYSTEM
 // ===============================
 
-const API_KEY = "METE_API_KEY_LA";
+c07c38a93b2e98f06baf7069f3467119dbade3caa812e26ca81fd4b8468c7ab9
 
 const API_URL = "https://v3.football.api-sports.io";
 
