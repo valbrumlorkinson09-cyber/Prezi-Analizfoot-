@@ -185,3 +185,91 @@ footer{
 }
 
 }
+/* NOUVO MATCH DESIGN */
+
+.match-card{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    text-align:center;
+    background:#0b1425;
+    padding:20px;
+    border-radius:15px;
+}
+
+.club{
+    font-size:18px;
+}
+
+.club p{
+    margin-top:10px;
+}
+
+.score strong{
+    font-size:32px;
+    color:#00e5ff;
+}
+
+.score span{
+    display:block;
+    margin-top:8px;
+    color:#ff0033;
+}
+
+
+/* AI DESIGN */
+
+.ai-row{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+}
+
+.ai-row b{
+    color:#00e5ff;
+}
+
+.bar{
+    height:10px;
+    background:#1f2937;
+    border-radius:10px;
+    margin-top:8px;
+    overflow:hidden;
+}
+
+.real{
+    width:55%;
+    height:100%;
+    background:#00e5ff;
+}
+
+.draw{
+    width:25%;
+    height:100%;
+    background:#ffd700;
+}
+
+.barca{
+    width:20%;
+    height:100%;
+    background:#2563eb;
+}
+
+
+/* KLASMAN DESIGN */
+
+.rank{
+    background:#0b1425;
+    padding:15px;
+    margin:10px 0;
+    border-radius:12px;
+    font-size:18px;
+    border-left:4px solid #00e5ff;
+}
+
+
+/* EFÈT KAT YO */
+
+.card{
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
