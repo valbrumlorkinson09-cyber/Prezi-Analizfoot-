@@ -3,6 +3,34 @@ const API_KEY = "c07c38a93b2e98f06baf7069f3467119dbade3caa812e26ca81fd4b8468c7ab
 
 async function montreMatch() {
 
+const box = document.getElementById("match-api");
+
+box.innerHTML = "API ap teste...";
+
+try{
+
+const response = await fetch(API_URL + "/fixtures?date=2026-07-23",{
+headers:{
+"x-apisports-key":API_KEY
+}
+});
+
+const data = await response.json();
+
+console.log(data);
+
+box.innerHTML = "<pre>"+JSON.stringify(data,null,2)+"</pre>";
+
+}catch(e){
+
+box.innerHTML = "ERÈ: " + e.message;
+
+}
+
+}
+
+montreMatch();
+
   const box = document.getElementById("match-api");
 
   if (!box) return;
