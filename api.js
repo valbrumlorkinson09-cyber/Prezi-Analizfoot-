@@ -14,7 +14,7 @@ async function montreMatch() {
 
     try {
 
-        const today = new Date().toISOString().split("T")[0];
+        const today = "2026-07-24";
 
 
         const response = await fetch(
