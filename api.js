@@ -1,12 +1,11 @@
 // ===============================
 // ANALIZFOOT PRO - API SYSTEM
 // ===============================
-
+const API_URL = "https://v3.football.api-sports.io";
 const API_KEY =c07c38a93b2e98f06baf7069f3467119dbade3caa812e26ca81fd4b8468c7ab9
 
-const API_URL = "https://v3.football.api-sports.io";
 
-async function getMatches(){
+
 
 try{
 
@@ -19,12 +18,12 @@ headers:{
 }
 );
 
+  
 const data = await response.json();
 
 console.log(data);
 
-}
-
+  
 catch(error){
 
 console.log("Erè API:", error);
