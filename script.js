@@ -265,3 +265,12 @@ result.innerHTML =
 
 
 }
+function buyPremium(){
+
+localStorage.setItem("level","Premium");
+
+alert("🎉 Ou se Premium kounye a!");
+
+location.href="profile.html";
+
+}
