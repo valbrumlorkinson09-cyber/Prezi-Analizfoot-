@@ -274,3 +274,31 @@ alert("🎉 Ou se Premium kounye a!");
 location.href="profile.html";
 
 }
+function registerUser(){
+
+let username = document.getElementById("username").value;
+
+let password = document.getElementById("password").value;
+
+
+if(username === "" || password === ""){
+
+alert("Ranpli tout bwat yo");
+
+return;
+
+}
+
+
+localStorage.setItem("user", username);
+
+localStorage.setItem("password", password);
+
+localStorage.setItem("level","Gratis");
+
+
+alert("Kont kreye avèk siksè!");
+
+location.href="login.html";
+
+}
