@@ -649,3 +649,10 @@ margin:15px auto;
 border:3px solid #00ff88;
 
 }
+.news-card{
+background:#1b1b1b;
+padding:15px;
+margin:12px 0;
+border-radius:12px;
+border-left:4px solid #00ff88;
+}
