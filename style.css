@@ -388,3 +388,66 @@ document.getElementById("loginMessage").innerHTML =
 
 
   }
+/* ===== DESIGN PREMIUM V2 ===== */
+
+body{
+background:#07131f;
+color:#fff;
+}
+
+.top{
+background:#0d1b2a;
+box-shadow:0 2px 15px rgba(0,0,0,.4);
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#00ff88;
+letter-spacing:1px;
+}
+
+.card{
+background:#122235;
+border-radius:18px;
+padding:18px;
+margin:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.button,
+.hero button{
+
+background:linear-gradient(90deg,#00ff88,#00c853);
+color:#07131f;
+font-weight:bold;
+padding:12px 18px;
+border-radius:12px;
+text-align:center;
+cursor:pointer;
+margin-top:15px;
+border:none;
+}
+
+.button:hover,
+.hero button:hover{
+
+transform:scale(1.03);
+
+}
+
+.match-item,
+.news-card,
+.player-card{
+
+background:#1b2d44;
+padding:15px;
+border-radius:15px;
+margin-top:12px;
+
+}
