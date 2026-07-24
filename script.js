@@ -181,3 +181,29 @@ document.getElementById("premium-message").innerHTML =
 
 
 }
+// REGISTER
+
+function registerUser(){
+
+let username = document.getElementById("username").value;
+
+let password = document.getElementById("password").value;
+
+
+if(username==="" || password===""){
+
+document.getElementById("message").innerHTML =
+"❌ Ranpli tout chan yo.";
+
+return;
+
+}
+
+
+localStorage.setItem("user", username);
+localStorage.setItem("pass", password);
+
+document.getElementById("message").innerHTML =
+"✅ Kont kreye avèk siksè!";
+
+}
