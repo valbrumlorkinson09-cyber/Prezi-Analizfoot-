@@ -323,3 +323,68 @@ border-radius:15px;
 color:#00ff88;
 
 }
+// REGISTER
+
+function registerUser(){
+
+let username =
+document.getElementById("username").value;
+
+
+let password =
+document.getElementById("password").value;
+
+
+localStorage.setItem("user", username);
+
+localStorage.setItem("pass", password);
+
+
+document.getElementById("message").innerHTML =
+"✅ Kont kreye avèk siksè";
+
+
+}
+
+
+
+// LOGIN
+
+function loginUser(){
+
+
+let user =
+document.getElementById("loginUser").value;
+
+
+let pass =
+document.getElementById("loginPass").value;
+
+
+
+if(
+user == localStorage.getItem("user")
+&&
+pass == localStorage.getItem("pass")
+){
+
+
+localStorage.setItem("logged","yes");
+
+
+location.href="profile.html";
+
+
+}
+
+else{
+
+
+document.getElementById("loginMessage").innerHTML =
+"❌ Non oswa modpas pa bon";
+
+
+}
+
+
+  }
