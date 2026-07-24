@@ -1,70 +1,86 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
 
 body{
-    background:#050b18;
-    color:white;
-    padding-bottom:80px;
+
+background:#07111f;
+color:white;
+padding-bottom:80px;
+
 }
+
 
 
 /* HEADER */
 
 .top{
-    background:#0f172a;
-    padding:18px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:10;
+
+background:#101c33;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:10;
+
 }
+
 
 
 .logo{
-    font-size:25px;
-    font-weight:bold;
-    color:#00e5ff;
+
+font-size:24px;
+font-weight:bold;
+color:#00ff88;
+
 }
+
 
 
 .profile{
-    background:#2563eb;
-    border:none;
-    color:white;
-    padding:10px;
-    border-radius:50%;
-    font-size:18px;
+
+background:#2563eb;
+color:white;
+border:none;
+padding:10px;
+border-radius:50%;
+font-size:18px;
+
 }
+
 
 
 
 /* SEARCH */
 
 .search{
-    margin:15px;
-    background:#111827;
-    padding:15px;
-    border-radius:15px;
+
+margin:15px;
+background:#14233d;
+padding:12px;
+border-radius:15px;
+
 }
+
 
 
 .search input{
 
-    background:none;
-    border:none;
-    outline:none;
-    color:white;
-    width:85%;
-    font-size:16px;
+width:100%;
+background:none;
+border:none;
+outline:none;
+color:white;
+font-size:16px;
 
 }
+
 
 
 
@@ -72,20 +88,21 @@ body{
 
 .menu{
 
-    display:flex;
-    justify-content:space-around;
-    background:#0f172a;
-    padding:12px;
+display:flex;
+justify-content:space-around;
+background:#101c33;
+padding:12px;
 
 }
 
 
+
 .menu a{
 
-    text-decoration:none;
-    color:white;
-    text-align:center;
-    font-size:13px;
+color:white;
+text-decoration:none;
+text-align:center;
+font-size:13px;
 
 }
 
@@ -95,165 +112,131 @@ body{
 
 .hero{
 
-    margin:15px;
-    padding:30px;
-    text-align:center;
-    border-radius:20px;
-    background:linear-gradient(135deg,#005bea,#00c6fb);
+margin:15px;
+padding:30px;
+border-radius:20px;
+text-align:center;
+background:linear-gradient(135deg,#2563eb,#00a86b);
 
 }
 
 
 .hero h1{
 
-    margin-bottom:10px;
+font-size:32px;
 
 }
+
 
 
 .hero button{
 
-    margin-top:20px;
-    padding:12px 25px;
-    border:none;
-    border-radius:25px;
-    font-weight:bold;
+margin-top:15px;
+padding:12px 25px;
+border:none;
+border-radius:25px;
+font-weight:bold;
 
 }
 
 
 
-/* CARDS */
+
+
+/* CARD */
 
 .card{
 
-    background:#111827;
-    margin:15px;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.4);
+background:#101c33;
+margin:15px;
+padding:20px;
+border-radius:20px;
 
 }
+
 
 
 .card h2{
 
-    color:#00e5ff;
-    margin-bottom:20px;
+color:#00ff88;
+margin-bottom:15px;
 
 }
 
 
 
-/* MATCH LIVE */
+
+/* LIVE */
 
 .live{
 
-    border-left:5px solid #ff0033;
+border-left:5px solid red;
 
 }
 
 
 
-.match-card{
+.teams{
 
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    text-align:center;
-
-}
-
-
-.club{
-
-    font-size:18px;
-
-}
-
-
-.club p{
-
-    margin-top:10px;
-
-}
-
-
-.score strong{
-
-    font-size:32px;
-    color:#00ff88;
-
-}
-
-
-.score span{
-
-    display:block;
-    margin-top:10px;
-    color:#ff0033;
+display:flex;
+justify-content:space-around;
+align-items:center;
+text-align:center;
 
 }
 
 
 
-/* AI */
+.teams strong{
 
-.ai-box{
-
-    display:flex;
-    justify-content:space-between;
-    background:#0b1425;
-    padding:15px;
-    margin:12px 0;
-    border-radius:12px;
-
-}
-
-
-.ai-box b{
-
-    color:#00ff88;
+font-size:28px;
+color:#00ff88;
 
 }
 
 
 
-/* RANK */
 
-.rank{
+/* ITEMS */
 
-    background:#0b1425;
-    padding:15px;
-    margin:10px 0;
-    border-radius:12px;
-    border-left:4px solid #00e5ff;
+.match-item,
+.news,
+.player,
+.rank,
+.prediction{
 
-}
-
-
-
-/* NEWS */
-
-.news{
-
-    background:#0b1425;
-    padding:15px;
-    margin:10px 0;
-    border-radius:12px;
+background:#16243d;
+margin:10px 0;
+padding:15px;
+border-radius:12px;
 
 }
 
 
 
-/* PLAYERS */
 
-.player{
+.prediction{
 
-    background:#0b1425;
-    padding:15px;
-    margin:10px 0;
-    border-radius:12px;
+display:flex;
+justify-content:space-between;
+
+}
+
+
+
+
+/* BUTTON */
+
+.button{
+
+background:#00ff88;
+color:#07111f;
+padding:12px;
+border-radius:20px;
+text-align:center;
+margin-top:15px;
+font-weight:bold;
+cursor:pointer;
 
 }
 
@@ -263,33 +246,33 @@ body{
 
 footer{
 
-    text-align:center;
-    color:#94a3b8;
-    padding:20px;
+text-align:center;
+padding:20px;
+color:#aaa;
 
 }
 
 
 
-/* MOBILE */
+
 
 @media(max-width:600px){
 
 
 .menu{
 
-    position:fixed;
-    bottom:0;
-    left:0;
-    right:0;
-    z-index:20;
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+z-index:20;
 
 }
 
 
 .logo{
 
-    font-size:20px;
+font-size:20px;
 
 }
 
