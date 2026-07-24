@@ -302,3 +302,28 @@ alert("Kont kreye avèk siksè!");
 location.href="login.html";
 
 }
+function loginUser(){
+
+let username = document.getElementById("login-user").value;
+
+let password = document.getElementById("login-pass").value;
+
+
+if(
+username === localStorage.getItem("user") &&
+password === localStorage.getItem("password")
+){
+
+alert("Byenveni "+username);
+
+location.href="profile.html";
+
+}
+
+else{
+
+alert("Move enfòmasyon");
+
+}
+
+}
