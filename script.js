@@ -207,3 +207,61 @@ document.getElementById("message").innerHTML =
 "✅ Kont kreye avèk siksè!";
 
 }
+function searchFootball(){
+
+let text = document.getElementById("searchBox").value.toLowerCase();
+
+let result = document.getElementById("search-result");
+
+
+let teams = [
+"real madrid",
+"barcelona",
+"manchester city",
+"liverpool",
+"psg"
+];
+
+
+let players = [
+"kylian mbappe",
+"vinicius jr",
+"lamine yamal"
+];
+
+
+let all = teams.concat(players);
+
+
+let found = all.filter(item => 
+item.includes(text)
+);
+
+
+
+if(text === ""){
+
+result.innerHTML="";
+
+return;
+
+}
+
+
+
+if(found.length > 0){
+
+result.innerHTML = 
+"🔍 Rezilta:<br>" + found.join("<br>");
+
+}
+
+else{
+
+result.innerHTML =
+"❌ Pa jwenn rezilta";
+
+}
+
+
+}
