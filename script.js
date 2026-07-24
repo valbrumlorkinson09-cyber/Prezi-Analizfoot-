@@ -138,3 +138,33 @@ card.style.transform="scale(1)";
 
 
 });
+// 🤖 ANALIZ AI
+
+function aiAnalyse(){
+
+let result = document.getElementById("ai-result");
+
+
+if(result){
+
+result.innerHTML =
+"🤖 AI ap analize match la...";
+
+
+setTimeout(function(){
+
+
+result.innerHTML =
+
+"✅ Rezilta AI:<br><br>" +
+"⚪ Real Madrid gen 55% chans viktwa.<br>" +
+"🤝 Match nul: 25%<br>" +
+"🔵 Barcelona: 20%";
+
+
+},2000);
+
+
+}
+
+}
