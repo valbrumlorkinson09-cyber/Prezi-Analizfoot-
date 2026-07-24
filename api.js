@@ -1,2 +1,1 @@
-document.getElementById("match-api").innerHTML =
-"✅ API AP MACHÉ";
+alert("ANALIZFOOT API OK");
