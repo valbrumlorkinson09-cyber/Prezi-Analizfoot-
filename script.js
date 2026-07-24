@@ -168,3 +168,16 @@ result.innerHTML =
 }
 
 }
+// PREMIUM SYSTEM
+
+function activatePremium(){
+
+
+localStorage.setItem("level","Premium");
+
+
+document.getElementById("premium-message").innerHTML =
+"👑 Felisitasyon! Kont ou vin Premium.";
+
+
+}
