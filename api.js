@@ -1,31 +1,32 @@
-// ANALIZFOOT API SYSTEM
+// ⚽ ANALIZFOOT API SYSTEM
 
 
-const matchesBox = document.getElementById("matches");
+const matchContainer = document.querySelector("#match-api");
 
 
-// Match demo pou teste sistèm nan
+// Match demo (baz pou API reyèl pita)
 
-const demoMatches = [
+const matches = [
 
 {
 home:"⚪ Real Madrid",
 away:"🔵 Barcelona",
-time:"20:00"
+time:"20:00",
+status:"Jodi a"
 },
-
 
 {
-home:"🔴 Liverpool",
-away:"🔵 Manchester City",
-time:"18:30"
+home:"🔵 Manchester City",
+away:"🔴 Liverpool",
+time:"18:30",
+status:"Jodi a"
 },
-
 
 {
 home:"🔵 PSG",
 away:"⚪ Marseille",
-time:"21:00"
+time:"21:00",
+status:"Jodi a"
 }
 
 ];
@@ -35,48 +36,51 @@ time:"21:00"
 
 // Afiche match yo
 
-function loadMatches(){
+function displayMatches(){
 
 
-if(!matchesBox){
+if(!matchContainer){
     return;
 }
 
 
-matchesBox.innerHTML="";
+matchContainer.innerHTML="";
 
 
-demoMatches.forEach(function(match){
+matches.forEach(function(match){
 
 
-let box=document.createElement("div");
+let card = document.createElement("div");
 
 
-box.className="news";
+card.className="match-item";
 
 
-box.innerHTML=`
+card.innerHTML = `
 
-<p>
 ⚽ ${match.home}
-</p>
 
-<p>
-VS
-</p>
+<br>
 
-<p>
+🆚
+
+<br>
+
 ${match.away}
-</p>
 
-<p>
+<br>
+
 🕒 ${match.time}
-</p>
+
+<br>
+
+📅 ${match.status}
 
 `;
 
 
-matchesBox.appendChild(box);
+
+matchContainer.appendChild(card);
 
 
 
@@ -88,20 +92,20 @@ matchesBox.appendChild(box);
 
 
 
-// Lanse match yo
+// Lanse sistèm nan
 
-loadMatches();
-
-
+displayMatches();
 
 
-// Fonksyon pou pita konekte API reyèl
 
-async function getFootballData(){
+
+// Fonksyon API reyèl pita
+
+async function getLiveMatches(){
 
 
 console.log(
-"Preparasyon koneksyon API ANALIZFOOT..."
+"🔄 ANALIZFOOT ap chèche match yo..."
 );
 
 
