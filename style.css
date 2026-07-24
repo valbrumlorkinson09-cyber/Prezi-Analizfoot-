@@ -515,3 +515,82 @@ color:#07131f;
 background:#16243d;
 
   }
+/* ===== NEWS PREMIUM ===== */
+
+.news-card{
+
+border-left:4px solid #00ff88;
+transition:.3s;
+
+}
+
+.news-card:hover{
+
+transform:translateX(5px);
+
+}
+
+
+/* ===== PLAYER PREMIUM ===== */
+
+.player-card{
+
+border-left:4px solid #2563eb;
+transition:.3s;
+
+}
+
+.player-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+/* ===== PROFILE ===== */
+
+.player-card h3{
+
+color:#00ff88;
+
+}
+
+
+/* ===== FOOTER ===== */
+
+footer{
+
+background:#0d1b2a;
+margin-top:30px;
+border-radius:15px;
+font-size:14px;
+
+}
+
+
+/* ===== PAGE ANIMATION ===== */
+
+section{
+
+animation:show .5s ease;
+
+}
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
