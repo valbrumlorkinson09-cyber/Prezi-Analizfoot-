@@ -69,7 +69,17 @@
 ⚽ ANALIZFOOT © 2026
 
 </footer>
+<script>
 
+let user = localStorage.getItem("user");
+
+if(user){
+
+document.getElementById("profile-name").innerHTML=user;
+
+}
+
+</script>
 </body>
 
 </html>
