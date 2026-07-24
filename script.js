@@ -327,3 +327,27 @@ alert("Move enfòmasyon");
 }
 
 }
+function aiAnalyse(){
+
+let result = document.getElementById("ai-result");
+
+
+result.innerHTML = 
+`
+<h3>🤖 Rezilta AI</h3>
+
+<p>
+⚽ Rezilta posib: Real Madrid 2 - 1 Barcelona
+</p>
+
+<p>
+📈 Chans viktwa: 55%
+</p>
+
+<p>
+🔥 Jwè kle: Kylian Mbappé
+</p>
+
+`;
+
+  }
