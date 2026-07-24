@@ -45,7 +45,10 @@
 
 
 <p>
-🏆 Nivo: Gratis
+🏆 Nivo:
+<span id="user-level">
+Gratis
+</span>
 </p>
 
 
@@ -114,7 +117,17 @@
 </footer>
 
 
+<script>
 
+let level = localStorage.getItem("level");
+
+if(level){
+
+document.getElementById("user-level").innerHTML = level;
+
+}
+
+</script>
 </body>
 
 </html>
