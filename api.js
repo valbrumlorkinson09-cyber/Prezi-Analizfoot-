@@ -1,8 +1,5 @@
 const matchBox = document.getElementById("match-api");
 
-const matchBox = document.getElementById("match-api");
-
-
 const matches = [
 
 {
