@@ -278,3 +278,31 @@ font-size:20px;
 
 
 }
+.table{
+
+width:100%;
+border-collapse:collapse;
+}
+
+
+.table th{
+
+color:#00ff88;
+padding:10px;
+}
+
+
+.table td{
+
+padding:12px;
+background:#16243d;
+text-align:center;
+
+}
+
+
+.table tr{
+
+border-bottom:1px solid #26364f;
+
+}
