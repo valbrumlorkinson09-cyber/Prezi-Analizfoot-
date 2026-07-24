@@ -358,3 +358,9 @@ result.innerHTML =
 `;
 
   }
+function aiAnalyse(){
+
+document.getElementById("ai-result").innerHTML =
+"🤖 AI ap analize match la...";
+
+                       }
