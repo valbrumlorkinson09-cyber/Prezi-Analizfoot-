@@ -40,7 +40,7 @@
 <div class="player-card">
 
 <h3>
-👤 Valbrum
+👤 <span id="profile-name">Vizitè</span>
 </h3>
 
 
@@ -126,7 +126,13 @@ if(level){
 document.getElementById("user-level").innerHTML = level;
 
 }
+let username = localStorage.getItem("user");
 
+if(username){
+
+document.getElementById("profile-name").innerHTML = username;
+
+}
 </script>
 </body>
 
