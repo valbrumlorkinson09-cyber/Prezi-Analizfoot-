@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html lang="ht">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Konekte - ANALIZFOOT</title>
+
+<title>Login - ANALIZFOOT</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header>
-<div class="logo">⚽ ANALIZFOOT</div>
-<p class="slogan">Konekte sou kont ou</p>
+
+<header class="top">
+
+<div class="logo">
+⚽ ANALIZFOOT
+</div>
+
 </header>
+
+
 
 <section class="card">
 
-<h2>🔐 KONEKTE</h2>
+<h2>🔐 Konekte</h2>
 
-<input id="username" type="text" placeholder="Non itilizatè">
 
-<input type="password" placeholder="Modpas">
+<input id="loginUser" placeholder="Non itilizatè">
 
-<div class="button" onclick="konekte()">
-KONEKTE
+
+<input id="loginPass" type="password" placeholder="Modpas">
+
+
+<div class="button" onclick="loginUser()">
+
+Antre
+
 </div>
 
-<br>
 
-<div class="button" onclick="location.href='index.html'">
-⬅️ Retounen
-</div>
+<p id="loginMessage"></p>
+
 
 </section>
-<script>
 
-function konekte(){
 
-let non = document.getElementById("username").value;
 
-if(non==""){
+<script src="script.js"></script>
 
-alert("⚠️ Tanpri antre non itilizatè ou.");
-
-}else{
-
-localStorage.setItem("utilizate", non);
-
-alert("🎉 Byenvini " + non + " sou ANALIZFOOT!");
-
-location.href="index.html";
-
-}
-
-}
-
-</script>
 </body>
+
 </html>
