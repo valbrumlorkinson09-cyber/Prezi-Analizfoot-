@@ -1,69 +1,56 @@
 <!DOCTYPE html>
 <html lang="ht">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enskripsyon - ANALIZFOOT</title>
+
+<title>Kreye Kont - ANALIZFOOT</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header>
-<div class="logo">⚽ ANALIZFOOT</div>
-<p class="slogan">Kreye yon kont</p>
+
+<header class="top">
+
+<div class="logo">
+⚽ ANALIZFOOT
+</div>
+
 </header>
+
 
 <section class="card">
 
-<h2>📝 Enskripsyon</h2>
+<h2>📝 Kreye Kont</h2>
 
-<input type="text" id="non" placeholder="Non itilizatè">
 
-<br><br>
+<input id="username" placeholder="Non itilizatè">
 
-<input type="email" id="email" placeholder="Imèl">
 
-<br><br>
+<input id="password" type="password" placeholder="Modpas">
 
-<input type="password" id="password" placeholder="Modpas">
 
-<br><br>
+<div class="button" onclick="registerUser()">
 
-<div class="button" onclick="register()">
-✅ Kreye Kont
+Kreye Kont
+
 </div>
 
-<p id="msg"></p>
 
-<br>
+<p id="message"></p>
 
-<div class="button" onclick="location.href='login.html'">
-🔐 Ale Konekte
-</div>
 
 </section>
 
-<script>
-function register(){
 
-let non=document.getElementById("non").value;
 
-if(non==""){
-document.getElementById("msg").innerHTML="❌ Antre non ou.";
-return;
-}
-
-localStorage.setItem("utilizate",non);
-
-document.getElementById("msg").innerHTML="✅ Kont kreye avèk siksè!";
-
-setTimeout(function(){
-location.href="profile.html";
-},1000);
-
-}
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
