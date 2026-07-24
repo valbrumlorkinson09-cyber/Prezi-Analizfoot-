@@ -1,40 +1,43 @@
-console.log("ANALIZFOOT lanse...");
+// ⚽ ANALIZFOOT APP SCRIPT
 
 
-// BOUTON KÒMANSE ANALIZ
+// Bouton Analiz
 
-const startButton = document.querySelector(".hero button");
+const buttons = document.querySelectorAll(".button");
 
-if(startButton){
 
-startButton.addEventListener("click", function(){
+buttons.forEach(function(btn){
 
-alert("🤖 AI ANALIZ ap prepare...");
+btn.addEventListener("click",function(){
+
+console.log("Analiz lanse...");
 
 });
 
-}
+});
 
 
 
 
-// RECHÈCH EKIP / JWÈ
+// 🔍 RECHÈCH FOOTBALL
+
 
 const searchInput = document.querySelector(".search input");
 
 
 if(searchInput){
 
-searchInput.addEventListener("keyup", function(){
-
-let text = searchInput.value.toLowerCase();
+searchInput.addEventListener("keyup",function(){
 
 
-if(text.length > 0){
+let value = searchInput.value.toLowerCase();
 
-console.log("Rechèch:", text);
 
-}
+console.log(
+"Rechèch:",
+value
+);
+
 
 });
 
@@ -43,52 +46,73 @@ console.log("Rechèch:", text);
 
 
 
-// AI ANALIZ
-
-function nouvoAnaliz(){
-
-let rezilta = document.getElementById("ai-result");
+// 🤖 AI ANALIZ DEMO
 
 
-if(rezilta){
-
-rezilta.innerHTML =
-"🤖 Nouvo analiz AI pare!";
-
-}
-
-}
+function startAI(){
 
 
+let result = document.getElementById("ai-result");
 
 
-// SIMILASYON MATCH LIVE
+if(result){
 
-let minute = 67;
+result.innerHTML =
+"🤖 AI ap analize match la...";
 
-
-setInterval(function(){
-
-
-let liveTime = document.querySelector(".score span");
+setTimeout(function(){
 
 
-if(liveTime){
+result.innerHTML =
+"✅ Prediksyon fini: Real Madrid gen plis chans.";
 
-minute++;
 
-liveTime.innerHTML = "⏱ " + minute + "'";
+},2000);
+
 
 }
 
 
-},60000);
+}
 
 
 
 
 
-// ANIMASYON SOU KAT YO
+// ❤️ FAVORI MATCH
+
+
+function favoriteMatch(){
+
+
+alert(
+"⭐ Match ajoute nan favori!"
+);
+
+
+}
+
+
+
+
+// 🔔 NOTIFICATION
+
+
+function notifyUser(){
+
+
+alert(
+"🔔 Ou pral resevwa nouvèl ANALIZFOOT."
+);
+
+
+}
+
+
+
+
+// ANIMASYON KAT YO
+
 
 const cards = document.querySelectorAll(".card");
 
@@ -105,6 +129,7 @@ card.style.transform="scale(1.02)";
 setTimeout(function(){
 
 card.style.transform="scale(1)";
+
 
 },200);
 
