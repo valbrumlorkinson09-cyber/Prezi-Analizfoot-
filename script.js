@@ -144,26 +144,33 @@ function aiAnalyse(){
 
 let result = document.getElementById("ai-result");
 
+result.innerHTML = `
+<div class="loading">
+🤖 AI ap analize...
+</div>
+`;
 
-if(result){
+setTimeout(()=>{
 
-result.innerHTML =
-"🤖 AI ap analize match la...";
+result.innerHTML = `
 
+<h3>🤖 Rezilta AI</h3>
 
-setTimeout(function(){
+<p>
+⚽ Rezilta posib: Real Madrid 2 - 1 Barcelona
+</p>
 
+<p>
+📈 Chans viktwa: 55%
+</p>
 
-result.innerHTML =
+<p>
+🔥 Jwè kle: Kylian Mbappé
+</p>
 
-"✅ Rezilta AI:<br><br>" +
-"⚪ Real Madrid gen 55% chans viktwa.<br>" +
-"🤝 Match nul: 25%<br>" +
-"🔵 Barcelona: 20%";
-
+`;
 
 },2000);
-
 
 }
 
