@@ -589,14 +589,14 @@ Gwo ekip Ewòp yo pare pou konpetisyon an.
 👤 PROFIL
 </h2>
 
-
 <p>
-👤 Non: Vizitè
+👤 Non:
+<span id="home-name">Vizitè</span>
 </p>
 
-
 <p>
-🏆 Nivo: Gratis
+🏆 Nivo:
+<span id="home-level">Gratis</span>
 </p>
 
 
@@ -619,7 +619,22 @@ Gwo ekip Ewòp yo pare pou konpetisyon an.
 
 <script src="./script.js"></script>
 <script src="./api.js"></script>
+<script>
 
+let name = localStorage.getItem("user");
+let level = localStorage.getItem("level");
+
+
+if(name){
+document.getElementById("home-name").innerHTML = name;
+}
+
+
+if(level){
+document.getElementById("home-level").innerHTML = level;
+}
+
+</script>
 </body>
 
 </html>
