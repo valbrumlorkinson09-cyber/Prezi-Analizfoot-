@@ -2,7 +2,6 @@
 <html lang="ht">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,9 +11,7 @@
 
 </head>
 
-
 <body>
-
 
 <header class="top">
 
@@ -29,85 +26,36 @@
 </header>
 
 
-
 <section class="card">
 
-<h2>
-👤 PROFIL UTILIZATÈ
-</h2>
-
+<h2>👤 PROFIL UTILIZATÈ</h2>
 
 <div class="player-card">
 
-<h3>
-👤 <span id="profile-name">Vizitè</span>
-</h3>
+<h3>👤 Vizitè</h3>
 
+<p>🏆 Nivo: Gratis</p>
 
-<p>
-🏆 Nivo:
-<span id="user-level">
-Gratis
-</span>
-</p>
+<p>⚽ Match analize: 0</p>
 
-
-<p>
-⚽ Match analize: 0
-</p>
-
-
-<p>
-🤖 AI itilize: 0
-</p>
-
+<p>🤖 AI itilize: 0</p>
 
 </div>
-
-
-<div class="button">
-
-👑 Pase Premium
-
-</div>
-
 
 </section>
-
-
-
 
 
 <section class="card">
 
-<h2>
-⚙️ PARAMÈT
-</h2>
+<h2>⚙️ PARAMÈT</h2>
 
+<div class="news-card">🔔 Notifikasyon</div>
 
-<div class="news-card">
+<div class="news-card">🌙 Mode nwa</div>
 
-🔔 Notifikasyon
-
-</div>
-
-
-<div class="news-card">
-
-🌙 Mode nwa
-
-</div>
-
-
-<div class="news-card">
-
-🔐 Sekirite kont
-
-</div>
-
+<div class="news-card">🔐 Sekirite kont</div>
 
 </section>
-
 
 
 <footer>
@@ -116,24 +64,6 @@ Gratis
 
 </footer>
 
-
-<script>
-
-let level = localStorage.getItem("level");
-
-if(level){
-
-document.getElementById("user-level").innerHTML = level;
-
-}
-let username = localStorage.getItem("user");
-
-if(username){
-
-document.getElementById("profile-name").innerHTML = username;
-
-}
-</script>
 </body>
 
 </html>
