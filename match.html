@@ -39,7 +39,9 @@
 
 <div class="match-item">
 
-<h3>🔴 Live</h3>
+<h3 id="status">
+🔴 Live
+</h3>
 
 <p id="homeTeam">
 ⚪ Ekip Lakay
@@ -279,6 +281,39 @@ document.getElementById("score").innerHTML =
 homeScore + " - " + awayScore;
 }
 </script>
+  <script>
+
+let home = localStorage.getItem("homeTeam");
+let away = localStorage.getItem("awayTeam");
+let homeScore = localStorage.getItem("homeScore");
+let awayScore = localStorage.getItem("awayScore");
+
+
+if(home){
+
+document.getElementById("homeTeam").innerHTML =
+"⚪ " + home;
+
+}
+
+
+if(away){
+
+document.getElementById("awayTeam").innerHTML =
+"🔵 " + away;
+
+}
+
+
+if(homeScore && awayScore){
+
+document.getElementById("score").innerHTML =
+homeScore + " - " + awayScore;
+
+}
+
+
+  </script>
 </body>
 
 </html>
