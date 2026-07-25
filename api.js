@@ -56,7 +56,7 @@ ${match.teams.away.name}
 <p>
 🕒 ${match.fixture.date}
 </p>
-
+fixtures?date=2026-07-25
 <div class="button" onclick="location.href='match.html'">
 📊 Analize Match
 </div>
