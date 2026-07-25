@@ -26,8 +26,17 @@ headers:{
 
 const data = await response.json();
 console.log(data);
-
+console.log("STATUS:", response.status);
 matchBox.innerHTML="";
+
+
+if(!data.response || data.response.length === 0){
+
+matchBox.innerHTML = "⚠️ Pa gen match live kounya";
+
+return;
+
+}
 
 
 data.response.forEach(match=>{
