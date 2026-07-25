@@ -67,7 +67,7 @@ ${match.teams.away.name}
 </p>
 
 
-<div class="button" onclick="analyzeMatch('${match.teams.home.name}','${match.teams.away.name}','${match.goals.home ?? 0}','${match.goals.away ?? 0}')">
+<div class="button" onclick="analyzeMatch('${match.teams.home.name}','${match.teams.away.name}','${match.goals.home ?? 0}','${match.goals.away ?? 0}','${match.teams.home.id}','${match.teams.away.id}')">
 📊 Analize Match
 </div>
 
