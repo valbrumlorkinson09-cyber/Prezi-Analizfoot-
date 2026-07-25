@@ -161,8 +161,7 @@ return "N/A";
 }
 
 
-
-function analyzeMatch(home, away, homeScore, awayScore, homeId, awayId){
+function analyzeMatch(home, away, homeScore, awayScore, homeId, awayId, fixtureId){
 
 localStorage.setItem("homeTeam", home);
 localStorage.setItem("awayTeam", away);
@@ -173,9 +172,12 @@ localStorage.setItem("awayScore", awayScore);
 localStorage.setItem("homeId", homeId);
 localStorage.setItem("awayId", awayId);
 
+localStorage.setItem("fixtureId", fixtureId);
+
 location.href = "match.html";
 
 }
+
 async function loadLiveScore(){
 
 const liveHome = document.getElementById("liveHome");
