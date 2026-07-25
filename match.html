@@ -2,7 +2,6 @@
 <html lang="ht">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,9 +11,7 @@
 
 </head>
 
-
 <body>
-
 
 <header class="top">
 
@@ -29,13 +26,11 @@
 </header>
 
 
-
 <section class="card">
 
 <h2>
 ⚽ DETAY MATCH
 </h2>
-
 
 <div class="match-item">
 
@@ -57,9 +52,7 @@
 
 </div>
 
-
 </section>
-
 
 
 
@@ -69,57 +62,70 @@
 📊 ANALIZ MATCH
 </h2>
 
-
 <div class="news-card">
 
+<p>
 ⚽ Fòm ekip:
+<strong id="teamForm">
 Bon
+</strong>
+</p>
 
 </div>
 
-
 <div class="news-card">
 
-🔥 Atak: <span id="attackText"</span>
+<p>
+🔥 Atak:
+<span id="attackText">
+AI ap analize...
+</span>
+</p>
 
 </div>
 
-
 <div class="news-card">
 
-🛡 Defans:
+<p>
+🛡️ Defans:
+<span id="defenseText">
 Match sere
+</span>
+</p>
 
 </div>
-
 
 </section>
-
 <section class="card">
 
 <h2>
 📈 FÒM EKIP YO
 </h2>
 
+<div class="news-card">
+
+<p>
+⚪ <strong id="formHome">Ekip Lakay</strong>
+</p>
+
+<p id="homeForm">
+🔥 Dènye 5 match: AI ap chaje...
+</p>
+
+</div>
 
 <div class="news-card">
 
-<div>
-⚪ <span id="formHome">Ekip Lakay</span>
-<br>
-🔥 Dènye 5 match: W W W D W
+<p>
+🔵 <strong id="formAway">Ekip Vizitè</strong>
+</p>
+
+<p id="awayForm">
+🔥 Dènye 5 match: AI ap chaje...
+</p>
+
 </div>
 
-
-<br>
-
-
-<div>
-🔵 <span id="formAway">Ekip Vizitè</span>
-<br>
-🔥 Dènye 5 match: W W D L W
-</div>
-  
 </section>
 
 
@@ -130,24 +136,50 @@ Match sere
 ⚔️ ANALIZ TAKTIK
 </h2>
 
+<div class="news-card">
 
-<span id="tacticHome">Ekip Lakay</span>: 88/100
+<p>
+⚔️ Atak
+</p>
 
-<br>
+<p>
+<span id="tacticHome">Ekip Lakay</span>:
+<strong id="attackHome">
+88/100
+</strong>
+</p>
 
-<span id="tacticAway">Ekip Vizitè</span>: 82/100
+<p>
+<span id="tacticAway">Ekip Vizitè</span>:
+<strong id="attackAway">
+82/100
+</strong>
+</p>
+
+</div>
 
 
 <div class="news-card">
 
+<p>
 🛡️ Defans
+</p>
 
-<span id="attackHome">Ekip Lakay</span>: 88/100
+<p>
+<span id="defenseHome">Ekip Lakay</span>:
+<strong id="defenseHomeScore">
+85/100
+</strong>
+</p>
 
-<br>
+<p>
+<span id="defenseAway">Ekip Vizitè</span>:
+<strong id="defenseAwayScore">
+80/100
+</strong>
+</p>
 
-<span id="attackAway">Ekip Vizitè</span>: 82/100
-
+</div>
 
 </section>
 
@@ -159,33 +191,46 @@ Match sere
 🤖 PREDIKSYON AI
 </h2>
 
-</div>
-<p id="predictHome">⚪ Ekip Lakay genyen</p>
+<div class="news-card">
 
-<b>55%</b>
+<p id="predictHome">
+⚪ Ekip Lakay genyen
+</p>
 
-<p>🤝 Match nul</p>
+<b id="predictHomePercent">
+55%
+</b>
 
-<b>25%</b>
+<br><br>
 
-<p id="predictAway">🔵 Ekip Vizitè genyen</p>
+<p>
+🤝 Match nul
+</p>
 
-<b>20%</b>
+<b id="predictDrawPercent">
+25%
+</b>
+
+<br><br>
+
+<p id="predictAway">
+🔵 Ekip Vizitè genyen
+</p>
+
+<b id="predictAwayPercent">
+20%
+</b>
+
 </div>
 
 </section>
-
-
-
 <section class="card">
 
 <h2>
 ⭐ JWÈ KLE
 </h2>
 
-
 <div class="player-card">
-
 
 <p id="keyPlayers">
 🔍 AI ap analize jwè kle yo...
@@ -193,8 +238,8 @@ Match sere
 
 </div>
 
-
 </section>
+
 
 <footer>
 
@@ -202,115 +247,87 @@ Match sere
 
 </footer>
 
+
 <script>
 
-let home = localStorage.getItem("homeTeam");
-let away = localStorage.getItem("awayTeam");
+const home = localStorage.getItem("homeTeam") || "Ekip Lakay";
+const away = localStorage.getItem("awayTeam") || "Ekip Vizitè";
+const homeScore = Number(localStorage.getItem("homeScore") || 0);
+const awayScore = Number(localStorage.getItem("awayScore") || 0);
 
-
-if(home){
+// Detay match
 document.getElementById("homeTeam").innerHTML = "⚪ " + home;
-}
-
-
-if(away){
 document.getElementById("awayTeam").innerHTML = "🔵 " + away;
+document.getElementById("score").innerHTML = homeScore + " - " + awayScore;
+
+// Fòm ekip
+document.getElementById("formHome").innerHTML = home;
+document.getElementById("formAway").innerHTML = away;
+
+// Analiz taktik
+document.getElementById("tacticHome").innerHTML = home;
+document.getElementById("tacticAway").innerHTML = away;
+document.getElementById("defenseHome").innerHTML = home;
+document.getElementById("defenseAway").innerHTML = away;
+
+// Prediksyon
+document.getElementById("predictHome").innerHTML = "⚪ " + home + " genyen";
+document.getElementById("predictAway").innerHTML = "🔵 " + away + " genyen";
+
+// AI Analiz
+let attackText = "";
+let defenseText = "";
+let homePercent = 55;
+let drawPercent = 25;
+let awayPercent = 20;
+
+if(homeScore > awayScore){
+
+attackText = "🔥 " + home + " gen avantaj selon AI.";
+defenseText = "🛡️ " + home + " kontwole match la.";
+homePercent = 70;
+drawPercent = 15;
+awayPercent = 15;
+
 }
-let homeScore = localStorage.getItem("homeScore");
-let awayScore = localStorage.getItem("awayScore");
+else if(homeScore < awayScore){
 
-if(homeScore && awayScore){
-document.getElementById("score").innerHTML =
-homeScore + " - " + awayScore;
-}
-</script>
-  <script>
-
-let home = localStorage.getItem("homeTeam");
-let away = localStorage.getItem("awayTeam");
-let homeScore = localStorage.getItem("homeScore");
-let awayScore = localStorage.getItem("awayScore");
-let analyse = "";
-
-if(Number(homeScore) > Number(awayScore)){
-
-analyse = "🔥 " + home + " gen avantaj selon AI.";
-
-}
-else if(Number(homeScore) < Number(awayScore)){
-
-analyse = "🔥 " + away + " gen avantaj selon AI.";
+attackText = "🔥 " + away + " gen avantaj selon AI.";
+defenseText = "🛡️ " + away + " ap defann byen.";
+homePercent = 15;
+drawPercent = 15;
+awayPercent = 70;
 
 }
 else{
 
-analyse = "🤝 Match la sanble byen balanse.";
+attackText = "🤝 Match la sanble byen balanse.";
+defenseText = "🛡️ Toude ekip yo egal.";
+homePercent = 40;
+drawPercent = 20;
+awayPercent = 40;
 
 }
 
-document.getElementById("attackText").innerHTML = analyse;
+document.getElementById("attackText").innerHTML = attackText;
+document.getElementById("defenseText").innerHTML = defenseText;
 
-if(home){
+document.getElementById("predictHomePercent").innerHTML = homePercent + "%";
+document.getElementById("predictDrawPercent").innerHTML = drawPercent + "%";
+document.getElementById("predictAwayPercent").innerHTML = awayPercent + "%";
 
-document.getElementById("homeTeam").innerHTML =
-"⚪ " + home;
+// Nòt atak/defans
+document.getElementById("attackHome").innerHTML = (80 + homeScore * 5) + "/100";
+document.getElementById("attackAway").innerHTML = (80 + awayScore * 5) + "/100";
 
-}
+document.getElementById("defenseHomeScore").innerHTML = (85 - awayScore * 3) + "/100";
+document.getElementById("defenseAwayScore").innerHTML = (85 - homeScore * 3) + "/100";
 
+// Jwè kle
+document.getElementById("keyPlayers").innerHTML =
+"⭐ AI ap prepare analiz jwè kle pou <b>" + home + "</b> ak <b>" + away + "</b>.";
 
-if(away){
+</script>
 
-document.getElementById("awayTeam").innerHTML =
-"🔵 " + away;
-
-}
-
-
-if(homeScore && awayScore){
-
-document.getElementById("score").innerHTML =
-homeScore + " - " + awayScore;
-
-}
-
-let home = localStorage.getItem("homeTeam");
-let away = localStorage.getItem("awayTeam");
-
-
-if(home){
-
-document.getElementById("formHome").innerHTML = home;
-
-document.getElementById("attackHome").innerHTML = home;
-
-}
-
-
-if(away){
-
-document.getElementById("formAway").innerHTML = away;
-
-document.getElementById("attackAway").innerHTML = away;
-
-}
-
-
-document.getElementById("attackText").innerHTML =
-home + " ap analize ak done API";
-    document.getElementById("tacticHome").innerHTML = home;
-
-document.getElementById("tacticAway").innerHTML = away;
-document.getElementById("predictHome").innerHTML =
-"⚪ " + home + " genyen";
-
-document.getElementById("predictAway").innerHTML =
-"🔵 " + away + " genyen";  
-
- document.getElementById("keyPlayers").innerHTML =
-"⭐ Jwè kle pou <b>" + home + "</b> ak <b>" + away + "</b> ap disponib apre analiz avanse."; 
-
-    
-  </script>
 </body>
-
 </html>
