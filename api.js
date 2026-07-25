@@ -66,7 +66,8 @@ ${match.teams.away.name}
 🕒 ${match.fixture.date}
 </p>
 
-<div class="button" onclick="location.href='match.html'">
+
+<div class="button" onclick="analyzeMatch('${match.teams.home.name}','${match.teams.away.name}')">
 📊 Analize Match
 </div>
 
@@ -93,3 +94,12 @@ console.log(error);
 
 
 loadMatches();
+function analyzeMatch(home, away){
+
+localStorage.setItem("homeTeam", home);
+
+localStorage.setItem("awayTeam", away);
+
+location.href="match.html";
+
+}
