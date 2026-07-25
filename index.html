@@ -30,25 +30,36 @@
 
 
 
-
-
 <nav class="menu">
+
 
 <a href="index.html">
 🏠<br>
-Akèy
+Home
 </a>
 
 
-<a href="match.html">
+<a href="live.html">
+🔴<br>
+Live
+</a>
+
+
+<a href="matches.html">
 ⚽<br>
-Match
+Matches
 </a>
 
 
-<a href="standings.html">
-📊<br>
-Klasman
+<a href="leagues.html">
+🏆<br>
+Lig
+</a>
+
+
+<a href="players.html">
+⭐<br>
+Players
 </a>
 
 
@@ -57,61 +68,31 @@ Klasman
 AI
 </a>
 
- <a href="news.html">
-📰
-Nouvèl
-</a>
-
-<a href="players.html">
-⭐
-Jwè
-</a> 
-
-<a href="profile.html">
-👤<br>
-Profil
-</a>
 
 </nav>
 
 
 
 
-
 <section class="hero">
 
+
 <h1>
-Byenveni sou ANALIZFOOT
+PREZI SCORE
 </h1>
 
+
 <p>
-Platfòm analiz foutbòl an Kreyòl
+Rezilta foutbòl an tan reyèl
 </p>
 
+
 <button>
-Kòmanse Analiz
+Gade Match yo
 </button>
+
 
 </section>
-
-
-<div class="search">
-
-🔍
-
-<input 
-id="searchBox"
-type="text" 
-placeholder="Chèche ekip oswa jwè..."
->
-
-<button onclick="searchFootball()">
-🔍 Chèche
-</button>
-
-</div>
-
-<div id="search-result"></div>
 
 
 
@@ -121,53 +102,31 @@ placeholder="Chèche ekip oswa jwè..."
 
 
 <h2>
-🔴 MATCH LIVE
+🔴 LIVE NOW
 </h2>
 
 
+<div class="match-item">
 
-<div class="match-card">
+
+<h3>
+⏱ Match Live
+</h3>
 
 
-<div class="club">
-
-⚪
-
-<p>
-Real Madrid
+<p id="liveHome">
+⚪ Ekip Lakay
 </p>
 
-</div>
 
-
-
-
-<div class="score">
-
-<strong>
-2 - 1
+<strong id="liveScore">
+0 - 0
 </strong>
 
-<span>
-⏱ 67'
-</span>
 
-
-</div>
-
-
-
-
-
-<div class="club">
-
-🔵
-
-<p>
-Barcelona
+<p id="liveAway">
+🔵 Ekip Vizitè
 </p>
-
-</div>
 
 
 
@@ -175,8 +134,6 @@ Barcelona
 
 
 </section>
-
-
 
 
 
@@ -191,7 +148,7 @@ Barcelona
 </h2>
 
 
-<div class="match-list" id="match-api">
+<div id="match-api">
 
 ⏳ Ap chèche match yo...
 
@@ -199,74 +156,32 @@ Barcelona
 
 
 </section>
-
-
-
-
-
-
-
-
-<section class="card ai-card">
-
+<section class="card">
 
 <h2>
-🤖 PREDIKSYON AI
+🏆 LIG POPILÈ
 </h2>
 
 
-
-<div class="ai-box">
-
-<p>
-⚪ Real Madrid
-</p>
-
-<b>
-55%
-</b>
-
-
+<div class="news-card">
+🏴 Premier League
 </div>
 
 
-
-<div class="ai-box">
-
-<p>
-🤝 Match nul
-</p>
-
-<b>
-25%
-</b>
-
-
+<div class="news-card">
+🇪🇸 La Liga
 </div>
 
 
-
-<div class="ai-box">
-
-<p>
-🔵 Barcelona
-</p>
-
-<b>
-20%
-</b>
-</div>
- 
-<div class="button" onclick="aiAnalyse()">
-
-🤖 FÈ ANALIZ AI
-
+<div class="news-card">
+🇮🇹 Serie A
 </div>
 
 
-<div id="ai-result"></div>
-
+<div class="news-card">
+🏆 Champions League
 </div>
+
 
 </section>
 
@@ -276,148 +191,43 @@ Barcelona
 
 <section class="card">
 
-
-<table class="table">
-
-<tr>
-
-<th>
-#
-</th>
-
-<th>
-Ekip
-</th>
-
-<th>
-MJ
-</th>
-
-<th>
-Pwen
-</th>
-
-</tr>
+<h2>
+🔥 DÈNYE REZILTA
+</h2>
 
 
-<tr>
+<div class="match-item">
 
-<td>
-🥇
-</td>
-
-<td>
+<p>
 ⚪ Real Madrid
-</td>
+</p>
 
-<td>
-38
-</td>
+<strong>
+2 - 1
+</strong>
 
-<td>
-85
-</td>
-
-</tr>
-
-
-
-<tr>
-
-<td>
-🥈
-</td>
-
-<td>
+<p>
 🔵 Barcelona
-</td>
+</p>
 
-<td>
-38
-</td>
-
-<td>
-78
-</td>
-
-</tr>
+</div>
 
 
+<div class="match-item">
 
-
-<tr>
-
-<td>
-🥉
-</td>
-
-<td>
-🔵 Manchester City
-</td>
-
-<td>
-38
-</td>
-
-<td>
-75
-</td>
-
-</tr>
-
-
-
-
-<tr>
-
-<td>
-4️⃣
-</td>
-
-<td>
+<p>
 🔴 Liverpool
-</td>
+</p>
 
-<td>
-38
-</td>
+<strong>
+1 - 0
+</strong>
 
-<td>
-74
-</td>
+<p>
+🔵 Manchester City
+</p>
 
-</tr>
-
-
-
-
-<tr>
-
-<td>
-5️⃣
-</td>
-
-<td>
-🔴 PSG
-</td>
-
-<td>
-38
-</td>
-
-<td>
-72
-</td>
-
-</tr>
-
-
- </table>
-
-
-
-
-
+</div>
 
 
 </section>
@@ -426,187 +236,31 @@ Pwen
 
 
 
-
-
-
 <section class="card">
 
-
 <h2>
-📰 DÈNYE NOUVÈL
+🤖 PREZI AI
 </h2>
 
 
 <div class="news-card">
 
-<h3>
-🔥 Real Madrid pare pou gwo match la
-</h3>
-
 <p>
-Analiz, nouvèl ak dènye enfòmasyon ekip la.
+Analiz match ak prediksyon entèlijan.
 </p>
 
-</div>
 
+<div class="button" onclick="location.href='ai.html'">
 
-<div class="news-card">
-
-<h3>
-⚽ PSG ap prepare nouvo transfè
-</h3>
-
-<p>
-Tout mouvman mache transfè foutbòl la.
-</p>
+🤖 Louvri AI
 
 </div>
 
 
-<div class="news-card">
-
-<h3>
-🏆 Champions League ap retounen
-</h3>
-
-<p>
-Gwo ekip Ewòp yo pare pou konpetisyon an.
-</p>
-
 </div>
-
-
-<div class="button" onclick="location.href='news.html'">
-
-📰 Tout nouvèl
-
-</div>
-
 
 
 </section>
-
-
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-⭐ TOP JWÈ
-</h2>
-
-
-<div class="player-card">
-
-<h3>
-🥇 Kylian Mbappé
-</h3>
-
-<p>
-⚽ Gòl: 28
-</p>
-
-<p>
-🎯 Asist: 10
-</p>
-
-<p>
-⭐ Rating: 9.2
-</p>
-
-</div>
-
-
-
-<div class="player-card">
-
-<h3>
-🥈 Vinícius Jr
-</h3>
-
-<p>
-⚽ Gòl: 22
-</p>
-
-<p>
-🎯 Asist: 12
-</p>
-
-<p>
-⭐ Rating: 8.9
-</p>
-
-</div>
-
-
-
-
-<div class="player-card">
-
-<h3>
-🥉 Lamine Yamal
-</h3>
-
-<p>
-⚽ Gòl: 15
-</p>
-
-<p>
-🎯 Asist: 9
-</p>
-
-<p>
-⭐ Rating: 8.8
-</p>
-
-</div>
-
-
-<div class="button" onclick="location.href='players.html'">
-
-⭐ Tout jwè yo
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<section class="card">
-
-<h2>
-👤 PROFIL
-</h2>
-
-<p>
-👤 Non:
-<span id="home-name">
-Vizitè
-</span>
-</p>
-
-<p>
-🏆 Nivo:
-<span id="home-level">
-Gratis
-</span>
-</p>
-
- </section>
-
-
 
 
 
@@ -620,25 +274,9 @@ Gratis
 
 
 
-
-<script src="./script.js"></script>
-<script src="./api.js"></script>
-<script>
-
-let name = localStorage.getItem("user");
-let level = localStorage.getItem("level");
+<script src="api.js"></script>
 
 
-if(name){
-document.getElementById("home-name").innerHTML = name;
-}
-
-
-if(level){
-document.getElementById("home-level").innerHTML = level;
-}
-
-</script>
 </body>
 
 </html>
