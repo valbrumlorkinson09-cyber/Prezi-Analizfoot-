@@ -159,45 +159,19 @@ Match sere
 🤖 PREDIKSYON AI
 </h2>
 
-
-<div class="ai-box">
-
-<p>
-⚪ Real Madrid genyen
-</p>
-
-<b>
-55%
-</b>
-
 </div>
+<p id="predictHome">⚪ Ekip Lakay genyen</p>
 
+<b>55%</b>
 
-<div class="ai-box">
+<p>🤝 Match nul</p>
 
-<p>
-🤝 Match nul
-</p>
+<b>25%</b>
 
-<b>
-25%
-</b>
+<p id="predictAway">🔵 Ekip Vizitè genyen</p>
 
+<b>20%</b>
 </div>
-
-
-<div class="ai-box">
-
-<p>
-🔵 Barcelona genyen
-</p>
-
-<b>
-20%
-</b>
-
-</div>
-
 
 </section>
 
@@ -320,6 +294,11 @@ home + " ap analize ak done API";
     document.getElementById("tacticHome").innerHTML = home;
 
 document.getElementById("tacticAway").innerHTML = away;
+document.getElementById("predictHome").innerHTML =
+"⚪ " + home + " genyen";
+
+document.getElementById("predictAway").innerHTML =
+"🔵 " + away + " genyen";    
   </script>
 </body>
 
