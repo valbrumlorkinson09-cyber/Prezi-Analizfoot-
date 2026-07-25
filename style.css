@@ -676,3 +676,72 @@ img{
 max-width:100%;
 object-fit:cover;
 }
+/* ===== TOP JWÈ PRO DESIGN ===== */
+
+.pro-player{
+
+background:#1b2d44;
+border-radius:20px;
+padding:20px;
+margin:15px 0;
+text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.3);
+transition:.3s;
+
+}
+
+
+.pro-player:hover{
+
+transform:translateY(-6px);
+
+}
+
+
+.pro-player img{
+
+width:160px;
+height:160px;
+object-fit:cover;
+border-radius:20px;
+border:3px solid #00ff88;
+margin-bottom:15px;
+
+}
+
+
+.pro-player h3{
+
+color:#00ff88;
+font-size:22px;
+margin-bottom:10px;
+
+}
+
+
+.pro-player p{
+
+font-size:16px;
+margin-bottom:12px;
+
+}
+
+
+.stats{
+
+display:flex;
+justify-content:space-around;
+gap:8px;
+flex-wrap:wrap;
+
+}
+
+
+.stats span{
+
+background:#07111f;
+padding:8px 12px;
+border-radius:12px;
+font-size:14px;
+
+}
