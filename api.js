@@ -94,7 +94,7 @@ console.log(error);
 
 
 loadMatches();
-function analyzeMatch(home, away, homeScore, awayScore){
+function analyzeMatch(home, away, homeScore, awayScore, homeId, awayId){
 
 localStorage.setItem("homeTeam", home);
 
@@ -103,6 +103,10 @@ localStorage.setItem("awayTeam", away);
 localStorage.setItem("homeScore", homeScore);
 
 localStorage.setItem("awayScore", awayScore);
+
+localStorage.setItem("homeId", homeId);
+
+localStorage.setItem("awayId", awayId);
 
 location.href="match.html";
 
