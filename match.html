@@ -38,6 +38,8 @@
 🔴 Live
 </h3>
 
+<img id="homeLogo" class="team-logo" src="" alt="">
+
 <p id="homeTeam">
 ⚪ Ekip Lakay
 </p>
@@ -45,6 +47,8 @@
 <strong id="score">
 0 - 0
 </strong>
+
+<img id="awayLogo" class="team-logo" src="" alt="">
 
 <p id="awayTeam">
 🔵 Ekip Vizitè
@@ -326,7 +330,22 @@ document.getElementById("defenseAwayScore").innerHTML = (85 - homeScore * 3) + "
 // Jwè kle
 document.getElementById("keyPlayers").innerHTML =
 "⭐ AI ap prepare analiz jwè kle pou <b>" + home + "</b> ak <b>" + away + "</b>.";
+let homeLogo = localStorage.getItem("homeLogo");
+let awayLogo = localStorage.getItem("awayLogo");
 
+
+if(homeLogo){
+
+document.getElementById("homeLogo").src = homeLogo;
+
+}
+
+
+if(awayLogo){
+
+document.getElementById("awayLogo").src = awayLogo;
+
+}
 </script>
 
 </body>
