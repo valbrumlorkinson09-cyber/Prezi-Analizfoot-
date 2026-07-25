@@ -80,7 +80,7 @@ Bon
 
 <div class="news-card">
 
-🔥 Atak: <span id="attackText">Analiz an kou...</span>
+🔥 Atak: <span id="attackText"</span>
 
 </div>
 
@@ -230,7 +230,25 @@ let home = localStorage.getItem("homeTeam");
 let away = localStorage.getItem("awayTeam");
 let homeScore = localStorage.getItem("homeScore");
 let awayScore = localStorage.getItem("awayScore");
+let analyse = "";
 
+if(Number(homeScore) > Number(awayScore)){
+
+analyse = "🔥 " + home + " gen avantaj selon AI.";
+
+}
+else if(Number(homeScore) < Number(awayScore)){
+
+analyse = "🔥 " + away + " gen avantaj selon AI.";
+
+}
+else{
+
+analyse = "🤝 Match la sanble byen balanse.";
+
+}
+
+document.getElementById("attackText").innerHTML = analyse;
 
 if(home){
 
@@ -289,7 +307,9 @@ document.getElementById("predictAway").innerHTML =
 "🔵 " + away + " genyen";  
 
  document.getElementById("keyPlayers").innerHTML =
-"⭐ Jwè kle pou <b>" + home + "</b> ak <b>" + away + "</b> ap disponib apre analiz avanse.";   
+"⭐ Jwè kle pou <b>" + home + "</b> ak <b>" + away + "</b> ap disponib apre analiz avanse."; 
+
+    
   </script>
 </body>
 
