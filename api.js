@@ -26,7 +26,7 @@ headers:{
 
 const data = await response.json();
 
-
+console.log(data);
 matchBox.innerHTML="";
 
 
