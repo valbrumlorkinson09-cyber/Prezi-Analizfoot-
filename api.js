@@ -14,7 +14,7 @@ matchBox.innerHTML = "⏳ Ap chèche match yo...";
 try{
 
 const response = await fetch(
-"https://v3.football.api-sports.io/fixtures?next=5",
+"https://v3.football.api-sports.io/fixtures?date=2026-07-25"
 {
 method:"GET",
 headers:{
