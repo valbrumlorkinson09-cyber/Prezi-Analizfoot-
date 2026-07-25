@@ -45,8 +45,8 @@
 ⚪ Ekip Lakay
 </p>
 
-<strong>
-2 - 1
+<strong id="score">
+0 - 0
 </strong>
 
 <p id="awayTeam">
@@ -271,7 +271,13 @@ document.getElementById("homeTeam").innerHTML = "⚪ " + home;
 if(away){
 document.getElementById("awayTeam").innerHTML = "🔵 " + away;
 }
+let homeScore = localStorage.getItem("homeScore");
+let awayScore = localStorage.getItem("awayScore");
 
+if(homeScore && awayScore){
+document.getElementById("score").innerHTML =
+homeScore + " - " + awayScore;
+}
 </script>
 </body>
 
