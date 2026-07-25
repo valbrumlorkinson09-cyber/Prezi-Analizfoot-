@@ -1,85 +1,65 @@
+const API_KEY = "17bb4ac5d7787d60de3ff0301ce0554b";
+
 const matchBox = document.getElementById("match-api");
-console.log(matchBox);
-const matches = [
 
-{
-home:"⚪ Real Madrid",
-away:"🔵 Barcelona",
-time:"20:00",
-status:"🔴 Live",
-score:"2 - 1"
-},
-
-{
-home:"🔵 Manchester City",
-away:"🔴 Liverpool",
-time:"18:30",
-status:"⏳ Pa kòmanse",
-score:"-"
-},
-
-{
-home:"🔴 PSG",
-away:"⚪ Marseille",
-time:"21:00",
-status:"⏳ Pa kòmanse",
-score:"-"
-}
-
-];
-
-
-
-function loadMatches(){
+async function loadMatches(){
 
 if(!matchBox){
 return;
 }
 
+matchBox.innerHTML = "⏳ Ap chèche match yo...";
+
+
+try{
+
+const response = await fetch(
+"https://v3.football.api-sports.io/fixtures?next=5",
+{
+method:"GET",
+headers:{
+"x-apisports-key": API_KEY
+}
+}
+);
+
+
+const data = await response.json();
+
 
 matchBox.innerHTML="";
 
 
-matches.forEach(match=>{
+data.response.forEach(match=>{
 
 
 matchBox.innerHTML += `
 
 <div class="match-item">
 
-
 <h3>
-${match.status}
+⚽ ${match.league.name}
 </h3>
 
-
 <p>
-${match.home}
+${match.teams.home.name}
 </p>
-
 
 <strong>
-${match.score}
+${match.goals.home ?? 0} - ${match.goals.away ?? 0}
 </strong>
 
-
 <p>
-${match.away}
+${match.teams.away.name}
 </p>
 
-
 <p>
-🕒 ${match.time}
+🕒 ${match.fixture.date}
 </p>
-
-
 
 <div class="button" onclick="location.href='match.html'">
-
 📊 Analize Match
-
 </div>
-
 
 </div>
 
@@ -90,6 +70,17 @@ ${match.away}
 
 }
 
+catch(error){
+
+matchBox.innerHTML =
+"❌ Erè koneksyon API";
+
+console.log(error);
+
+}
+
+
+}
 
 
 loadMatches();
