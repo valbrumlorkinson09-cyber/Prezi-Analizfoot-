@@ -745,3 +745,34 @@ border-radius:12px;
 font-size:14px;
 
 }
+.team-logo{
+width:55px;
+height:55px;
+object-fit:contain;
+}
+
+.teams{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+}
+
+.team{
+width:35%;
+text-align:center;
+}
+
+.score-box{
+width:30%;
+text-align:center;
+font-weight:bold;
+font-size:22px;
+}
+
+.score-box small{
+display:block;
+margin-top:5px;
+font-size:14px;
+color:#aaa;
+}
