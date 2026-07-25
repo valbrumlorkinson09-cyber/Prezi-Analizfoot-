@@ -80,8 +80,7 @@ Bon
 
 <div class="news-card">
 
-🔥 Atak:
-Real Madrid pi fò
+🔥 Atak: <span id="attackText">Analiz an kou...</span>
 
 </div>
 
@@ -105,28 +104,21 @@ Match sere
 
 <div class="news-card">
 
-⚪ Real Madrid
-
-<p>
-🔥 Dènye 5 match:
-W W W D W
-</p>
-
+<div>
+⚪ <span id="formHome">Ekip Lakay</span>
+<br>
+🔥 Dènye 5 match: W W W D W
 </div>
 
 
-<div class="news-card">
+<br>
 
-🔵 Barcelona
 
-<p>
-🔥 Dènye 5 match:
-W W D L W
-</p>
-
+<div>
+🔵 <span id="formAway">Ekip Vizitè</span>
+<br>
+🔥 Dènye 5 match: W W D L W
 </div>
-
-
 </section>
 
 
@@ -157,15 +149,11 @@ Barcelona: 82/100
 
 🛡️ Defans
 
-<p>
-Real Madrid: 85/100
-</p>
+<span id="attackHome">Ekip Lakay</span>: 88/100
 
-<p>
-Barcelona: 80/100
-</p>
+<br>
 
-</div>
+<span id="attackAway">Ekip Vizitè</span>: 82/100
 
 
 </section>
@@ -312,7 +300,30 @@ homeScore + " - " + awayScore;
 
 }
 
+let home = localStorage.getItem("homeTeam");
+let away = localStorage.getItem("awayTeam");
 
+
+if(home){
+
+document.getElementById("formHome").innerHTML = home;
+
+document.getElementById("attackHome").innerHTML = home;
+
+}
+
+
+if(away){
+
+document.getElementById("formAway").innerHTML = away;
+
+document.getElementById("attackAway").innerHTML = away;
+
+}
+
+
+document.getElementById("attackText").innerHTML =
+home + " ap analize ak done API";
   </script>
 </body>
 
