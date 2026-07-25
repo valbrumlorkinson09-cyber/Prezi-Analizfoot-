@@ -2,72 +2,87 @@ const API_KEY = "17bb4ac5d7787d60de3ff0301ce0554b";
 
 const matchBox = document.getElementById("match-api");
 
-async function loadMatches(){
+async function loadMatches() {
 
-if(!matchBox){
-return;
-}
+  if (!matchBox) return;
 
-matchBox.innerHTML = "TEST API";
+  matchBox.innerHTML = "⏳ Chajman match yo...";
 
+  try {
 
-try{
+    const response = await fetch(
+      "https://v3.football.api-sports.io/fixtures?live=all",
+      {
+        method: "GET",
+        headers: {
+          "x-apisports-key": API_KEY
+        }
+      }
+    );
 
-const response = await fetch(
-"https://v3.football.api-sports.io/fixtures?live=all",
-{
-method:"GET",
-headers:{
-"x-apisports-key": API_KEY
-}
-}
-);
+    const data = await response.json();
 
+    matchBox.innerHTML = "";
 
-const data = await response.json();
-console.log(data);
-console.log("STATUS:", response.status);
-matchBox.innerHTML="";
+    if (!data.response || data.response.length === 0) {
+      matchBox.innerHTML = "⚪ Pa gen match live kounya.";
+      return;
+    }
 
+    data.response.forEach(match => {
 
-if(!data.response || data.response.length === 0){
+      let minute = match.fixture.status.elapsed ?? "--";
 
-matchBox.innerHTML = "⚠️ Pa gen match live kounya";
+      let scoreHome = match.goals.home ?? 0;
+      let scoreAway = match.goals.away ?? 0;
 
-return;
-
-}
-
-
-data.response.forEach(match=>{
-
-
-matchBox.innerHTML += `
+      matchBox.innerHTML += `
 
 <div class="match-item">
 
 <h3>
-⚽ ${match.league.name}
+🏆 ${match.league.name}
 </h3>
 
-<p>
-${match.teams.home.name}
-</p>
+<div class="teams">
 
-<strong>
-${match.goals.home ?? 0} - ${match.goals.away ?? 0}
-</strong>
+<div class="team">
 
-<p>
-${match.teams.away.name}
-</p>
+<img src="${match.teams.home.logo}" class="team-logo">
 
-<p>
-🕒 ${match.fixture.date}
-</p>
+<p>${match.teams.home.name}</p>
 
+</div>
 
-<div class="button" onclick="analyzeMatch('${match.teams.home.name}','${match.teams.away.name}','${match.goals.home ?? 0}','${match.goals.away ?? 0}','${match.teams.home.id}','${match.teams.away.id}')">
+<div class="score-box">
+
+<strong>${scoreHome} - ${scoreAway}</strong>
+
+<br>
+
+<small>⏱ ${minute}'</small>
+
+</div>
+
+<div class="team">
+
+<img src="${match.teams.away.logo}" class="team-logo">
+
+<p>${match.teams.away.name}</p>
+
+</div>
+
+</div>
+
+<div class="button"
+onclick="analyzeMatch(
+'${match.teams.home.name}',
+'${match.teams.away.name}',
+'${scoreHome}',
+'${scoreAway}',
+'${match.teams.home.id}',
+'${match.teams.away.id}'
+)">
 📊 Analize Match
 </div>
 
@@ -75,23 +90,17 @@ ${match.teams.away.name}
 
 `;
 
-});
+    });
 
+  } catch (error) {
 
-}
+    console.log(error);
 
-catch(error){
+    matchBox.innerHTML = "❌ Erè API.";
 
-matchBox.innerHTML =
-"❌ Erè koneksyon API";
-
-console.log(error);
+  }
 
 }
-
-
-}
-
 
 loadMatches();
 async function getTeamForm(teamId){
@@ -114,32 +123,28 @@ let form = [];
 
 data.response.forEach(match=>{
 
-let isHome = match.teams.home.id == teamId;
+const isHome = match.teams.home.id == teamId;
 
-let teamGoals = isHome ? match.goals.home : match.goals.away;
-let opponentGoals = isHome ? match.goals.away : match.goals.home;
-
+const teamGoals = isHome ? match.goals.home : match.goals.away;
+const opponentGoals = isHome ? match.goals.away : match.goals.home;
 
 if(teamGoals > opponentGoals){
 
-form.push("W");
+form.push("🟢 W");
 
 }
-
 else if(teamGoals < opponentGoals){
 
-form.push("L");
+form.push("🔴 L");
 
 }
-
 else{
 
-form.push("D");
+form.push("🟡 D");
 
 }
 
 });
-
 
 return form.join(" ");
 
@@ -154,21 +159,21 @@ return "N/A";
 }
 
 }
+
+
+
 function analyzeMatch(home, away, homeScore, awayScore, homeId, awayId){
 
 localStorage.setItem("homeTeam", home);
-
 localStorage.setItem("awayTeam", away);
 
 localStorage.setItem("homeScore", homeScore);
-
 localStorage.setItem("awayScore", awayScore);
 
 localStorage.setItem("homeId", homeId);
-
 localStorage.setItem("awayId", awayId);
 
-location.href="match.html";
+location.href = "match.html";
 
 }
 async function loadLiveScore(){
@@ -179,7 +184,6 @@ if(!liveHome){
 return;
 }
 
-
 try{
 
 const response = await fetch(
@@ -187,51 +191,46 @@ const response = await fetch(
 {
 method:"GET",
 headers:{
-"x-apisports-key": API_KEY
+"x-apisports-key":API_KEY
 }
 }
 );
 
-
 const data = await response.json();
 
-
-if(!data.response || data.response.length === 0){
+if(!data.response || data.response.length===0){
 
 document.getElementById("liveStatus").innerHTML =
-"⚪ Pa gen match live kounya";
+"⚪ Pa gen match live";
 
 return;
 
 }
 
-
-let match = data.response[0];
-
+const match = data.response[0];
 
 document.getElementById("liveStatus").innerHTML =
-"🔴 LIVE " + match.fixture.status.elapsed + "'";
-
+"🔴 LIVE " + (match.fixture.status.elapsed ?? "--") + "'";
 
 document.getElementById("liveHome").innerHTML =
 "⚪ " + match.teams.home.name;
 
-
 document.getElementById("liveAway").innerHTML =
 "🔵 " + match.teams.away.name;
 
-
 document.getElementById("liveScore").innerHTML =
-match.goals.home + " - " + match.goals.away;
+(match.goals.home ?? 0) + " - " + (match.goals.away ?? 0);
 
+const minute = document.getElementById("liveMinute");
 
-document.getElementById("liveMinute").innerHTML =
-"⏱ " + match.fixture.status.elapsed + "'";
+if(minute){
 
+minute.innerHTML =
+"⏱ " + (match.fixture.status.elapsed ?? "--") + "'";
 
 }
 
-catch(error){
+}catch(error){
 
 console.log(error);
 
@@ -239,5 +238,14 @@ console.log(error);
 
 }
 
+loadLiveScore();
+
+/* Rafrechi chak 30 segonn */
+
+setInterval(()=>{
+
+loadMatches();
 
 loadLiveScore();
+
+},30000);
