@@ -8,7 +8,7 @@ if(!matchBox){
 return;
 }
 
-matchBox.innerHTML = "⏳ Ap chèche match yo...";
+matchBox.innerHTML = "TEST API";
 
 
 try{
