@@ -171,3 +171,73 @@ localStorage.setItem("awayId", awayId);
 location.href="match.html";
 
 }
+async function loadLiveScore(){
+
+const liveHome = document.getElementById("liveHome");
+
+if(!liveHome){
+return;
+}
+
+
+try{
+
+const response = await fetch(
+"https://v3.football.api-sports.io/fixtures?live=all",
+{
+method:"GET",
+headers:{
+"x-apisports-key": API_KEY
+}
+}
+);
+
+
+const data = await response.json();
+
+
+if(!data.response || data.response.length === 0){
+
+document.getElementById("liveStatus").innerHTML =
+"⚪ Pa gen match live kounya";
+
+return;
+
+}
+
+
+let match = data.response[0];
+
+
+document.getElementById("liveStatus").innerHTML =
+"🔴 LIVE " + match.fixture.status.elapsed + "'";
+
+
+document.getElementById("liveHome").innerHTML =
+"⚪ " + match.teams.home.name;
+
+
+document.getElementById("liveAway").innerHTML =
+"🔵 " + match.teams.away.name;
+
+
+document.getElementById("liveScore").innerHTML =
+match.goals.home + " - " + match.goals.away;
+
+
+document.getElementById("liveMinute").innerHTML =
+"⏱ " + match.fixture.status.elapsed + "'";
+
+
+}
+
+catch(error){
+
+console.log(error);
+
+}
+
+}
+
+
+loadLiveScore();
