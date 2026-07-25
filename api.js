@@ -67,7 +67,7 @@ ${match.teams.away.name}
 </p>
 
 
-<div class="button" onclick="analyzeMatch('${match.teams.home.name}','${match.teams.away.name}')">
+<div class="button" onclick="analyzeMatch('${match.teams.home.name}','${match.teams.away.name}','${match.goals.home ?? 0}','${match.goals.away ?? 0}')">
 📊 Analize Match
 </div>
 
@@ -94,11 +94,15 @@ console.log(error);
 
 
 loadMatches();
-function analyzeMatch(home, away){
+function analyzeMatch(home, away, homeScore, awayScore){
 
 localStorage.setItem("homeTeam", home);
 
 localStorage.setItem("awayTeam", away);
+
+localStorage.setItem("homeScore", homeScore);
+
+localStorage.setItem("awayScore", awayScore);
 
 location.href="match.html";
 
