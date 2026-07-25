@@ -94,6 +94,66 @@ console.log(error);
 
 
 loadMatches();
+async function getTeamForm(teamId){
+
+try{
+
+const response = await fetch(
+`https://v3.football.api-sports.io/fixtures?team=${teamId}&last=5`,
+{
+method:"GET",
+headers:{
+"x-apisports-key": API_KEY
+}
+}
+);
+
+const data = await response.json();
+
+let form = [];
+
+data.response.forEach(match=>{
+
+let isHome = match.teams.home.id == teamId;
+
+let teamGoals = isHome ? match.goals.home : match.goals.away;
+let opponentGoals = isHome ? match.goals.away : match.goals.home;
+
+
+if(teamGoals > opponentGoals){
+
+form.push("W");
+
+}
+
+else if(teamGoals < opponentGoals){
+
+form.push("L");
+
+}
+
+else{
+
+form.push("D");
+
+}
+
+});
+
+
+return form.join(" ");
+
+}
+
+catch(error){
+
+console.log(error);
+
+return "N/A";
+
+}
+
+}
 function analyzeMatch(home, away, homeScore, awayScore, homeId, awayId){
 
 localStorage.setItem("homeTeam", home);
