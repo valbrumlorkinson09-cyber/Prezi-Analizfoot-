@@ -39,24 +39,19 @@
 
 <div class="match-item">
 
-<h3>
-🔴 Live
-</h3>
+<h3>🔴 Live</h3>
 
-
-<h2>
-⚪ Real Madrid
-<br>
-2 - 1
-<br>
-🔵 Barcelona
-</h2>
-
-
-<p>
-⏱ 67 minit
+<p id="homeTeam">
+⚪ Ekip Lakay
 </p>
 
+<strong>
+2 - 1
+</strong>
+
+<p id="awayTeam">
+🔵 Ekip Vizitè
+</p>
 
 </div>
 
@@ -262,7 +257,22 @@ Barcelona: 80/100
 
 </footer>
 
+<script>
 
+let home = localStorage.getItem("homeTeam");
+let away = localStorage.getItem("awayTeam");
+
+
+if(home){
+document.getElementById("homeTeam").innerHTML = "⚪ " + home;
+}
+
+
+if(away){
+document.getElementById("awayTeam").innerHTML = "🔵 " + away;
+}
+
+</script>
 </body>
 
 </html>
