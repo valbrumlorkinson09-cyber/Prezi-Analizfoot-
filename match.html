@@ -258,7 +258,8 @@ const home = localStorage.getItem("homeTeam") || "Ekip Lakay";
 const away = localStorage.getItem("awayTeam") || "Ekip Vizitè";
 const homeScore = Number(localStorage.getItem("homeScore") || 0);
 const awayScore = Number(localStorage.getItem("awayScore") || 0);
-
+const homeId = localStorage.getItem("homeId");
+const awayId = localStorage.getItem("awayId");
 // Detay match
 document.getElementById("homeTeam").innerHTML = "⚪ " + home;
 document.getElementById("awayTeam").innerHTML = "🔵 " + away;
@@ -346,7 +347,29 @@ if(awayLogo){
 document.getElementById("awayLogo").src = awayLogo;
 
 }
-</script>
+  async function loadForms(){
 
+if(homeId && awayId){
+
+let homeForm = await getTeamForm(homeId);
+
+let awayForm = await getTeamForm(awayId);
+
+
+document.getElementById("homeForm").innerHTML =
+"🔥 Dènye 5 match: " + homeForm;
+
+
+document.getElementById("awayForm").innerHTML =
+"🔥 Dènye 5 match: " + awayForm;
+
+}
+
+}
+
+
+loadForms();
+</script>
+<script src="api.js"></script>
 </body>
 </html>
