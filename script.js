@@ -364,3 +364,30 @@ document.getElementById("ai-result").innerHTML =
 "🤖 AI ap analize match la...";
 
                        }
+function loginUser(){
+
+let user =
+document.getElementById("loginUser").value;
+
+let pass =
+document.getElementById("loginPass").value;
+
+if(
+user == localStorage.getItem("user")
+&&
+pass == localStorage.getItem("pass")
+){
+
+localStorage.setItem("logged","yes");
+
+location.href="profile.html";
+
+}
+else{
+
+document.getElementById("loginMessage").innerHTML =
+"❌ Non oswa modpas pa bon";
+
+}
+
+}
