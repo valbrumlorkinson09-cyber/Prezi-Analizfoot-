@@ -969,3 +969,16 @@ grid-template-columns:1fr;
 }
 
 }
+.match-item{
+
+cursor:pointer;
+transition:0.3s;
+
+}
+
+
+.match-item:hover{
+
+transform:scale(1.03);
+
+}
