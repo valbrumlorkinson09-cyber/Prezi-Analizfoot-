@@ -347,3 +347,4 @@ console.log(error);
 loadMatches();
 
 loadLive();
+console.log("NOUVO API PREZI SCORE AKTIF");
