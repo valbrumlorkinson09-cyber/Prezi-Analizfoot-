@@ -73,17 +73,10 @@ async function loadMatches() {
 </div>
 
 </div>
-
-<div class="button"
-onclick="analyzeMatch(
-'${match.teams.home.name}',
-'${match.teams.away.name}',
-'${scoreHome}',
-'${scoreAway}',
-'${match.teams.home.id}',
-'${match.teams.away.id}'
-)">
+<button onclick="openMatch('${home}', '${away}', '${score}', '${league}', '${minute}')">
 📊 Analize Match
+</button>
+<div class=
 </div>
 
 </div>
@@ -251,3 +244,15 @@ loadMatches();
 loadLiveScore();
 
 },30000);
+function openMatch(home, away, score, league, minute){
+
+localStorage.setItem("homeTeam", home);
+localStorage.setItem("awayTeam", away);
+localStorage.setItem("score", score);
+localStorage.setItem("league", league);
+localStorage.setItem("minute", minute);
+
+
+window.location.href = "match-details.html";
+
+}
