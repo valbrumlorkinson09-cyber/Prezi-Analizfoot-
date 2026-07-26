@@ -2,9 +2,10 @@
 // PREZI SCORE API FINAL
 // ===============================
 
-
 const API_KEY = "17bb4ac5d7787d60de3ff0301ce0554b";
-console.log("PREZI API START");
+
+console.log("PREZI SCORE API KEY CHARGED");
+
 
 const API_URL = "https://v3.football.api-sports.io/fixtures";
 
