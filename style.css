@@ -846,3 +846,126 @@ progress{
 width:100%;
 height:12px;
 }
+/* =========================
+   MATCH DETAILS DESIGN
+========================= */
+
+.match-header {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg,#111827,#1e3a8a);
+    border-radius: 20px;
+    margin: 15px;
+}
+
+.match-header h1 {
+    font-size: 45px;
+    margin: 15px 0;
+    color: white;
+}
+
+.team {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.live-badge {
+    display: inline-block;
+    background: red;
+    padding: 8px 18px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* STATISTIK */
+
+.stats-box {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    margin: 15px;
+}
+
+
+.stat {
+    background:#111827;
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    color:white;
+}
+
+
+.stat h3 {
+    color:#38bdf8;
+}
+
+
+/* AI CARD */
+
+.ai-card {
+
+    margin:15px;
+    padding:20px;
+    border-radius:20px;
+    background:#0f172a;
+    color:white;
+    border:1px solid #334155;
+
+}
+
+
+.ai-card h2 {
+
+    color:#22c55e;
+
+}
+
+
+/* TIMELINE */
+
+.timeline {
+
+    margin:15px;
+
+}
+
+
+.event {
+
+    background:#111827;
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:10px;
+    color:white;
+
+}
+
+
+/* PLAYER */
+
+.player-card {
+
+    background:#111827;
+    color:white;
+    padding:15px;
+    margin:15px;
+    border-radius:15px;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.stats-box{
+
+grid-template-columns:1fr;
+
+}
+
+}
