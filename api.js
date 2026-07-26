@@ -15,7 +15,7 @@ const API_URL = "https://v3.football.api-sports.io/fixtures";
 // LOAD MATCH JODI A
 // ===============================
 
-async async function loadMatches(){
+async function loadMatches(){
 
 const box = document.getElementById("match-api");
 
