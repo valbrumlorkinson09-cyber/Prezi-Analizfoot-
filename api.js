@@ -49,20 +49,76 @@ box.innerHTML = "";
 
 if(!data.response || data.response.length === 0){
 
-box.innerHTML =
-`
-<div class="news-card">
+const next = await fetch(
+`${API_URL}?next=10`,
+{
+headers:{
+"x-apisports-key":API_KEY
+}
+}
+);
 
-<h3>
-⚽ Pa gen match jodi a
-</h3>
+const nextData = await next.json();
+
+
+if(!nextData.response || nextData.response.length === 0){
+
+box.innerHTML =
+"⚽ Pa gen match disponib";
+
+return;
+
+}
+
+
+box.innerHTML = "";
+
+
+nextData.response.forEach(match=>{
+
+
+box.innerHTML += `
+
+<div class="match-item">
+
+<h4>
+🏆 ${match.league.name}
+</h4>
 
 <p>
-🔥 Ap chèche match k ap vini yo...
+⚪ ${match.teams.home.name}
 </p>
 
+<strong>
+VS
+</strong>
+
+<p>
+🔵 ${match.teams.away.name}
+</p>
+
+<p>
+📅 ${match.fixture.date.substring(0,10)}
+</p>
+
+<button onclick="openMatch(
+'${match.teams.home.name}',
+'${match.teams.away.name}',
+'0 - 0',
+'${match.league.name}',
+'--'
+)">
+
+📊 Analize Match
+
+</button>
+
 </div>
+
 `;
+
+});
+
 
 return;
 
