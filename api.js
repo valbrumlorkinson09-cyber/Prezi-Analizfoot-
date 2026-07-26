@@ -15,156 +15,108 @@ const API_URL = "https://v3.football.api-sports.io/fixtures";
 // LOAD MATCH JODI A
 // ===============================
 
-async function loadMatches(){
+async async function loadMatches(){
 
-    const box = document.getElementById("match-api");
+const box = document.getElementById("match-api");
 
-    if(!box){
-        return;
-    }
+if(!box){
+    return;
+}
 
-
-    try{
-
-        const today = new Date().toLocaleDateString("en-CA");
+box.innerHTML = "⏳ Chajman match yo...";
 
 
-        const response = await fetch(
-            `${API_URL}?date=${today}`,
-            {
+try{
 
-                method:"GET",
+const response = await fetch(
+`${API_URL}?date=${new Date().toLocaleDateString("en-CA")}`,
+{
+method:"GET",
+headers:{
+"x-apisports-key":API_KEY
+}
+}
+);
 
-                headers:{
-                    "x-apisports-key":API_KEY
-                }
 
-            }
-        );
+const data = await response.json();
 
-
-        const data = await response.json();
 console.log(data);
 
-        box.innerHTML="";
+
+box.innerHTML = "";
 
 
-        if(!data.response || data.response.length===0){
+if(!data.response || data.response.length === 0){
 
-            box.innerHTML =
-            "⚽ Pa gen match disponib";
+box.innerHTML =
+"⚽ Pa gen match jodi a";
 
-            return;
+return;
 
-        }
-
-
-
-        data.response.slice(0,10)
-        .forEach(match=>{
-
-
-            const home =
-            match.teams.home.name;
-
-
-            const away =
-            match.teams.away.name;
-
-
-            const homeLogo =
-            match.teams.home.logo;
-
-
-            const awayLogo =
-            match.teams.away.logo;
+}
 
 
 
-            const score =
-            `${match.goals.home ?? 0} - ${match.goals.away ?? 0}`;
+data.response.slice(0,10).forEach(match=>{
 
 
-            const minute =
-            match.fixture.status.elapsed 
-            ? match.fixture.status.elapsed+"'"
-            : "--";
+box.innerHTML += `
+
+<div class="match-item">
+
+<h4>
+🏆 ${match.league.name}
+</h4>
+
+<p>
+⚪ ${match.teams.home.name}
+</p>
+
+<strong>
+${match.goals.home ?? 0} - ${match.goals.away ?? 0}
+</strong>
+
+<p>
+🔵 ${match.teams.away.name}
+</p>
+
+<p>
+⏱ ${match.fixture.status.elapsed ?? "--"}'
+</p>
+
+<button onclick="openMatch(
+'${match.teams.home.name}',
+'${match.teams.away.name}',
+'${match.goals.home ?? 0} - ${match.goals.away ?? 0}',
+'${match.league.name}',
+'${match.fixture.status.elapsed ?? "--"}'
+)">
+
+📊 Analize Match
+
+</button>
 
 
+</div>
 
-            const league =
-            match.league.name;
+`;
 
-
-
-            box.innerHTML += `
-
-
-            <div class="match-item">
-
-
-            <h4>
-            🏆 ${league}
-            </h4>
-
-
-            <p>
-            ⚪ ${home}
-            </p>
-
-
-            <strong>
-            ${score}
-            </strong>
-
-
-            <p>
-            🔵 ${away}
-            </p>
-
-
-            <p>
-            ⏱️ ${minute}
-            </p>
-
-
-
-            <button onclick="openMatch(
-            '${home}',
-            '${away}',
-            '${score}',
-            '${league}',
-            '${minute}'
-            )">
-
-            📊 Analize Match
-
-            </button>
-
-
-            </div>
-
-
-            `;
-
-
-        });
-
-
-    }
-
-    catch(error){
-
-    console.log("API ERROR:", error);
-
-    box.innerHTML =
-    "❌ API pa konekte";
-
-    }
+});
 
 
 }
 
+catch(error){
+
+console.log(error);
+
+box.innerHTML =
+"❌ Erè API Match";
+
+}
+
+}
 
 
 
