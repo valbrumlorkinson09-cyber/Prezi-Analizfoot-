@@ -391,3 +391,8 @@ document.getElementById("loginMessage").innerHTML =
 }
 
 }
+document.getElementById("home-logo").src =
+"https://media.api-sports.io/football/teams/238.png";
+
+document.getElementById("away-logo").src =
+"https://media.api-sports.io/football/teams/1619.png";
