@@ -2,7 +2,7 @@
 // PREZI SCORE API FINAL
 // ===============================
 
-const API_KEY = "17bb4ac5d7787d60de3ff0301ce0554b";
+const API_KEY = "7172cfb71994762ee5e6b525ed41d571";
 
 console.log("PREZI SCORE API KEY CHARGED");
 
