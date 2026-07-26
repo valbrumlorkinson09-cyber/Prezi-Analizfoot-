@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PREZI SCORE - Match</title>
+<title>PREZI SCORE - Match Details</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -26,31 +26,104 @@
 
 
 
+<nav class="menu">
+
+<a href="index.html">
+🏠<br>Home
+</a>
+
+<a href="live.html">
+🔴<br>Live
+</a>
+
+<a href="matches.html">
+⚽<br>Matches
+</a>
+
+<a href="ai.html">
+🤖<br>AI
+</a>
+
+</nav>
+
+
+
+
+
 <!-- MATCH HEADER -->
 
-<div class="match-header">
+<section class="match-header">
+
 
 <span class="live-badge">
 🔴 LIVE
 </span>
 
 
-<div class="match-item" onclick="openMatch()">
- <p id="homeTeam">
+<p id="league">
+🏆 Lig
+</p>
+
+
+<p class="team" id="homeTeam">
 ⚪ Ekip Lakay
 </p>
 
 
-<h1 id="matchScore">
+<h1 class="score-live" id="matchScore">
 0 - 0
 </h1>
 
 
-<p id="awayTeam">
+<p class="team" id="awayTeam">
 🔵 Ekip Vizitè
-</p> 
+</p>
 
-</div>
+
+<p id="minute">
+⏱️ --'
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ANALIZ AI -->
+
+<section class="analysis">
+
+
+<h3>
+📊 ANALIZ MATCH AI
+</h3>
+
+
+<p>
+⚽ Fòm ekip: Bon
+</p>
+
+
+<p>
+🔥 Atak:
+AI ap analize fòs ofansif yo.
+</p>
+
+
+<p>
+🛡️ Defans:
+AI ap analize liy defans yo.
+</p>
+
+
+</section>
+
+
+
 
 
 
@@ -58,60 +131,98 @@
 
 <!-- STATISTIK -->
 
-<section class="stats-box">
+<section class="card">
+
+
+<h2>
+📊 ESTATISTIK MATCH
+</h2>
+
+
+<div class="stats-box">
 
 
 <div class="stat">
+<h3>⚽ Possession</h3>
+<p>--% | --%</p>
+</div>
 
-<h3>
-⚽ Possession
-</h3>
 
-<p>
-45% | 55%
-</p>
+<div class="stat">
+<h3>🎯 Shots</h3>
+<p>-- | --</p>
+</div>
+
+
+<div class="stat">
+<h3>🥅 On Target</h3>
+<p>-- | --</p>
+</div>
+
+
+<div class="stat">
+<h3>🚩 Corners</h3>
+<p>-- | --</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- PREDICTION -->
+
+<section class="prediction-box">
+
+
+<h2>
+🤖 PREZI AI PREDICTION
+</h2>
+
+
+<div class="prediction-item">
+
+<span>
+🏠 Ekip Lakay genyen
+</span>
+
+<span>
+20%
+</span>
 
 </div>
 
 
 
-<div class="stat">
+<div class="prediction-item">
 
-<h3>
-🎯 Shots
-</h3>
+<span>
+🤝 Match nul
+</span>
 
-<p>
-8 | 12
-</p>
-
-</div>
-
-
-
-<div class="stat">
-
-<h3>
-🥅 On Target
-</h3>
-
-<p>
-3 | 6
-</p>
+<span>
+25%
+</span>
 
 </div>
 
 
 
-<div class="stat">
+<div class="prediction-item">
 
-<h3>
-🚩 Corners
-</h3>
+<span>
+🚀 Ekip Vizitè genyen
+</span>
 
-<p>
-3 | 6
-</p>
+<span>
+55%
+</span>
 
 </div>
 
@@ -122,72 +233,30 @@
 
 
 
-<!-- AI ANALYSIS -->
-
-
-<div class="ai-card">
-
-
-<h2>
-🤖 PREZI AI ANALIZ
-</h2>
-
-
-<p>
-🔥 Atak:
-🔵 Oriente Petrolero gen avantaj.
-</p>
-
-
-<p>
-🛡️ Defans:
-🔵 Oriente Petrolero pi solid.
-</p>
-
-
-<p>
-📈 Dominasyon AI:
-85%
-</p>
-
-
-</div>
 
 
 
+<!-- FORM -->
 
-
-
-<!-- PREDICTION -->
-
-
-<div class="ai-card">
+<section class="card">
 
 
 <h2>
-🤖 PREDIKSYON AI
+📈 FÒM EKIP YO
 </h2>
 
 
-<p>
-⚪ Independiente Petrolero:
-15%
+<p id="formHome">
+⚪ Ekip Lakay: W W D L W
 </p>
 
 
-<p>
-🤝 Match nul:
-15%
+<p id="formAway">
+🔵 Ekip Vizitè: D W W L D
 </p>
 
 
-<p>
-🔵 Oriente Petrolero:
-70%
-</p>
-
-
-</div>
+</section>
 
 
 
@@ -197,12 +266,11 @@
 
 <!-- TIMELINE -->
 
-
 <section class="timeline">
 
 
 <h2>
-🔴 LIVE EVENTS
+🔴 EVENMAN LIVE
 </h2>
 
 
@@ -212,14 +280,13 @@
 
 <br>
 
-⚽ GOAL
+⚽ Goal
 
 <br>
 
-🔵 Oriente Petrolero
+AI ap swiv match la...
 
 </div>
-
 
 
 <div class="event">
@@ -243,8 +310,7 @@
 
 <!-- PLAYERS -->
 
-
-<div class="player-card">
+<section class="player-card">
 
 
 <h2>
@@ -253,24 +319,12 @@
 
 
 <p>
-⚽ Atakan:
-AI ap analize...
+🤖 AI ap prepare analiz jwè kle yo.
 </p>
 
 
-<p>
-🎯 Milieu:
-AI ap analize...
-</p>
+</section>
 
-
-<p>
-🛡️ Defans:
-AI ap analize...
-</p>
-
-
-</div>
 
 
 
@@ -283,7 +337,36 @@ AI ap analize...
 
 </footer>
 
-u
+
+
+
+
+<script>
+
+
+document.getElementById("homeTeam").innerHTML =
+"⚪ " + (localStorage.getItem("homeTeam") || "Ekip Lakay");
+
+
+document.getElementById("awayTeam").innerHTML =
+"🔵 " + (localStorage.getItem("awayTeam") || "Ekip Vizitè");
+
+
+document.getElementById("matchScore").innerHTML =
+localStorage.getItem("matchScore") || "0 - 0";
+
+
+document.getElementById("league").innerHTML =
+"🏆 " + (localStorage.getItem("league") || "Lig");
+
+
+document.getElementById("minute").innerHTML =
+"⏱️ " + (localStorage.getItem("minute") || "--'");
+
+
+</script>
+
+
 
 </body>
 
