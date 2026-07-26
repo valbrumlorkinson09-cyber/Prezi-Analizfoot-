@@ -44,7 +44,7 @@ async function loadMatches(){
 
 
         const data = await response.json();
-
+console.log(data);
 
         box.innerHTML="";
 
@@ -155,10 +155,10 @@ async function loadMatches(){
 
     catch(error){
 
-        console.log(error);
+    console.log("API ERROR:", error);
 
-        box.innerHTML =
-        "❌ Erè koneksyon API";
+    box.innerHTML =
+    "❌ API pa konekte";
 
     }
 
