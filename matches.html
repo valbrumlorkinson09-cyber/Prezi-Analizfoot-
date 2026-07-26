@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ht">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PREZI SCORE - Matches</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="top">
+
+<div class="logo">
+⚽ PREZI SCORE
+</div>
+
+</header>
+
+
+
+
+<nav class="menu">
+
+
+<a href="index.html">
+🏠<br>
+Home
+</a>
+
+
+<a href="live.html">
+🔴<br>
+Live
+</a>
+
+
+<a href="matches.html" class="active">
+⚽<br>
+Matches
+</a>
+
+
+<a href="leagues.html">
+🏆<br>
+Lig
+</a>
+
+
+<a href="players.html">
+⭐<br>
+Players
+</a>
+
+
+<a href="ai.html">
+🤖<br>
+AI
+</a>
+
+
+</nav>
+
+
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+⚽ MATCHES
+</h1>
+
+
+<p>
+Tout match foutbòl jodi a ak analiz PREZI AI.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+📅 MATCH JODI A
+</h2>
+
+
+<div id="matches-list">
+
+
+<div class="loading">
+
+⏳ Ap chèche match yo...
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+🔥 TOP MATCH
+</h2>
+
+
+<div class="match-item">
+
+
+<p>
+🏆 Champions League
+</p>
+
+
+<h3>
+⚪ Ekip Lakay
+</h3>
+
+
+<strong>
+VS
+</strong>
+
+
+<h3>
+🔵 Ekip Vizitè
+</h3>
+
+
+<button onclick="openMatch(
+'Ekip Lakay',
+'Ekip Vizitè',
+'0 - 0',
+'Champions League',
+'--'
+)">
+
+📊 Analize Match
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+⚽ PREZI SCORE © 2026
+
+
+</footer>
+
+
+
+
+
+
+
+<script src="api.js"></script>
+
+
+<script>
+
+
+async function loadMatchPage(){
+
+
+const box =
+document.getElementById("matches-list");
+
+
+try{
+
+
+const today =
+new Date()
+.toISOString()
+.split("T")[0];
+
+
+
+const response =
+await fetch(
+`https://v3.football.api-sports.io/fixtures?date=${today}`,
+{
+
+
+headers:{
+
+"x-apisports-key":API_KEY
+
+}
+
+
+});
+
+
+
+const data =
+await response.json();
+
+
+
+box.innerHTML="";
+
+
+
+data.response
+.slice(0,20)
+.forEach(match=>{
+
+
+let home =
+match.teams.home.name;
+
+
+let away =
+match.teams.away.name;
+
+
+let score =
+`${match.goals.home ?? 0} - ${match.goals.away ?? 0}`;
+
+
+let minute =
+match.fixture.status.elapsed
+?
+match.fixture.status.elapsed+"'"
+:
+"--";
+
+
+
+let league =
+match.league.name;
+
+
+
+box.innerHTML += `
+
+
+<div class="match-item">
+
+
+<h4>
+🏆 ${league}
+</h4>
+
+
+<p>
+⚪ ${home}
+</p>
+
+
+<strong>
+${score}
+</strong>
+
+
+<p>
+🔵 ${away}
+</p>
+
+
+<p>
+⏱️ ${minute}
+</p>
+
+
+<button onclick="openMatch(
+'${home}',
+'${away}',
+'${score}',
+'${league}',
+'${minute}'
+)">
+
+📊 Analize Match
+
+</button>
+
+
+</div>
+
+
+`;
+
+
+
+});
+
+
+
+}
+
+catch(error){
+
+
+box.innerHTML =
+"❌ Erè chajman match yo";
+
+
+console.log(error);
+
+
+}
+
+
+}
+
+
+
+loadMatchPage();
+
+
+</script>
+
+
+
+</body>
+
+</html>
