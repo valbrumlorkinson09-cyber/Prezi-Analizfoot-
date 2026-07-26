@@ -1,145 +1,313 @@
+// ===============================
+// PREZI SCORE API FINAL
+// ===============================
+
+
 const API_KEY = "17bb4ac5d7787d60de3ff0301ce0554b";
 
-const matchBox = document.getElementById("match-api");
+const API_URL = "https://v3.football.api-sports.io/fixtures";
 
-async function loadMatches() {
 
-  if (!matchBox) return;
 
-  matchBox.innerHTML = "⏳ Chajman match yo...";
+// ===============================
+// LOAD MATCH JODI A
+// ===============================
 
-  try {
+async function loadMatches(){
 
-    const response = await fetch(
-      "https://v3.football.api-sports.io/fixtures?live=all",
-      {
-        method: "GET",
-        headers: {
-          "x-apisports-key": API_KEY
-        }
-      }
-    );
+    const box = document.getElementById("match-api");
 
-    const data = await response.json();
-
-    matchBox.innerHTML = "";
-
-    if (!data.response || data.response.length === 0) {
-      matchBox.innerHTML = "⚪ Pa gen match live kounya.";
-      return;
+    if(!box){
+        return;
     }
 
-    data.response.forEach(match => {
 
-      let minute = match.fixture.status.elapsed ?? "--";
+    try{
 
-      let scoreHome = match.goals.home ?? 0;
-      let scoreAway = match.goals.away ?? 0;
+        const today = new Date()
+        .toISOString()
+        .split("T")[0];
 
-      matchBox.innerHTML += `
 
-<div class="match-item">
+        const response = await fetch(
+            `${API_URL}?date=${today}`,
+            {
 
-<h3>
-🏆 ${match.league.name}
-</h3>
+                method:"GET",
 
-<div class="teams">
+                headers:{
+                    "x-apisports-key":API_KEY
+                }
 
-<div class="team">
+            }
+        );
 
-<img src="${match.teams.home.logo}" class="team-logo">
 
-<p>${match.teams.home.name}</p>
+        const data = await response.json();
 
-</div>
 
-<div class="score-box">
+        box.innerHTML="";
 
-<strong>${scoreHome} - ${scoreAway}</strong>
 
-<br>
+        if(!data.response || data.response.length===0){
 
-<small>⏱ ${minute}'</small>
+            box.innerHTML =
+            "⚽ Pa gen match disponib";
 
-</div>
+            return;
 
-<div class="team">
+        }
 
-<img src="${match.teams.away.logo}" class="team-logo">
 
-<p>${match.teams.away.name}</p>
 
-</div>
+        data.response.slice(0,10)
+        .forEach(match=>{
 
-</div>
-<button onclick="openMatch('${home}', '${away}', '${score}', '${league}', '${minute}')">
-📊 Analize Match
-</button>
-<div class=
-</div>
 
-</div>
+            const home =
+            match.teams.home.name;
 
-`;
 
-    });
+            const away =
+            match.teams.away.name;
 
-  } catch (error) {
 
-    console.log(error);
+            const homeLogo =
+            match.teams.home.logo;
 
-    matchBox.innerHTML = "❌ Erè API.";
 
-  }
+            const awayLogo =
+            match.teams.away.logo;
+
+
+
+            const score =
+            `${match.goals.home ?? 0} - ${match.goals.away ?? 0}`;
+
+
+            const minute =
+            match.fixture.status.elapsed 
+            ? match.fixture.status.elapsed+"'"
+            : "--";
+
+
+
+            const league =
+            match.league.name;
+
+
+
+            box.innerHTML += `
+
+
+            <div class="match-item">
+
+
+            <h4>
+            🏆 ${league}
+            </h4>
+
+
+            <p>
+            ⚪ ${home}
+            </p>
+
+
+            <strong>
+            ${score}
+            </strong>
+
+
+            <p>
+            🔵 ${away}
+            </p>
+
+
+            <p>
+            ⏱️ ${minute}
+            </p>
+
+
+
+            <button onclick="openMatch(
+            '${home}',
+            '${away}',
+            '${score}',
+            '${league}',
+            '${minute}'
+            )">
+
+            📊 Analize Match
+
+            </button>
+
+
+            </div>
+
+
+            `;
+
+
+        });
+
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+        box.innerHTML =
+        "❌ Erè koneksyon API";
+
+    }
+
 
 }
 
-loadMatches();
-async function getTeamForm(teamId){
+
+
+
+// ===============================
+// OPEN MATCH DETAILS
+// ===============================
+
+
+function openMatch(
+home,
+away,
+score,
+league,
+minute
+){
+
+
+localStorage.setItem(
+"homeTeam",
+home
+);
+
+
+localStorage.setItem(
+"awayTeam",
+away
+);
+
+
+localStorage.setItem(
+"matchScore",
+score
+);
+
+
+localStorage.setItem(
+"league",
+league
+);
+
+
+localStorage.setItem(
+"minute",
+minute
+);
+
+
+
+window.location.href =
+"match-details.html";
+
+
+}
+
+
+
+
+// ===============================
+// LIVE MATCH
+// ===============================
+
+
+async function loadLive(){
+
+
+const home =
+document.getElementById("liveHome");
+
+
+if(!home){
+
+return;
+
+}
+
+
 
 try{
 
-const response = await fetch(
-`https://v3.football.api-sports.io/fixtures?team=${teamId}&last=5`,
+
+const response =
+await fetch(
+`${API_URL}?live=all`,
 {
-method:"GET",
+
 headers:{
-"x-apisports-key": API_KEY
+"x-apisports-key":API_KEY
 }
+
 }
 );
 
-const data = await response.json();
 
-let form = [];
 
-data.response.forEach(match=>{
+const data =
+await response.json();
 
-const isHome = match.teams.home.id == teamId;
 
-const teamGoals = isHome ? match.goals.home : match.goals.away;
-const opponentGoals = isHome ? match.goals.away : match.goals.home;
 
-if(teamGoals > opponentGoals){
+if(data.response.length > 0){
 
-form.push("🟢 W");
+
+const match =
+data.response[0];
+
+
+
+document.getElementById("liveHome")
+.innerHTML =
+"⚪ "+
+match.teams.home.name;
+
+
+
+document.getElementById("liveAway")
+.innerHTML =
+"🔵 "+
+match.teams.away.name;
+
+
+
+document.getElementById("liveScore")
+.innerHTML =
+`${match.goals.home ?? 0} - ${match.goals.away ?? 0}`;
+
+
+
+document.getElementById("liveMinute")
+.innerHTML =
+"⏱️ "+
+(match.fixture.status.elapsed ?? 0)
++"'";
+
+
+
+document.getElementById("liveStatus")
+.innerHTML =
+"🔴 LIVE";
+
 
 }
-else if(teamGoals < opponentGoals){
 
-form.push("🔴 L");
 
-}
-else{
-
-form.push("🟡 D");
-
-}
-
-});
-
-return form.join(" ");
 
 }
 
@@ -147,112 +315,15 @@ catch(error){
 
 console.log(error);
 
-return "N/A";
-
-}
-
 }
 
 
-function analyzeMatch(home, away, homeScore, awayScore, homeId, awayId, fixtureId){
-
-localStorage.setItem("homeTeam", home);
-localStorage.setItem("awayTeam", away);
-
-localStorage.setItem("homeScore", homeScore);
-localStorage.setItem("awayScore", awayScore);
-
-localStorage.setItem("homeId", homeId);
-localStorage.setItem("awayId", awayId);
-
-localStorage.setItem("fixtureId", fixtureId);
-
-location.href = "match.html";
-
 }
 
-async function loadLiveScore(){
 
-const liveHome = document.getElementById("liveHome");
 
-if(!liveHome){
-return;
-}
-
-try{
-
-const response = await fetch(
-"https://v3.football.api-sports.io/fixtures?live=all",
-{
-method:"GET",
-headers:{
-"x-apisports-key":API_KEY
-}
-}
-);
-
-const data = await response.json();
-
-if(!data.response || data.response.length===0){
-
-document.getElementById("liveStatus").innerHTML =
-"⚪ Pa gen match live";
-
-return;
-
-}
-
-const match = data.response[0];
-
-document.getElementById("liveStatus").innerHTML =
-"🔴 LIVE " + (match.fixture.status.elapsed ?? "--") + "'";
-
-document.getElementById("liveHome").innerHTML =
-"⚪ " + match.teams.home.name;
-
-document.getElementById("liveAway").innerHTML =
-"🔵 " + match.teams.away.name;
-
-document.getElementById("liveScore").innerHTML =
-(match.goals.home ?? 0) + " - " + (match.goals.away ?? 0);
-
-const minute = document.getElementById("liveMinute");
-
-if(minute){
-
-minute.innerHTML =
-"⏱ " + (match.fixture.status.elapsed ?? "--") + "'";
-
-}
-
-}catch(error){
-
-console.log(error);
-
-}
-
-}
-
-loadLiveScore();
-
-/* Rafrechi chak 30 segonn */
-
-setInterval(()=>{
+// START
 
 loadMatches();
 
-loadLiveScore();
-
-},30000);
-function openMatch(home, away, score, league, minute){
-
-localStorage.setItem("homeTeam", home);
-localStorage.setItem("awayTeam", away);
-localStorage.setItem("score", score);
-localStorage.setItem("league", league);
-localStorage.setItem("minute", minute);
-
-
-window.location.href = "match-details.html";
-
-}
+loadLive();
