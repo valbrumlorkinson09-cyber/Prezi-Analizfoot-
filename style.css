@@ -1,984 +1,604 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+/* =========================
+   PREZI SCORE FINAL CSS
+   PART 1
+========================= */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-
-background:#07111f;
-color:white;
-padding-bottom:80px;
-
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0b1220;
+    color:#ffffff;
+    line-height:1.5;
 }
-
-
 
 /* HEADER */
 
 .top{
-
-background:#101c33;
-padding:18px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:10;
-
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#101827;
+    padding:15px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.35);
 }
-
-
 
 .logo{
-
-font-size:24px;
-font-weight:bold;
-color:#00ff88;
-
+    font-size:24px;
+    font-weight:bold;
+    color:#00d4ff;
 }
-
-
 
 .profile{
-
-background:#2563eb;
-color:white;
-border:none;
-padding:10px;
-border-radius:50%;
-font-size:18px;
-
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    background:#1e293b;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
 }
-
-
-
-
-/* SEARCH */
-
-.search{
-
-margin:15px;
-background:#14233d;
-padding:12px;
-border-radius:15px;
-
-}
-
-
-
-.search input{
-
-width:100%;
-background:none;
-border:none;
-outline:none;
-color:white;
-font-size:16px;
-
-}
-
-
-
 
 /* MENU */
 
 .menu{
-
-display:flex;
-justify-content:space-around;
-background:#101c33;
-padding:12px;
-
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background:#111827;
+    padding:12px 5px;
+    overflow-x:auto;
 }
-
-
 
 .menu a{
-
-color:white;
-text-decoration:none;
-text-align:center;
-font-size:13px;
-
+    color:#fff;
+    text-decoration:none;
+    text-align:center;
+    font-size:14px;
+    min-width:60px;
+    transition:.3s;
 }
 
-
+.menu a:hover,
+.menu a.active{
+    color:#00d4ff;
+}
 
 /* HERO */
 
 .hero{
-
-margin:15px;
-padding:30px;
-border-radius:20px;
-text-align:center;
-background:linear-gradient(135deg,#2563eb,#00a86b);
-
+    margin:15px;
+    padding:30px 20px;
+    border-radius:18px;
+    text-align:center;
+    background:linear-gradient(135deg,#1d4ed8,#0f172a);
 }
-
 
 .hero h1{
-
-font-size:32px;
-
+    font-size:30px;
+    margin-bottom:10px;
 }
 
-
+.hero p{
+    color:#d1d5db;
+    margin-bottom:20px;
+}
 
 .hero button{
-
-margin-top:15px;
-padding:12px 25px;
-border:none;
-border-radius:25px;
-font-weight:bold;
-
+    border:none;
+    background:#00d4ff;
+    color:#000;
+    font-weight:bold;
+    padding:12px 24px;
+    border-radius:30px;
+    cursor:pointer;
 }
 
-
-
-
-
-/* CARD */
+/* CARDS */
 
 .card{
-
-background:#101c33;
-margin:15px;
-padding:20px;
-border-radius:20px;
-
+    background:#111827;
+    margin:15px;
+    padding:18px;
+    border-radius:18px;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
 }
-
-
 
 .card h2{
-
-color:#00ff88;
-margin-bottom:15px;
-
+    color:#00d4ff;
+    margin-bottom:15px;
 }
 
-
-
-
-/* LIVE */
+/* LIVE CARD */
 
 .live{
-
-border-left:5px solid red;
-
+    border-left:5px solid red;
 }
 
+/* MATCH */
 
-
-.teams{
-
-display:flex;
-justify-content:space-around;
-align-items:center;
-text-align:center;
-
+.match-item{
+    background:#1e293b;
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:12px;
+    text-align:center;
+    transition:.3s;
 }
 
-
-
-.teams strong{
-
-font-size:28px;
-color:#00ff88;
-
+.match-item:hover{
+    transform:translateY(-2px);
 }
 
-
-
-
-/* ITEMS */
-
-.match-item,
-.news,
-.player,
-.rank,
-.prediction{
-
-background:#16243d;
-margin:10px 0;
-padding:15px;
-border-radius:12px;
-
+.match-item h3,
+.match-item p{
+    margin:6px 0;
 }
 
-
-
-
-.prediction{
-
-display:flex;
-justify-content:space-between;
-
+.match-item strong{
+    display:block;
+    font-size:28px;
+    color:#00ff88;
+    margin:10px 0;
 }
 
+/* LOADING */
 
+.loading{
+    text-align:center;
+    padding:20px;
+    color:#cbd5e1;
+}
+/* =========================
+   PREZI SCORE FINAL CSS
+   PART 2
+========================= */
 
 
 /* BUTTON */
 
-.button{
-
-background:#00ff88;
-color:#07111f;
-padding:12px;
-border-radius:20px;
-text-align:center;
-margin-top:15px;
-font-weight:bold;
-cursor:pointer;
-
-}
-
-
-
-/* FOOTER */
-
-footer{
-
-text-align:center;
-padding:20px;
-color:#aaa;
-
-}
-
-
-
-
-
-@media(max-width:600px){
-
-
-.menu{
-
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-z-index:20;
-
-}
-
-
-.logo{
-
-font-size:20px;
-
-}
-
-
-}
-.table{
-
-width:100%;
-border-collapse:collapse;
-}
-
-
-.table th{
-
-color:#00ff88;
-padding:10px;
-}
-
-
-.table td{
-
-padding:12px;
-background:#16243d;
-text-align:center;
-
-}
-
-
-.table tr{
-
-border-bottom:1px solid #26364f;
-
-}
-.news-card,
-.player-card{
-
-background:#16243d;
-padding:15px;
-margin:10px 0;
-border-radius:15px;
-
-}
-
-
-.news-card h3,
-.player-card h3{
-
-color:#00ff88;
-
-}
-
-
-
-
-
-  }
-/* ===== DESIGN PREMIUM V2 ===== */
-
-body{
-background:#07131f;
-color:#fff;
-}
-
-.top{
-background:#0d1b2a;
-box-shadow:0 2px 15px rgba(0,0,0,.4);
-}
-
-.logo{
-font-size:26px;
-font-weight:bold;
-color:#00ff88;
-letter-spacing:1px;
-}
-
-.card{
-background:#122235;
-border-radius:18px;
-padding:18px;
-margin:15px;
-box-shadow:0 8px 20px rgba(0,0,0,.25);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-4px);
-}
-
 .button,
-.hero button{
-
-background:linear-gradient(90deg,#00ff88,#00c853);
-color:#07131f;
-font-weight:bold;
-padding:12px 18px;
-border-radius:12px;
-text-align:center;
-cursor:pointer;
-margin-top:15px;
-border:none;
+button{
+    cursor:pointer;
+    transition:.3s;
 }
+
 
 .button:hover,
-.hero button:hover{
-
-transform:scale(1.03);
-
+button:hover{
+    transform:scale(1.05);
 }
 
-.match-item,
-.news-card,
-.player-card{
 
-background:#1b2d44;
-padding:15px;
-border-radius:15px;
-margin-top:12px;
-
-}
-/* ===== MATCH PREMIUM ===== */
-
-.live{
-border-left:6px solid #ff3b30;
-}
-
-.match-item{
-
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-gap:10px;
-
-}
-
-.match-item h2{
-
-font-size:32px;
-color:#00ff88;
-
-}
-
-.match-item h3{
-
-color:#ff4d4d;
-
-}
-
-/* ===== AI ===== */
-
-.ai-box{
-
-background:#1b2d44;
-padding:15px;
-margin-top:10px;
-border-radius:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-}
-
-.ai-box b{
-
-font-size:22px;
-color:#00ff88;
-
-}
-
-/* ===== TABLE ===== */
-
-.table th{
-
-background:#00ff88;
-color:#07131f;
-
-}
-
-.table td{
-
-background:#16243d;
-
-  }
-/* ===== NEWS PREMIUM ===== */
+/* NEWS CARD */
 
 .news-card{
 
-border-left:4px solid #00ff88;
-transition:.3s;
-
-}
-
-.news-card:hover{
-
-transform:translateX(5px);
-
-}
-
-
-/* ===== PLAYER PREMIUM ===== */
-
-.player-card{
-
-border-left:4px solid #2563eb;
-transition:.3s;
-
-}
-
-.player-card:hover{
-
-transform:translateY(-5px);
+    background:#1e293b;
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:12px;
+    color:white;
 
 }
 
 
-/* ===== PROFILE ===== */
+/* LEAGUE GRID */
 
-.player-card h3{
+.league-grid{
 
-color:#00ff88;
-
-}
-
-
-/* ===== FOOTER ===== */
-
-footer{
-
-background:#0d1b2a;
-margin-top:30px;
-border-radius:15px;
-font-size:14px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
 
 }
 
 
-/* ===== PAGE ANIMATION ===== */
+.league-grid .news-card{
 
-section{
-
-animation:show .5s ease;
-
-}
-
-
-@keyframes show{
-
-from{
-
-opacity:0;
-transform:translateY(15px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-/* FOTO JWÈ */
-
-.player-img{
-
-width:100px;
-height:100px;
-object-fit:cover;
-border-radius:50%;
-display:block;
-margin:auto;
-margin-bottom:10px;
-
-}
-.team-logo{
-
-width:45px;
-height:45px;
-object-fit:contain;
-vertical-align:middle;
-margin-right:10px;
-
-}
-.player-img{
-
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:50%;
-margin:15px auto;
-display:block;
-border:3px solid #00ff88;
+    text-align:center;
+    font-weight:bold;
 
 }
 
 
-.team-logo{
+/* AI CARD */
 
-width:50px;
-height:50px;
-object-fit:contain;
-vertical-align:middle;
-margin-right:10px;
+.ai-card{
 
-  }
-.player-img{
-
-width:120px;
-height:120px;
-object-fit:cover;
-border-radius:50%;
-display:block;
-margin:15px auto;
-border:3px solid #00ff88;
-
-}
-.news-card{
-background:#1b1b1b;
-padding:15px;
-margin:12px 0;
-border-radius:12px;
-border-left:4px solid #00ff88;
-}
-/* ANIMASYON ANALIZFOOT */
-
-.card,
-.player-card,
-.news-card,
-.ai-box {
-
-animation: showCard 0.6s ease;
+    background:linear-gradient(135deg,#111827,#172554);
+    padding:20px;
+    border-radius:18px;
+    margin:15px 0;
+    border:1px solid #334155;
 
 }
 
 
-@keyframes showCard {
+.ai-card h2{
 
-from{
-
-opacity:0;
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
+    color:#22c55e;
+    margin-bottom:12px;
 
 }
 
 
+.ai-card p{
 
-/* Bouton efè */
-
-.button{
-
-transition:0.3s;
-cursor:pointer;
+    margin:8px 0;
 
 }
 
 
-.button:hover{
+/* LIVE BADGE */
 
-transform:scale(1.05);
+.live-badge{
 
-}
-
-
-
-/* Loading AI */
-
-.loading{
-
-text-align:center;
-font-size:20px;
-
-animation:pulse 1s infinite;
+    display:inline-block;
+    background:#ef4444;
+    color:white;
+    padding:6px 15px;
+    border-radius:20px;
+    font-weight:bold;
+    animation:pulse 1.5s infinite;
 
 }
 
 
 @keyframes pulse{
 
-50%{
+    0%{
+        opacity:1;
+    }
 
-opacity:0.4;
+    50%{
+        opacity:.5;
+    }
 
-}
-
-}
-body{
-transition:0.3s;
-}
-
-img{
-max-width:100%;
-object-fit:cover;
-}
-/* ===== TOP JWÈ PRO DESIGN ===== */
-
-.pro-player{
-
-background:#1b2d44;
-border-radius:20px;
-padding:20px;
-margin:15px 0;
-text-align:center;
-box-shadow:0 8px 20px rgba(0,0,0,.3);
-transition:.3s;
+    100%{
+        opacity:1;
+    }
 
 }
 
 
-.pro-player:hover{
+/* STATISTICS */
 
-transform:translateY(-6px);
+.stats-box{
 
-}
-
-
-.pro-player img{
-
-width:160px;
-height:160px;
-object-fit:cover;
-border-radius:20px;
-border:3px solid #00ff88;
-margin-bottom:15px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin:15px;
 
 }
 
 
-.pro-player h3{
+.stat{
 
-color:#00ff88;
-font-size:22px;
-margin-bottom:10px;
-
-}
-
-
-.pro-player p{
-
-font-size:16px;
-margin-bottom:12px;
-
-}
-
-
-.stats{
-
-display:flex;
-justify-content:space-around;
-gap:8px;
-flex-wrap:wrap;
-
-}
-
-
-.stats span{
-
-background:#07111f;
-padding:8px 12px;
-border-radius:12px;
-font-size:14px;
-
-}
-.team-logo{
-width:55px;
-height:55px;
-object-fit:contain;
-}
-
-.teams{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-}
-
-.team{
-width:35%;
-text-align:center;
-}
-
-.score-box{
-width:30%;
-text-align:center;
-font-weight:bold;
-font-size:22px;
-}
-
-.score-box small{
-display:block;
-margin-top:5px;
-font-size:14px;
-color:#aaa;
-}
-/* ===== ANALYSE MATCH ===== */
-
-body{
-background:#111;
-color:#fff;
-font-family:Arial,sans-serif;
-}
-
-header{
-background:#181818;
-padding:15px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
-}
-
-.match-box{
-background:#1d1d1d;
-margin:15px;
-padding:20px;
-border-radius:15px;
-text-align:center;
-}
-
-.match-box h1{
-font-size:45px;
-margin:10px 0;
-color:#00ff88;
-}
-
-.match-box p{
-color:#bbb;
-}
-
-.menu-stats{
-display:flex;
-overflow:auto;
-gap:10px;
-padding:10px;
-}
-
-.menu-stats button{
-background:#222;
-color:white;
-border:none;
-padding:10px 15px;
-border-radius:20px;
-font-size:15px;
-}
-
-.menu-stats button:hover{
-background:#00b894;
-}
-
-.stats{
-background:#1d1d1d;
-margin:15px;
-padding:20px;
-border-radius:15px;
-}
-
-.stats p{
-margin-top:15px;
-margin-bottom:5px;
-}
-
-progress{
-width:100%;
-height:12px;
-}
-/* =========================
-   MATCH DETAILS DESIGN
-========================= */
-
-.match-header {
-    text-align: center;
-    padding: 25px;
-    background: linear-gradient(135deg,#111827,#1e3a8a);
-    border-radius: 20px;
-    margin: 15px;
-}
-
-.match-header h1 {
-    font-size: 45px;
-    margin: 15px 0;
-    color: white;
-}
-
-.team {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-}
-
-.live-badge {
-    display: inline-block;
-    background: red;
-    padding: 8px 18px;
-    border-radius: 20px;
-    color: white;
-    font-weight: bold;
-}
-
-
-/* STATISTIK */
-
-.stats-box {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 10px;
-    margin: 15px;
-}
-
-
-.stat {
-    background:#111827;
+    background:#1e293b;
     padding:15px;
     border-radius:15px;
     text-align:center;
-    color:white;
-}
-
-
-.stat h3 {
-    color:#38bdf8;
-}
-
-
-/* AI CARD */
-
-.ai-card {
-
-    margin:15px;
-    padding:20px;
-    border-radius:20px;
-    background:#0f172a;
-    color:white;
-    border:1px solid #334155;
 
 }
 
 
-.ai-card h2 {
+.stat h3{
 
-    color:#22c55e;
+    color:#00d4ff;
+    margin-bottom:8px;
 
 }
 
 
 /* TIMELINE */
 
-.timeline {
+.timeline{
 
-    margin:15px;
+    margin:15px 0;
 
 }
 
 
-.event {
+.event{
 
-    background:#111827;
+    background:#1e293b;
     padding:15px;
     border-radius:15px;
     margin-bottom:10px;
-    color:white;
 
 }
 
 
-/* PLAYER */
+/* PLAYER CARD */
 
-.player-card {
+.player-card{
 
-    background:#111827;
-    color:white;
+    background:#1e293b;
     padding:15px;
-    margin:15px;
     border-radius:15px;
+    margin:15px 0;
 
 }
 
 
-/* MOBILE */
+.player-card h2{
+
+    color:#facc15;
+
+}
+
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+    padding:25px;
+    color:#94a3b8;
+    font-size:14px;
+
+}
+
+
+/* MOBILE RESPONSIVE */
 
 @media(max-width:600px){
 
-.stats-box{
+    .logo{
+        font-size:20px;
+    }
 
-grid-template-columns:1fr;
+
+    .hero h1{
+        font-size:25px;
+    }
+
+
+    .league-grid,
+    .stats-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .menu a{
+
+        font-size:12px;
+
+    }
+
+  }
+/* =========================
+   PREZI SCORE FINAL CSS
+   PART 3
+   PREMIUM MATCH DESIGN
+========================= */
+
+
+/* MATCH DETAILS HEADER */
+
+.match-header{
+
+    background:linear-gradient(135deg,#0f172a,#1e40af);
+    padding:25px;
+    margin:15px;
+    border-radius:20px;
+    text-align:center;
 
 }
 
-}
-.match-item{
 
-cursor:pointer;
-transition:0.3s;
+.match-header h1{
 
-}
-
-
-.match-item:hover{
-
-transform:scale(1.03);
+    font-size:45px;
+    color:#22c55e;
+    margin:15px 0;
 
 }
+
+
+.team{
+
+    font-size:20px;
+    font-weight:bold;
+    margin:10px 0;
+
+}
+
+
+/* SCORE LIVE */
+
+.score-live{
+
+    font-size:40px;
+    font-weight:bold;
+    color:#ffffff;
+
+}
+
+
+
+/* PREDICTION BOX */
+
+.prediction-box{
+
+    background:#111827;
+    padding:20px;
+    border-radius:20px;
+    margin:15px;
+
+}
+
+
+.prediction-item{
+
+    display:flex;
+    justify-content:space-between;
+    background:#1e293b;
+    padding:12px;
+    border-radius:12px;
+    margin-bottom:10px;
+
+}
+
+
+.prediction-item span:last-child{
+
+    font-weight:bold;
+    color:#22c55e;
+
+}
+
+
+
+/* AI PROGRESS BAR */
+
+.progress{
+
+    width:100%;
+    height:12px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin:10px 0;
+
+}
+
+
+.progress-bar{
+
+    height:100%;
+    background:#22c55e;
+    border-radius:20px;
+
+}
+
+
+
+/* FORM TEAM */
+
+.form{
+
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    margin:10px 0;
+
+}
+
+
+.form span{
+
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    background:#1e293b;
+
+}
+
+
+/* WIN / DRAW / LOSS */
+
+.win{
+
+    color:#22c55e;
+
+}
+
+
+.draw{
+
+    color:#facc15;
+
+}
+
+
+.loss{
+
+    color:#ef4444;
+
+}
+
+
+
+/* ANALYSIS SECTION */
+
+.analysis{
+
+    background:#0f172a;
+    padding:18px;
+    border-radius:18px;
+    margin:15px;
+
+}
+
+
+.analysis h3{
+
+    color:#00d4ff;
+    margin-bottom:10px;
+
+}
+
+
+
+/* SEARCH BAR */
+
+.search-box{
+
+    width:100%;
+    padding:12px;
+    border-radius:25px;
+    border:none;
+    outline:none;
+    background:#1e293b;
+    color:white;
+
+}
+
+
+
+/* NOTIFICATION */
+
+.alert{
+
+    background:#7f1d1d;
+    padding:12px;
+    border-radius:12px;
+    text-align:center;
+    margin:15px;
+
+}
+
+
+
+/* DESKTOP */
+
+@media(min-width:768px){
+
+    .card,
+    .match-header,
+    .prediction-box,
+    .analysis{
+
+        max-width:700px;
+        margin:20px auto;
+
+    }
+
+      }
