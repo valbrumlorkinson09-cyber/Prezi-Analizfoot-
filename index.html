@@ -2,284 +2,184 @@
 <html lang="ht">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREZI SCORE</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PREZI SCORE</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+<!-- HEADER -->
 
 <header class="top">
 
-<div class="logo">
-⚽ PREZI SCORE
-</div>
+    <div class="logo">
+        ⚽ PREZI SCORE
+    </div>
 
-<button class="profile">
-👤
-</button>
+    <button class="profile">
+        👤
+    </button>
 
 </header>
 
-
+<!-- MENU -->
 
 <nav class="menu">
 
+    <a href="index.html" class="active">
+        🏠<br>Home
+    </a>
 
-<a href="index.html">
-🏠<br>
-Home
-</a>
+    <a href="live.html">
+        🔴<br>Live
+    </a>
 
+    <a href="matches.html">
+        ⚽<br>Matches
+    </a>
 
-<a href="live.html">
-🔴<br>
-Live
-</a>
+    <a href="leagues.html">
+        🏆<br>Lig
+    </a>
 
+    <a href="players.html">
+        ⭐<br>Players
+    </a>
 
-<a href="matches.html">
-⚽<br>
-Matches
-</a>
-
-
-<a href="leagues.html">
-🏆<br>
-Lig
-</a>
-
-
-<a href="players.html">
-⭐<br>
-Players
-</a>
-
-
-<a href="ai.html">
-🤖<br>
-AI
-</a>
-
+    <a href="ai.html">
+        🤖<br>AI
+    </a>
 
 </nav>
 
-
-
+<!-- HERO -->
 
 <section class="hero">
 
+    <h1>⚽ PREZI SCORE</h1>
 
-<h1>
-PREZI SCORE
-</h1>
+    <p>
+        Rezilta foutbòl an tan reyèl ak analiz AI.
+    </p>
 
-
-<p>
-Rezilta foutbòl an tan reyèl
-</p>
-
-
-<button>
-Gade Match yo
-</button>
-
+    <button onclick="location.href='live.html'">
+        Gade Match Live
+    </button>
 
 </section>
 
-
-
-
+<!-- LIVE MATCH -->
 
 <section class="card live">
 
+    <h2>🔴 LIVE NOW</h2>
 
-<h2>
-🔴 LIVE NOW
-</h2>
+    <div class="match-item">
 
+        <h3 id="liveStatus">
+            🔴 Chajman...
+        </h3>
 
-<div class="match-item">
+        <p id="liveHome">
+            ⚪ Ekip Lakay
+        </p>
 
-<h3 id="liveStatus">
-🔴 Ap chèche live...
-</h3>
+        <strong id="liveScore">
+            0 - 0
+        </strong>
 
+        <p id="liveAway">
+            🔵 Ekip Vizitè
+        </p>
 
-<p id="liveHome">
-⚪ Ekip Lakay
-</p>
+        <p id="liveMinute">
+            ⏱ --'
+        </p>
 
-
-<strong id="liveScore">
-0 - 0
-</strong>
-
-
-<p id="liveAway">
-🔵 Ekip Vizitè
-</p>
-
-
-<p id="liveMinute">
-⏱ --'
-</p>
-
-
-</div>
-
+    </div>
 
 </section>
 
-
-
-
-
+<!-- MATCH JODI A -->
 
 <section class="card">
 
+    <h2>📅 MATCH JODI A</h2>
 
-<h2>
-📅 MATCH JODI A
-</h2>
+    <div id="match-api">
 
+        <div class="loading">
+            ⏳ Ap chèche match yo...
+        </div>
 
-<div id="match-api">
-
-⏳ Ap chèche match yo...
-
-</div>
-
+    </div>
 
 </section>
-<section class="card">
-
-<h2>
-🏆 LIG POPILÈ
-</h2>
-
-
-<div class="news-card">
-🏴 Premier League
-</div>
-
-
-<div class="news-card">
-🇪🇸 La Liga
-</div>
-
-
-<div class="news-card">
-🇮🇹 Serie A
-</div>
-
-
-<div class="news-card">
-🏆 Champions League
-</div>
-
-
-</section>
-
-
-
-
+<!-- LIG POPILÈ -->
 
 <section class="card">
 
-<h2>
-🔥 DÈNYE REZILTA
-</h2>
+    <h2>🏆 LIG POPILÈ</h2>
 
+    <div class="league-grid">
 
-<div class="match-item">
+        <div class="news-card">🏴 Premier League</div>
 
-<p>
-⚪ Real Madrid
-</p>
+        <div class="news-card">🇪🇸 La Liga</div>
 
-<strong>
-2 - 1
-</strong>
+        <div class="news-card">🇮🇹 Serie A</div>
 
-<p>
-🔵 Barcelona
-</p>
+        <div class="news-card">🇩🇪 Bundesliga</div>
 
-</div>
+        <div class="news-card">🇫🇷 Ligue 1</div>
 
+        <div class="news-card">🏆 Champions League</div>
 
-<div class="match-item">
-
-<p>
-🔴 Liverpool
-</p>
-
-<strong>
-1 - 0
-</strong>
-
-<p>
-🔵 Manchester City
-</p>
-
-</div>
-
+    </div>
 
 </section>
 
-
-
-
+<!-- DÈNYE REZILTA -->
 
 <section class="card">
 
-<h2>
-🤖 PREZI AI
-</h2>
+    <h2>🔥 DÈNYE REZILTA</h2>
 
+    <div id="results-api">
 
-<div class="news-card">
+        <div class="loading">
+            ⏳ Ap chaje rezilta yo...
+        </div>
 
-<p>
-Analiz match ak prediksyon entèlijan.
-</p>
-
-
-<div class="button" onclick="location.href='ai.html'">
-
-🤖 Louvri AI
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
 
+<!-- PREZI AI -->
 
+<section class="card">
 
+    <h2>🤖 PREZI AI</h2>
 
+    <div class="news-card">
 
-<footer>
+        <p>
+            Prediksyon match, analiz ekip, estatistik ak AI an tan reyèl.
+        </p>
 
-⚽ PREZI SCORE © 2026
+        <button class="button" onclick="location.href='ai.html'">
+            🤖 Louvri AI
+        </button>
 
-</footer>
+    </div>
 
+</section>
 
+<!-- ABOUT -->
 
-<script src="api.js"></script>
+<section class="card">
 
-
-</body>
-
-</html>
+    <h2>ℹ️ SO
