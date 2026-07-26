@@ -50,7 +50,19 @@ box.innerHTML = "";
 if(!data.response || data.response.length === 0){
 
 box.innerHTML =
-"⚽ Pa gen match jodi a";
+`
+<div class="news-card">
+
+<h3>
+⚽ Pa gen match jodi a
+</h3>
+
+<p>
+🔥 Ap chèche match k ap vini yo...
+</p>
+
+</div>
+`;
 
 return;
 
