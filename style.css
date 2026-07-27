@@ -1,604 +1,90 @@
-/* =========================
-   PREZI SCORE FINAL CSS
-   PART 1
-========================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0b1220;
-    color:#ffffff;
-    line-height:1.5;
+    background:#0b132b;
+    color:white;
+    padding:15px;
 }
 
-/* HEADER */
-
-.top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#101827;
-    padding:15px 20px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.35);
-}
-
-.logo{
-    font-size:24px;
-    font-weight:bold;
-    color:#00d4ff;
-}
-
-.profile{
-    width:42px;
-    height:42px;
-    border:none;
-    border-radius:50%;
-    background:#1e293b;
-    color:#fff;
-    font-size:20px;
-    cursor:pointer;
-}
-
-/* MENU */
-
-.menu{
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    background:#111827;
-    padding:12px 5px;
-    overflow-x:auto;
-}
-
-.menu a{
-    color:#fff;
-    text-decoration:none;
+header{
     text-align:center;
-    font-size:14px;
-    min-width:60px;
-    transition:.3s;
-}
-
-.menu a:hover,
-.menu a.active{
-    color:#00d4ff;
-}
-
-/* HERO */
-
-.hero{
-    margin:15px;
-    padding:30px 20px;
-    border-radius:18px;
-    text-align:center;
-    background:linear-gradient(135deg,#1d4ed8,#0f172a);
-}
-
-.hero h1{
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-.hero p{
-    color:#d1d5db;
     margin-bottom:20px;
 }
 
-.hero button{
+header h1{
+    color:#00e676;
+    font-size:30px;
+}
+
+header p{
+    color:#ddd;
+    margin-top:5px;
+}
+
+.search input{
+    width:100%;
+    padding:14px;
     border:none;
-    background:#00d4ff;
+    border-radius:12px;
+    font-size:16px;
+    margin-bottom:20px;
+    outline:none;
+}
+
+h2{
+    margin:15px 0;
+    color:#00e676;
+}
+
+.card,
+.match{
+    background:#1c2541;
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+
+.match h3{
+    margin-bottom:10px;
+}
+
+.score{
+    font-size:24px;
+    font-weight:bold;
+    color:#00e676;
+    margin:10px 0;
+}
+
+.time{
+    color:#ccc;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#00e676;
     color:#000;
     font-weight:bold;
-    padding:12px 24px;
-    border-radius:30px;
     cursor:pointer;
 }
 
-/* CARDS */
-
-.card{
-    background:#111827;
-    margin:15px;
-    padding:18px;
-    border-radius:18px;
-    box-shadow:0 4px 12px rgba(0,0,0,.25);
-}
-
-.card h2{
-    color:#00d4ff;
-    margin-bottom:15px;
-}
-
-/* LIVE CARD */
-
-.live{
-    border-left:5px solid red;
-}
-
-/* MATCH */
-
-.match-item{
-    background:#1e293b;
-    border-radius:15px;
-    padding:15px;
-    margin-bottom:12px;
-    text-align:center;
-    transition:.3s;
-}
-
-.match-item:hover{
-    transform:translateY(-2px);
-}
-
-.match-item h3,
-.match-item p{
-    margin:6px 0;
-}
-
-.match-item strong{
-    display:block;
-    font-size:28px;
-    color:#00ff88;
-    margin:10px 0;
-}
-
-/* LOADING */
-
-.loading{
-    text-align:center;
-    padding:20px;
-    color:#cbd5e1;
-}
-/* =========================
-   PREZI SCORE FINAL CSS
-   PART 2
-========================= */
-
-
-/* BUTTON */
-
-.button,
-button{
-    cursor:pointer;
-    transition:.3s;
-}
-
-
-.button:hover,
 button:hover{
-    transform:scale(1.05);
+    background:#00c853;
 }
-
-
-/* NEWS CARD */
-
-.news-card{
-
-    background:#1e293b;
-    padding:15px;
-    border-radius:15px;
-    margin-bottom:12px;
-    color:white;
-
-}
-
-
-/* LEAGUE GRID */
-
-.league-grid{
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-
-}
-
-
-.league-grid .news-card{
-
-    text-align:center;
-    font-weight:bold;
-
-}
-
-
-/* AI CARD */
-
-.ai-card{
-
-    background:linear-gradient(135deg,#111827,#172554);
-    padding:20px;
-    border-radius:18px;
-    margin:15px 0;
-    border:1px solid #334155;
-
-}
-
-
-.ai-card h2{
-
-    color:#22c55e;
-    margin-bottom:12px;
-
-}
-
-
-.ai-card p{
-
-    margin:8px 0;
-
-}
-
-
-/* LIVE BADGE */
-
-.live-badge{
-
-    display:inline-block;
-    background:#ef4444;
-    color:white;
-    padding:6px 15px;
-    border-radius:20px;
-    font-weight:bold;
-    animation:pulse 1.5s infinite;
-
-}
-
-
-@keyframes pulse{
-
-    0%{
-        opacity:1;
-    }
-
-    50%{
-        opacity:.5;
-    }
-
-    100%{
-        opacity:1;
-    }
-
-}
-
-
-/* STATISTICS */
-
-.stats-box{
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin:15px;
-
-}
-
-
-.stat{
-
-    background:#1e293b;
-    padding:15px;
-    border-radius:15px;
-    text-align:center;
-
-}
-
-
-.stat h3{
-
-    color:#00d4ff;
-    margin-bottom:8px;
-
-}
-
-
-/* TIMELINE */
-
-.timeline{
-
-    margin:15px 0;
-
-}
-
-
-.event{
-
-    background:#1e293b;
-    padding:15px;
-    border-radius:15px;
-    margin-bottom:10px;
-
-}
-
-
-/* PLAYER CARD */
-
-.player-card{
-
-    background:#1e293b;
-    padding:15px;
-    border-radius:15px;
-    margin:15px 0;
-
-}
-
-
-.player-card h2{
-
-    color:#facc15;
-
-}
-
-
-/* FOOTER */
 
 footer{
-
     text-align:center;
-    padding:25px;
-    color:#94a3b8;
+    margin-top:30px;
+    color:#999;
     font-size:14px;
-
 }
-
-
-/* MOBILE RESPONSIVE */
-
-@media(max-width:600px){
-
-    .logo{
-        font-size:20px;
-    }
-
-
-    .hero h1{
-        font-size:25px;
-    }
-
-
-    .league-grid,
-    .stats-box{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .menu a{
-
-        font-size:12px;
-
-    }
-
-  }
-/* =========================
-   PREZI SCORE FINAL CSS
-   PART 3
-   PREMIUM MATCH DESIGN
-========================= */
-
-
-/* MATCH DETAILS HEADER */
-
-.match-header{
-
-    background:linear-gradient(135deg,#0f172a,#1e40af);
-    padding:25px;
-    margin:15px;
-    border-radius:20px;
-    text-align:center;
-
-}
-
-
-.match-header h1{
-
-    font-size:45px;
-    color:#22c55e;
-    margin:15px 0;
-
-}
-
-
-.team{
-
-    font-size:20px;
-    font-weight:bold;
-    margin:10px 0;
-
-}
-
-
-/* SCORE LIVE */
-
-.score-live{
-
-    font-size:40px;
-    font-weight:bold;
-    color:#ffffff;
-
-}
-
-
-
-/* PREDICTION BOX */
-
-.prediction-box{
-
-    background:#111827;
-    padding:20px;
-    border-radius:20px;
-    margin:15px;
-
-}
-
-
-.prediction-item{
-
-    display:flex;
-    justify-content:space-between;
-    background:#1e293b;
-    padding:12px;
-    border-radius:12px;
-    margin-bottom:10px;
-
-}
-
-
-.prediction-item span:last-child{
-
-    font-weight:bold;
-    color:#22c55e;
-
-}
-
-
-
-/* AI PROGRESS BAR */
-
-.progress{
-
-    width:100%;
-    height:12px;
-    background:#334155;
-    border-radius:20px;
-    overflow:hidden;
-    margin:10px 0;
-
-}
-
-
-.progress-bar{
-
-    height:100%;
-    background:#22c55e;
-    border-radius:20px;
-
-}
-
-
-
-/* FORM TEAM */
-
-.form{
-
-    display:flex;
-    gap:8px;
-    justify-content:center;
-    margin:10px 0;
-
-}
-
-
-.form span{
-
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    background:#1e293b;
-
-}
-
-
-/* WIN / DRAW / LOSS */
-
-.win{
-
-    color:#22c55e;
-
-}
-
-
-.draw{
-
-    color:#facc15;
-
-}
-
-
-.loss{
-
-    color:#ef4444;
-
-}
-
-
-
-/* ANALYSIS SECTION */
-
-.analysis{
-
-    background:#0f172a;
-    padding:18px;
-    border-radius:18px;
-    margin:15px;
-
-}
-
-
-.analysis h3{
-
-    color:#00d4ff;
-    margin-bottom:10px;
-
-}
-
-
-
-/* SEARCH BAR */
-
-.search-box{
-
-    width:100%;
-    padding:12px;
-    border-radius:25px;
-    border:none;
-    outline:none;
-    background:#1e293b;
-    color:white;
-
-}
-
-
-
-/* NOTIFICATION */
-
-.alert{
-
-    background:#7f1d1d;
-    padding:12px;
-    border-radius:12px;
-    text-align:center;
-    margin:15px;
-
-}
-
-
-
-/* DESKTOP */
-
-@media(min-width:768px){
-
-    .card,
-    .match-header,
-    .prediction-box,
-    .analysis{
-
-        max-width:700px;
-        margin:20px auto;
-
-    }
-
-      }
