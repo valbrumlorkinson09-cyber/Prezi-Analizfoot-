@@ -1,75 +1,44 @@
-const API_KEY = "fe08bb1ed4mshd1a647c90e2c802p172617jsn1f453b26a050";
+async function loadPlayers() {
 
-const url = "https://free-api-live-football-data.p.rapidapi.com/football-get-matches-by-date?date=20260727";
+const box = document.getElementById("players");
+if (!box) return;
 
-async function loadMatches(){
+try {
 
-const box = document.getElementById("matches");
-
-try{
-
-const response = await fetch(url,{
-method:"GET",
-headers:{
-"Content-Type":"application/json",
-"x-rapidapi-host":"free-api-live-football-data.p.rapidapi.com",
-"x-rapidapi-key":API_KEY
+const response = await fetch(
+"https://free-api-live-football-data.p.rapidapi.com/football-players-search?search=m",
+{
+method: "GET",
+headers: {
+"Content-Type": "application/json",
+"x-rapidapi-host": "free-api-live-football-data.p.rapidapi.com",
+"x-rapidapi-key": API_KEY
 }
 });
 
-
 const data = await response.json();
 
-console.log(data);
+box.innerHTML = "";
 
+const players = data.response.suggestions;
 
-box.innerHTML="";
-
-
-let matches = data.response.matches || data.response.live;
-
-
-if(!matches || matches.length === 0){
-
-box.innerHTML="Pa gen match disponib jodi a ⚽";
-
-return;
-
-}
-
-
-matches.slice(0,10).forEach(match=>{
+players.slice(0, 10).forEach(player => {
 
 box.innerHTML += `
-
-<div class="match">
-
-<h3>${match.home.name} 🆚 ${match.away.name}</h3>
-
-<div class="score">
-${match.home.score ?? 0} - ${match.away.score ?? 0}
+<div class="player-card">
+<h3>${player.name}</h3>
+<p>🏟️ ${player.teamName || "San ekip"}</p>
 </div>
-
-<p class="time">
-📅 ${match.time}
-</p>
-
-</div>
-
 `;
 
 });
 
+} catch (e) {
 
-}catch(error){
-
-console.log(error);
-
-box.innerHTML="Erè koneksyon API ❌";
+box.innerHTML = "❌ Erè chaje jwè yo";
 
 }
 
 }
 
-
-loadMatches();
+loadPlayers();
