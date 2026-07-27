@@ -71,27 +71,30 @@ box.innerHTML += `
 
 <h3>🏆 Match Jodi a</h3>
 
-<div class="teams">
+box.innerHTML += `
 
-<div>
-<p>⚪ ${match.home.name}</p>
-</div>
+<div class="match">
 
-<h2>
-${match.home.score ?? 0}
--
-${match.away.score ?? 0}
-</h2>
+<h3>${match.home.name} 🆚 ${match.away.name}</h3>
 
-<div>
-<p>🔵 ${match.away.name}</p>
-</div>
-
+<div class="score">
+${match.home.score ?? 0} - ${match.away.score ?? 0}
 </div>
 
 <p class="time">
 📅 ${match.time}
 </p>
+
+<button class="analyse-btn" onclick="analyseMatch(
+'${match.home.name}',
+'${match.away.name}'
+)">
+📊 Analiz Match
+</button>
+
+</div>
+
+`;
 
 <button class="analyze-btn" onclick="analyzeMatch(
 '${match.home.name}',
@@ -208,5 +211,13 @@ localStorage.setItem("homeTeam", home);
 localStorage.setItem("awayTeam", away);
 
 window.location.href = "analyse.html";
+
+}
+function analyseMatch(home, away){
+
+localStorage.setItem("homeTeam", home);
+localStorage.setItem("awayTeam", away);
+
+window.location.href="analyse.html";
 
 }
