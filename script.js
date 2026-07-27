@@ -11,109 +11,75 @@ const HEADERS = {
   "x-rapidapi-key": API_KEY
 };
 
-console.log("⚽ FootPredict HT demare...");
+
 // ===============================
-// MATCH LIVE
+// MATCH JODI A
 // ===============================
 
-async function loadLive() {
+async function loadMatches(){
 
-const box = document.getElementById("liveMatch");
+const box = document.getElementById("matches");
 
 if(!box) return;
 
-box.innerHTML = "⏳ Chajman match live...";
+box.innerHTML = "⏳ Chajman match yo...";
+
 
 try{
 
+const date = new Date()
+.toISOString()
+.substring(0,10)
+.replaceAll("-","");
+
+
 const response = await fetch(
-"https://free-api-live-football-data.p.rapidapi.com/football-get-live-all-matches",
+`https://free-api-live-football-data.p.rapidapi.com/football-get-matches-by-date?date=${date}`,
 {
 method:"GET",
 headers:HEADERS
 }
 );
 
-const data = await response.json();
-
-const live = data.response?.live || [];
-
-if(live.length === 0){
-
-box.innerHTML = "⚽ Pa gen match live kounye a.";
-
-return;
-
-}
-
-const match = live[0];
-
-box.innerHTML = `
-<div class="match">
-
-<h3>${match.home.name} 🆚 ${match.away.name}</h3>
-
-<div class="score">
-${match.home.score ?? 0} - ${match.away.score ?? 0}
-</div>
-
-<p class="time">
-⏱ ${match.status.liveTime.short}
-</p>
-
-</div>
-`;
-
-}catch(error){
-
-console.log(error);
-
-box.innerHTML = "❌ Erè Match Live";
-
-}
-
-}
-
-loadLive();
-// ===============================
-// TOP JWÈ
-// ===============================
-
-async function loadPlayers(){
-
-const box = document.getElementById("players");
-
-if(!box) return;
-
-box.innerHTML="⏳ Chajman jwè yo...";
-
-try{
-
-const response = await fetch(
-"https://free-api-live-football-data.p.rapidapi.com/football-players-search?search=m",
-{
-method:"GET",
-headers:HEADERS
-}
-);
 
 const data = await response.json();
 
-const players = data.response?.suggestions || [];
+console.log(data);
 
 
 box.innerHTML="";
 
 
-players.slice(0,10).forEach(player=>{
+const matches = data.response?.matches || [];
+
+
+if(matches.length === 0){
+
+box.innerHTML="⚽ Pa gen match disponib jodi a.";
+
+return;
+
+}
+
+
+matches.slice(0,10).forEach(match=>{
+
 
 box.innerHTML += `
 
-<div class="player-card">
+<div class="match">
 
-<h3>⭐ ${player.name}</h3>
+<h3>
+${match.home.name} 🆚 ${match.away.name}
+</h3>
 
-<p>🏟️ ${player.teamName || "San ekip"}</p>
+<div class="score">
+${match.home.score ?? 0} - ${match.away.score ?? 0}
+</div>
+
+<p>
+📅 ${match.time}
+</p>
 
 </div>
 
@@ -122,15 +88,20 @@ box.innerHTML += `
 });
 
 
-}catch(error){
+}
+
+catch(error){
 
 console.log(error);
 
-box.innerHTML="❌ Erè jwè yo";
+box.innerHTML="❌ Erè koneksyon API";
 
 }
 
 }
 
 
-loadPlayers();
+// DEMARE
+loadMatches();
+
+console.log("⚽ FootPredict HT API aktif");
