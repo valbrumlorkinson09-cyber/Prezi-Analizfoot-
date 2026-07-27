@@ -199,3 +199,11 @@ box.innerHTML = "❌ Erè Match Live";
 
 loadLive();
 console.log("⚽ FootPredict HT API aktif");
+function analyzeMatch(home, away){
+
+localStorage.setItem("homeTeam", home);
+localStorage.setItem("awayTeam", away);
+
+window.location.href = "analyse.html";
+
+}
