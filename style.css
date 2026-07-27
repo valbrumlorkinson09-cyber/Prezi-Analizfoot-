@@ -88,3 +88,20 @@ footer{
     color:#999;
     font-size:14px;
 }
+.player-card{
+background:#1c1c1c;
+padding:15px;
+margin:10px 0;
+border-radius:10px;
+border-left:4px solid #00ff66;
+}
+
+.player-card h3{
+margin:0;
+color:#fff;
+}
+
+.player-card p{
+margin-top:5px;
+color:#bbb;
+}
