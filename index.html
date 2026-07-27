@@ -1,205 +1,111 @@
 <!DOCTYPE html>
 <html lang="ht">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PREZI SCORE</title>
+
+    <title>FootPredict HT ⚽</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
-
-<header class="top">
+<header class="header">
 
     <div class="logo">
-        ⚽ PREZI SCORE
+        ⚽ FootPredict HT
     </div>
 
-    <button class="profile">
-        👤
-    </button>
+    <nav>
+        <a href="#">Akèy</a>
+        <a href="#live">Live</a>
+        <a href="#fixtures">Match</a>
+        <a href="#teams">Ekip</a>
+        <a href="#players">Jwè</a>
+    </nav>
 
 </header>
 
-<!-- MENU -->
-
-<nav class="menu">
-
-    <a href="index.html" class="active">
-        🏠<br>Home
-    </a>
-
-    <a href="live.html">
-        🔴<br>Live
-    </a>
-
-    <a href="matches.html">
-        ⚽<br>Matches
-    </a>
-
-    <a href="leagues.html">
-        🏆<br>Lig
-    </a>
-
-    <a href="players.html">
-        ⭐<br>Players
-    </a>
-
-    <a href="ai.html">
-        🤖<br>AI
-    </a>
-
-</nav>
-
-<!-- HERO -->
 
 <section class="hero">
 
-    <h1>⚽ PREZI SCORE</h1>
+    <h1>FootPredict HT</h1>
 
     <p>
-        Rezilta foutbòl an tan reyèl ak analiz AI.
+        Tout enfòmasyon foutbòl yo yon sèl kote ⚽🔥
     </p>
 
-    <button onclick="location.href='live.html'">
-        Gade Match Live
+    <button>
+        Gade Match yo
     </button>
 
 </section>
 
-<!-- LIVE MATCH -->
 
-<section class="card live">
 
-    <h2>🔴 LIVE NOW</h2>
+<section id="live" class="section">
 
-    <div class="match-item">
+    <h2>🔴 Match Live</h2>
 
-        <h3 id="liveStatus">
-            🔴 Chajman...
-        </h3>
-
-        <p id="liveHome">
-            ⚪ Ekip Lakay
-        </p>
-
-        <strong id="liveScore">
-            0 - 0
-        </strong>
-
-        <p id="liveAway">
-            🔵 Ekip Vizitè
-        </p>
-
-        <p id="liveMinute">
-            ⏱ --'
-        </p>
-
+    <div id="live-matches">
+        Chajman match live...
     </div>
 
 </section>
 
-<!-- MATCH JODI A -->
 
-<section class="card">
 
-    <h2>📅 MATCH JODI A</h2>
+
+<section id="fixtures" class="section">
+
+    <h2>📅 Match Jodi a</h2>
 
     <div id="match-api">
-
-        <div class="loading">
-            ⏳ Ap chèche match yo...
-        </div>
-
-    </div>
-
-</section>
-<!-- LIG POPILÈ -->
-
-<section class="card">
-
-    <h2>🏆 LIG POPILÈ</h2>
-
-    <div class="league-grid">
-
-        <div class="news-card">🏴 Premier League</div>
-
-        <div class="news-card">🇪🇸 La Liga</div>
-
-        <div class="news-card">🇮🇹 Serie A</div>
-
-        <div class="news-card">🇩🇪 Bundesliga</div>
-
-        <div class="news-card">🇫🇷 Ligue 1</div>
-
-        <div class="news-card">🏆 Champions League</div>
-
+        Chajman match yo...
     </div>
 
 </section>
 
-<!-- DÈNYE REZILTA -->
 
-<section class="card">
 
-    <h2>🔥 DÈNYE REZILTA</h2>
 
-    <div id="results-api">
+<section id="teams" class="section">
 
-        <div class="loading">
-            ⏳ Ap chaje rezilta yo...
-        </div>
+    <h2>🏟️ Ekip</h2>
 
+    <div id="teams-list">
+        Ap vini...
     </div>
 
 </section>
 
-<!-- PREZI AI -->
 
-<section class="card">
 
-    <h2>🤖 PREZI AI</h2>
 
-    <div class="news-card">
+<section id="players" class="section">
 
-        <p>
-            Prediksyon match, analiz ekip, estatistik ak AI an tan reyèl.
-        </p>
+    <h2>⭐ Jwè</h2>
 
-        <button class="button" onclick="location.href='ai.html'">
-            🤖 Louvri AI
-        </button>
-
+    <div id="players-list">
+        Ap vini...
     </div>
 
 </section>
 
-<!-- ABOUT -->
 
-<section class="card">
-
-    <h2>
-        ℹ️ SOU PREZI SCORE
-    </h2>
-
-    <p>
-        PREZI SCORE bay rezilta foutbòl an tan reyèl,
-        analiz AI ak prediksyon match.
-    </p>
-
-</section>
 
 
 <footer>
-    ⚽ PREZI SCORE © 2026
+
+<p>
+© 2026 FootPredict HT - Powered by Football Data ⚽
+</p>
+
 </footer>
 
 
-<script src="api.js?v=5"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
