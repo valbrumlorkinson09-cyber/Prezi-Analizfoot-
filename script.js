@@ -69,37 +69,33 @@ box.innerHTML += `
 
 <div class="match">
 
+<h3>🏆 Match Jodi a</h3>
+
 <div class="teams">
 
 <div>
-<img src="${match.home.logo || ''}" class="team-logo">
-<p>${match.home.name}</p>
+<p>⚪ ${match.home.name}</p>
 </div>
 
-<h2>VS</h2>
+<h2>
+${match.home.score ?? 0}
+-
+${match.away.score ?? 0}
+</h2>
 
 <div>
-<img src="${match.away.logo || ''}" class="team-logo">
-<p>${match.away.name}</p>
+<p>🔵 ${match.away.name}</p>
 </div>
 
 </div>
-
-
-<div class="score">
-${match.home.score ?? 0} - ${match.away.score ?? 0}
-</div>
-
 
 <p class="time">
 📅 ${match.time}
 </p>
 
-
 <button class="analyze-btn">
 📊 Analize Match
 </button>
-
 
 </div>
 
