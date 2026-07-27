@@ -220,3 +220,31 @@ font-size:22px;
 .analyze-btn:hover{
     opacity:0.8;
 }
+.match{
+background:#101827;
+padding:20px;
+border-radius:18px;
+margin-bottom:15px;
+text-align:center;
+}
+
+.teams{
+display:flex;
+justify-content:space-around;
+align-items:center;
+font-weight:bold;
+}
+
+.teams h2{
+color:#00ff88;
+font-size:25px;
+}
+
+.analyze-btn{
+background:#00ff88;
+border:none;
+padding:10px 25px;
+border-radius:25px;
+font-weight:bold;
+margin-top:15px;
+}
