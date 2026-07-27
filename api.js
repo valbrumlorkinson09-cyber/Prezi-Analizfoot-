@@ -80,7 +80,8 @@ onclick="analyseMatch(
 '${match.home.name}',
 '${match.away.name}',
 '${match.home.score ?? 0} - ${match.away.score ?? 0}',
-'${match.time}'
+'${match.time}',
+'${match.status?.liveTime?.short ?? "--"}'
 )">
 📊 Analize Match
 </button>
@@ -220,14 +221,19 @@ async function loadPlayers() {
 // ANALIZ MATCH
 // ===============================
 
-function analyseMatch(home, away, score, time) {
+function analyseMatch(home, away, score, date, minute){
 
-  localStorage.setItem("homeTeam", home);
-  localStorage.setItem("awayTeam", away);
-  localStorage.setItem("matchScore", score);
-  localStorage.setItem("minute", time);
+localStorage.setItem("homeTeam", home);
 
-  window.location.href = "match-details.html";
+localStorage.setItem("awayTeam", away);
+
+localStorage.setItem("matchScore", score);
+
+localStorage.setItem("matchDate", date);
+
+localStorage.setItem("minute", minute);
+
+window.location.href = "match-details.html";
 
 }
 
