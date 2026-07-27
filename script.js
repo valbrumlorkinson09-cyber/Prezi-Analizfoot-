@@ -103,5 +103,80 @@ box.innerHTML="❌ Erè koneksyon API";
 
 // DEMARE
 loadMatches();
+// ===============================
+// MATCH LIVE
+// ===============================
 
+async function loadLive(){
+
+const box = document.getElementById("liveMatch");
+
+if(!box) return;
+
+box.innerHTML = "⏳ Chajman match live...";
+
+
+try{
+
+const response = await fetch(
+"https://free-api-live-football-data.p.rapidapi.com/football-get-live-all-matches",
+{
+method:"GET",
+headers:HEADERS
+}
+);
+
+
+const data = await response.json();
+
+console.log("LIVE:", data);
+
+
+const live = data.response?.live || [];
+
+
+if(live.length === 0){
+
+box.innerHTML = "⚽ Pa gen match live kounye a.";
+
+return;
+
+}
+
+
+const match = live[0];
+
+
+box.innerHTML = `
+
+<h3>
+🔴 ${match.home.name} 🆚 ${match.away.name}
+</h3>
+
+<div class="score">
+${match.home.score ?? 0} - ${match.away.score ?? 0}
+</div>
+
+<p>
+⏱ ${match.status?.liveTime?.short || "--"}
+</p>
+
+`;
+
+
+
+}
+
+catch(error){
+
+console.log(error);
+
+box.innerHTML = "❌ Erè Match Live";
+
+}
+
+}
+
+
+loadLive();
 console.log("⚽ FootPredict HT API aktif");
