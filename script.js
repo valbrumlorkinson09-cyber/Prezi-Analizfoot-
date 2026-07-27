@@ -93,7 +93,10 @@ ${match.away.score ?? 0}
 📅 ${match.time}
 </p>
 
-<button class="analyze-btn">
+<button class="analyze-btn" onclick="analyzeMatch(
+'${match.home.name}',
+'${match.away.name}'
+)">
 📊 Analize Match
 </button>
 
