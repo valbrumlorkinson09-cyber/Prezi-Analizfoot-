@@ -1,120 +1,58 @@
 <!DOCTYPE html>
 <html lang="ht">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FootPredict HT</title>
 
-    <title>FootPredict HT ⚽</title>
-
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="header">
-
-    <div class="logo">
-        ⚽ FootPredict HT
-    </div>
-
-    <nav>
-        <a href="#">Akèy</a>
-        <a href="#live">Live</a>
-        <a href="#fixtures">Match</a>
-        <a href="#teams">Ekip</a>
-        <a href="#players">Jwè</a>
-    </nav>
-
+<header>
+  <h1>⚽ FootPredict HT</h1>
+  <p>Tout enfòmasyon foutbòl yo yon sèl kote</p>
 </header>
 
+<section class="search">
+  <input type="text" placeholder="🔍 Chèche ekip oswa jwè...">
+</section>
 
-<section class="hero">
+<section class="live">
+  <h2>🔴 Match Live</h2>
 
-    <h1>FootPredict HT</h1>
+  <div id="liveMatch" class="card">
+    Chajman match live...
+  </div>
+</section>
 
-    <p>
-        Tout enfòmasyon foutbòl yo yon sèl kote ⚽🔥
-    </p>
+<section class="today">
 
-    <button>
-        Gade Match yo
-    </button>
+  <h2>📅 Match Jodi a</h2>
+
+  <div id="matches">
+    Chajman match yo...
+  </div>
 
 </section>
 
+<section class="players">
 
+  <h2>⭐ Top Jwè</h2>
 
-<section id="live" class="section">
-
-    <h2>🔴 Match Live</h2>
-
-    <div id="live-matches">
-        Chajman match live...
-    </div>
+  <div id="players">
+    Ap vini...
+  </div>
 
 </section>
-
-
-
-
-<section id="fixtures" class="section">
-
-    <h2>📅 Match Jodi a</h2>
-
-    <div id="match-api">
-        Chajman match yo...
-    </div>
-
-</section>
-
-
-
-
-<section id="teams" class="section">
-
-    <h2>🏟️ Ekip</h2>
-
-    <div id="teams-list">
-        Ap vini...
-    </div>
-
-</section>
-
-
-
-
-<section id="players" class="section">
-
-    <h2>⭐ Jwè</h2>
-
-    <div id="players-list">
-        Ap vini...
-    </div>
-
-</section>
-
-
-
 
 <footer>
 
-<p>
-© 2026 FootPredict HT - Powered by Football Data ⚽
-</p>
+  © 2026 FootPredict HT
 
 </footer>
 
+<script src="api.js"></script>
 
-<div id="teams">
-Ap vini...
-</div>
-
-<div id="players">
-Ap vini...
-</div>
-
-
-<script src="teams.js"></script>
-<script src="players.js"></script>
 </body>
 </html>
