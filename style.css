@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
@@ -11,117 +11,144 @@ body{
     padding:15px;
 }
 
+
 header{
     text-align:center;
-    margin-bottom:20px;
+    padding:20px 0;
 }
 
 header h1{
     color:#00e676;
-    font-size:30px;
+    font-size:32px;
 }
 
 header p{
     color:#ddd;
-    margin-top:5px;
+    margin-top:8px;
 }
+
+
+/* SEARCH */
 
 .search input{
+
     width:100%;
-    padding:14px;
+    padding:15px;
+    border-radius:15px;
     border:none;
-    border-radius:12px;
+    outline:none;
     font-size:16px;
     margin-bottom:20px;
-    outline:none;
+
 }
+
+
+/* TIT */
 
 h2{
-    margin:15px 0;
+
     color:#00e676;
+    margin:20px 0 10px;
+
 }
 
-.card,
-.match{
+
+/* MATCH CARD */
+
+.match,
+.card{
+
     background:#1c2541;
     padding:15px;
     border-radius:15px;
     margin-bottom:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,.3);
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+
 }
+
 
 .match h3{
+
+    font-size:18px;
     margin-bottom:10px;
+
 }
+
 
 .score{
-    font-size:24px;
-    font-weight:bold;
+
     color:#00e676;
-    margin:10px 0;
+    font-size:26px;
+    font-weight:bold;
+    text-align:center;
+    margin:10px;
+
 }
+
 
 .time{
+
     color:#ccc;
-    font-size:14px;
+    text-align:center;
+
 }
 
-button{
-    width:100%;
-    margin-top:10px;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#00e676;
-    color:#000;
-    font-weight:bold;
-    cursor:pointer;
+
+/* JWÈ */
+
+.player-card{
+
+    background:#1c2541;
+    padding:15px;
+    margin:10px 0;
+    border-radius:15px;
+    border-left:4px solid #00e676;
+
 }
 
-button:hover{
-    background:#00c853;
+
+.player-card h3{
+
+    color:#00e676;
+
 }
+
+
+.player-card p{
+
+    color:#ddd;
+    margin-top:5px;
+
+}
+
+
+/* FOOTER */
 
 footer{
+
     text-align:center;
+    color:#aaa;
     margin-top:30px;
-    color:#999;
-    font-size:14px;
-}
-.player-card{
-background:#1c1c1c;
-padding:15px;
-margin:10px 0;
-border-radius:10px;
-border-left:4px solid #00ff66;
-}
-
-.player-card h3{
-margin:0;
-color:#fff;
-}
-
-.player-card p{
-margin-top:5px;
-color:#bbb;
-}
-.player-card{
-
-background:#1c2541;
-padding:15px;
-margin:10px 0;
-border-radius:15px;
+    padding:15px;
 
 }
 
-.player-card h3{
 
-color:#00e676;
+/* TELEFON */
+
+@media(max-width:600px){
+
+header h1{
+
+font-size:26px;
 
 }
 
-.player-card p{
 
-color:#ddd;
+.score{
 
-    }
+font-size:22px;
+
+}
+
+}
