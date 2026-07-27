@@ -1,31 +1,42 @@
-// ===============================
-// FOOTPREDICT HT
+// =====================================
+// ⚽ FOOTPREDICT HT
 // SCRIPT PRINCIPAL
-// ===============================
+// =====================================
+
 
 const API_KEY = "fe08bb1ed4mshd1a647c90e2c802p172617jsn1f453b26a050";
 
+
 const HEADERS = {
-  "Content-Type": "application/json",
-  "x-rapidapi-host": "free-api-live-football-data.p.rapidapi.com",
-  "x-rapidapi-key": API_KEY
+
+"Content-Type":"application/json",
+
+"x-rapidapi-host":"free-api-live-football-data.p.rapidapi.com",
+
+"x-rapidapi-key":API_KEY
+
 };
 
 
-// ===============================
-// MATCH JODI A
-// ===============================
+// =====================================
+// 📅 MATCH JODI A
+// =====================================
+
 
 async function loadMatches(){
 
+
 const box = document.getElementById("matches");
+
 
 if(!box) return;
 
-box.innerHTML = "⏳ Chajman match yo...";
+
+box.innerHTML="⏳ Chajman match yo...";
 
 
 try{
+
 
 const date = new Date()
 .toISOString()
@@ -33,33 +44,48 @@ const date = new Date()
 .replaceAll("-","");
 
 
+
 const response = await fetch(
+
 `https://free-api-live-football-data.p.rapidapi.com/football-get-matches-by-date?date=${date}`,
+
 {
+
 method:"GET",
+
 headers:HEADERS
+
 }
+
 );
+
 
 
 const data = await response.json();
 
-console.log(data);
+
+console.log("MATCH:",data);
+
+
+
+const matches = data.response?.matches || data.response?.events || [];
+
 
 
 box.innerHTML="";
 
 
-const matches = data.response?.matches || [];
 
+if(matches.length===0){
 
-if(matches.length === 0){
 
 box.innerHTML="⚽ Pa gen match disponib jodi a.";
 
 return;
 
+
 }
+
 
 
 matches.slice(0,10).forEach(match=>{
@@ -67,124 +93,176 @@ matches.slice(0,10).forEach(match=>{
 
 box.innerHTML += `
 
-<div class="match">
-
-<h3>🏆 Match Jodi a</h3>
-
-box.innerHTML += `
 
 <div class="match">
 
-<h3>${match.home.name} 🆚 ${match.away.name}</h3>
+
+<h3>
+
+${match.home.name} 🆚 ${match.away.name}
+
+</h3>
+
+
 
 <div class="score">
+
 ${match.home.score ?? 0} - ${match.away.score ?? 0}
+
 </div>
 
-<p class="time">
+
+
+<p>
+
 📅 ${match.time}
+
 </p>
 
-<button class="analyse-btn" onclick="analyseMatch(
+
+
+<button class="analyse-btn"
+onclick="analyseMatch(
 '${match.home.name}',
 '${match.away.name}'
 )">
+
 📊 Analiz Match
+
 </button>
+
+
 
 </div>
 
-`;
-
-<button class="analyze-btn" onclick="analyzeMatch(
-'${match.home.name}',
-'${match.away.name}'
-)">
-📊 Analize Match
-</button>
-
-</div>
 
 `;
+
 
 });
+
 
 
 }
 
 catch(error){
 
+
 console.log(error);
+
 
 box.innerHTML="❌ Erè koneksyon API";
 
-}
 
 }
 
 
-// DEMARE
-loadMatches();
-// ===============================
-// MATCH LIVE
-// ===============================
+}
+
+
+
+
+
+// =====================================
+// 🔴 MATCH LIVE
+// =====================================
+
+
 
 async function loadLive(){
 
+
+
 const box = document.getElementById("liveMatch");
+
+
 
 if(!box) return;
 
-box.innerHTML = "⏳ Chajman match live...";
+
+
+box.innerHTML="⏳ Chajman match live...";
+
 
 
 try{
 
+
 const response = await fetch(
+
 "https://free-api-live-football-data.p.rapidapi.com/football-get-live-all-matches",
+
 {
+
 method:"GET",
+
 headers:HEADERS
+
 }
+
 );
+
 
 
 const data = await response.json();
 
-console.log("LIVE:", data);
 
 
-const live = 
-data.response?.live || 
-data.response?.matches || 
-[];
-console.log("LIVE:", data);
+console.log("LIVE:",data);
 
-if(live.length === 0){
 
-box.innerHTML = "⚽ Pa gen match live kounye a.";
+
+const live = data.response?.live || [];
+
+
+
+if(live.length===0){
+
+
+box.innerHTML="⚽ Pa gen match live kounye a.";
 
 return;
 
+
 }
+
 
 
 const match = live[0];
 
 
+
 box.innerHTML = `
 
+
+<div class="match">
+
+
 <h3>
+
 🔴 ${match.home.name} 🆚 ${match.away.name}
+
 </h3>
 
+
+
 <div class="score">
+
 ${match.home.score ?? 0} - ${match.away.score ?? 0}
+
 </div>
 
+
+
 <p>
+
 ⏱ ${match.status?.liveTime?.short || "--"}
+
 </p>
+
+
+</div>
+
 
 `;
 
@@ -194,30 +272,62 @@ ${match.home.score ?? 0} - ${match.away.score ?? 0}
 
 catch(error){
 
+
 console.log(error);
 
-box.innerHTML = "❌ Erè Match Live";
+
+box.innerHTML="❌ Erè Match Live";
+
 
 }
 
-}
-
-
-loadLive();
-console.log("⚽ FootPredict HT API aktif");
-function analyzeMatch(home, away){
-
-localStorage.setItem("homeTeam", home);
-localStorage.setItem("awayTeam", away);
-
-window.location.href = "analyse.html";
 
 }
-function analyseMatch(home, away){
 
-localStorage.setItem("homeTeam", home);
-localStorage.setItem("awayTeam", away);
+
+
+
+// =====================================
+// 📊 ANALIZ MATCH
+// =====================================
+
+
+
+function analyseMatch(home,away){
+
+
+
+localStorage.setItem(
+"homeTeam",
+home
+);
+
+
+
+localStorage.setItem(
+"awayTeam",
+away
+);
+
+
 
 window.location.href="analyse.html";
 
+
+
 }
+
+
+
+
+// =====================================
+// 🚀 START APP
+// =====================================
+
+
+loadMatches();
+
+loadLive();
+
+
+console.log("⚽ FootPredict HT API AKTIF");
