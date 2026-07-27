@@ -75,3 +75,62 @@ box.innerHTML = "❌ Erè Match Live";
 }
 
 loadLive();
+// ===============================
+// TOP JWÈ
+// ===============================
+
+async function loadPlayers(){
+
+const box = document.getElementById("players");
+
+if(!box) return;
+
+box.innerHTML="⏳ Chajman jwè yo...";
+
+try{
+
+const response = await fetch(
+"https://free-api-live-football-data.p.rapidapi.com/football-players-search?search=m",
+{
+method:"GET",
+headers:HEADERS
+}
+);
+
+const data = await response.json();
+
+const players = data.response?.suggestions || [];
+
+
+box.innerHTML="";
+
+
+players.slice(0,10).forEach(player=>{
+
+box.innerHTML += `
+
+<div class="player-card">
+
+<h3>⭐ ${player.name}</h3>
+
+<p>🏟️ ${player.teamName || "San ekip"}</p>
+
+</div>
+
+`;
+
+});
+
+
+}catch(error){
+
+console.log(error);
+
+box.innerHTML="❌ Erè jwè yo";
+
+}
+
+}
+
+
+loadPlayers();
