@@ -132,8 +132,11 @@ const data = await response.json();
 console.log("LIVE:", data);
 
 
-const live = data.response?.live || [];
-
+const live = 
+data.response?.live || 
+data.response?.matches || 
+[];
+console.log("LIVE:", data);
 
 if(live.length === 0){
 
