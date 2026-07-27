@@ -1,34 +1,21 @@
 const API_KEY = "fe08bb1ed4mshd1a647c90e2c802p172617jsn1f453b26a050";
 
-const matchBox = document.getElementById("match-api");
+const url = "https://free-api-live-football-data.p.rapidapi.com/football-get-matches-by-date?date=20260727";
 
 async function loadMatches(){
 
-if(!matchBox){
-return;
-}
-
-matchBox.innerHTML = "Chajman match yo... ⚽";
-
-const today = new Date();
-const date = today.getFullYear() +
-String(today.getMonth()+1).padStart(2,"0") +
-String(today.getDate()).padStart(2,"0");
-
+const box = document.getElementById("matches");
 
 try{
 
-const response = await fetch(
-`https://free-api-live-football-data.p.rapidapi.com/football-get-matches-by-date?date=${date}`,
-{
+const response = await fetch(url,{
 method:"GET",
 headers:{
 "Content-Type":"application/json",
 "x-rapidapi-host":"free-api-live-football-data.p.rapidapi.com",
 "x-rapidapi-key":API_KEY
 }
-}
-);
+});
 
 
 const data = await response.json();
@@ -36,39 +23,35 @@ const data = await response.json();
 console.log(data);
 
 
-if(!data.response){
-matchBox.innerHTML="Pa gen match disponib jodi a ❌";
+box.innerHTML="";
+
+
+let matches = data.response.matches || data.response.live;
+
+
+if(!matches || matches.length === 0){
+
+box.innerHTML="Pa gen match disponib jodi a ⚽";
+
 return;
+
 }
 
 
-let matches = data.response;
+matches.slice(0,10).forEach(match=>{
 
+box.innerHTML += `
 
-matchBox.innerHTML="";
+<div class="match">
 
+<h3>${match.home.name} 🆚 ${match.away.name}</h3>
 
-matches.forEach(match=>{
+<div class="score">
+${match.home.score ?? 0} - ${match.away.score ?? 0}
+</div>
 
-matchBox.innerHTML += `
-
-<div class="match-card">
-
-<h3>
-${match.home?.name || "Home"} 
-vs 
-${match.away?.name || "Away"}
-</h3>
-
-<p>
-⚽ Score:
-${match.home?.score ?? 0}
--
-${match.away?.score ?? 0}
-</p>
-
-<p>
-⏰ ${match.time || "N/A"}
+<p class="time">
+📅 ${match.time}
 </p>
 
 </div>
@@ -78,14 +61,11 @@ ${match.away?.score ?? 0}
 });
 
 
-}
-
-catch(error){
+}catch(error){
 
 console.log(error);
 
-matchBox.innerHTML=
-"Erè koneksyon API ❌";
+box.innerHTML="Erè koneksyon API ❌";
 
 }
 
