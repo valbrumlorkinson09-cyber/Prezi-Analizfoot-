@@ -1,4 +1,4 @@
-const API_KEY = "METE_RAPIDAPI_KEY_OU_ISIT";
+const API_KEY = "fe08bb1ed4mshd1a647c90e2c802p172617jsn1f453b26a050";
 
 const headers = {
   "Content-Type": "application/json",
